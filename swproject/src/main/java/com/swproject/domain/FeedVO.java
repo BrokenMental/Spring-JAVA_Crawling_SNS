@@ -4,10 +4,17 @@ import java.util.Date;
 
 public class FeedVO {
 
+	private String ID;
 	private int F_Number;
 	private String MyFeed;
 	private Date F_Time;
 	
+	public String getID() {
+		return ID;
+	}
+	public void setID(String iD) {
+		ID = iD;
+	}
 	public int getF_Number() {
 		return F_Number;
 	}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.swproject.mapper.FeedMapper">
+
+<insert id ="create">
+insert into Feed (ID, MyFeed, F_Time)
+values(#{ID}, #{MyFeed}, #{F_Time})
+</insert>
+
+<update id="update">
+update Feed set MyFeed = #{MyFeed}
+where F_Number = #{F_Number}
+</update>
+
+<delete id="delete">
+delete from Feed where F_Number = #{F_Number}
+</delete>
+
+<select id="listAll" resultType="com.swproject.domain.FeedVO">
+<![CDATA[
+select
+	ID, F_Number, MyFeed, F_Time
+from
+	Feed
+where F_Number > 0
+order by F_Number desc, F_Time desc
+]]>
+</select>
+
+</mapper>

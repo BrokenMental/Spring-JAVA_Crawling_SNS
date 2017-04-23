@@ -44,9 +44,9 @@ public class FeedController {
 	}
 
 	@RequestMapping(value = "/readPage", method = RequestMethod.GET)
-	public void read(@RequestParam("f_Number") int F_Number, @ModelAttribute("cri") SearchCriteria cri, Model model)
+	public void read(@RequestParam("f_Number") int f_Number, @ModelAttribute("cri") SearchCriteria cri, Model model)
 			throws Exception {
-		model.addAttribute(service.read(F_Number));
+		model.addAttribute(service.read(f_Number));
 	}
 
 	@RequestMapping(value = "/modifyPage", method = RequestMethod.GET)

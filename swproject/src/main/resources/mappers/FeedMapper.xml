@@ -5,29 +5,70 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.swproject.mapper.FeedMapper">
 
-<insert id ="create">
-insert into Feed (ID, MyFeed, F_Time)
-values(#{ID}, #{MyFeed}, #{F_Time})
-</insert>
+	<insert id="create">
+		insert into Feed (ID, MyFeed, F_Time)
+		values(#{ID},
+		#{MyFeed}, #{F_Time})
+	</insert>
+	
+	<select id="read" resultType="com.swproject.domain.FeedVO">
+		select F_Number, MyFeed, ID, F_Time
+		from Feed where
+		F_Number = #{F_Number}
+	</select>
 
-<update id="update">
-update Feed set MyFeed = #{MyFeed}
-where F_Number = #{F_Number}
-</update>
+	<update id="update">
+		update Feed set MyFeed = #{MyFeed}
+		where F_Number =
+		#{F_Number}
+	</update>
 
-<delete id="delete">
-delete from Feed where F_Number = #{F_Number}
-</delete>
+	<delete id="delete">
+		delete from Feed where F_Number = #{F_Number}
+	</delete>
 
-<select id="listAll" resultType="com.swproject.domain.FeedVO">
-<![CDATA[
-select
-	ID, F_Number, MyFeed, F_Time
-from
-	Feed
-where F_Number > 0
-order by F_Number desc, F_Time desc
-]]>
-</select>
+	<!-- <select id="listAll" resultType="com.swproject.domain.FeedVO"> <![CDATA[ 
+		select ID, F_Number, MyFeed, F_Time from Feed where F_Number > 0 order by 
+		F_Number desc, F_Time desc ]]> </select> -->
+
+	<select id="listPage" resultType="FeedVO">
+	<![CDATA[select ID, F_Number, MyFeed, F_Time from Feed where F_Number >0 order by F_Number desc, F_Time desc limit #{page}, 10]]>
+	</select>
+
+	<select id="listCriteria" resultType="FeedVO">
+	<![CDATA[select ID,  F_Number, MyFeed, F_Time from Feed where F_Number >0 order by F_Number desc, F_Time desc limit #{pageStart}, #{perPageNum}]]>
+	</select>
+
+	<select id="countPaging" resultType="int">
+	<![CDATA[select count(F_Number) from Feed where F_Number > 0 ]]>
+	</select>
+
+	<sql id="search">
+		<if test="searchType !=null">
+			<if test="searchType == 'f'.toString()">
+				and MyFeed like CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType == 'i'.toString()">
+				and ID like CONCAT('%', #{keyword}, '%')
+			</if>
+			<if test="searchType == 'fi'.toString()">
+				and (MyFeed like CONCAT('%', #{keyword}, '%') OR ID
+				like
+				CONCAT('%', #{keyword}, '%'))
+			</if>
+		</if>
+	</sql>
+
+	<select id="listSearch" resultType="FeedVO">
+	<![CDATA[select * from Feed where F_Number >0]]>
+		<include refid="search"></include>
+		<![CDATA[order by F_Number desc
+		limit #{pageStart}, #{perPageNum}]]>
+	</select>
+
+	<select id="listSearchCount" resultType="int">
+	<![CDATA[select count(F_Number) from Feed where F_Number >0 ]]>
+		<include refid="search"></include>
+	</select>
 
 </mapper>

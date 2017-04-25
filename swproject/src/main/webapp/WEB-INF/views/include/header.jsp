@@ -371,13 +371,13 @@
             </li> -->
             <li class="treeview active">
               <a href="#">
-                <i class="fa fa-edit"></i> <span>Feed</span>
+                <i class="fa fa-edit"></i> <span>Menu</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                 <li class="active"><a href="../../sFeed/list"><i class="fa fa-circle-o"></i> Feed Page</a></li>
-               <!-- listAll.jsp라고 하면 이동이 되지 않는다. 어째서일까?
-                <li><a href="advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
+                <li><a href="advanced.html"><i class="fa fa-circle-o"></i> Crawler Page</a></li>
+               <!--
                 <li><a href="editors.html"><i class="fa fa-circle-o"></i> Editors</a></li> 
                -->
               </ul>

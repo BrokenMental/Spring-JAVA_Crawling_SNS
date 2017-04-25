@@ -60,7 +60,7 @@
 							<tr>
 								<td>${FeedVO.f_Number}</td>
 								<td><a
-									href='/sFeed/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&f_Number=${FeedVO.f_Number}'>${FeedVO.myFeed}</a></td>
+									href='/Feed/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&f_Number=${FeedVO.f_Number}'>${FeedVO.myFeed}</a></td>
 								<td>${FeedVO.ID}</td>
 								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 										value="${FeedVO.f_Time}" /></td>

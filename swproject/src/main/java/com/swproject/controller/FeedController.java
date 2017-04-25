@@ -19,7 +19,7 @@ import com.swproject.domain.SearchCriteria;
 import com.swproject.service.FeedService;
 
 @Controller
-@RequestMapping("/sFeed/*")
+@RequestMapping("/Feed/*")
 public class FeedController {
 	private static final Logger logger = LoggerFactory.getLogger(FeedController.class);
 

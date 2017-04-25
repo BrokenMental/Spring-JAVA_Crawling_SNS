@@ -375,7 +375,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="../../sFeed/list"><i class="fa fa-circle-o"></i> Feed Page</a></li>
+                <li class="active"><a href="../../Feed/list"><i class="fa fa-circle-o"></i> Feed Page</a></li>
                 <li><a href="advanced.html"><i class="fa fa-circle-o"></i> Crawler Page</a></li>
                <!--
                 <li><a href="editors.html"><i class="fa fa-circle-o"></i> Editors</a></li> 

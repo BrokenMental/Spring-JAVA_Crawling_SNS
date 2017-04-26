@@ -16,13 +16,13 @@
 		}); */
 
 		$(".btn-danger").on("click", function() {
-			formObj.attr("action", "/sFeed/removePage");
+			formObj.attr("action", "/Feed/removePage");
 			formObj.submit();
 		});
 
 		$(".btn-primary").on("click", function() {
 			formObj.attr("method", "get");
-			formObj.attr("action", "/sFeed/list");
+			formObj.attr("action", "/Feed/list");
 			formObj.submit(); 
 			
 			// window.history.back(); // 완료알림창이 뜬다.

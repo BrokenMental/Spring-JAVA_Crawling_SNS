@@ -56,14 +56,14 @@
 							<th>Time</th>
 						</tr>
 
-						<c:forEach items="${list}" var="FeedVO">
+						<c:forEach items="${list}" var="Feed">
 							<tr>
-								<td>${FeedVO.f_Number}</td>
+								<td>${Feed.f_Number}</td>
 								<td><a
-									href='/Feed/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&f_Number=${FeedVO.f_Number}'>${FeedVO.myFeed}</a></td>
-								<td>${FeedVO.ID}</td>
+									href='/Feed/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&f_Number=${Feed.f_Number}'>${Feed.myFeed}</a></td>
+								<td>${Feed.ID}</td>
 								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
-										value="${FeedVO.f_Time}" /></td>
+										value="${Feed.f_Time}" /></td>
 							</tr>
 						</c:forEach>
 					</table>

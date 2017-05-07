@@ -37,7 +37,7 @@
         <!-- Logo -->
         <a href="/" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>A</b>LT</span>
+          <!-- <span class="logo-mini"><b>A</b>LT</span> -->
           <!-- logo for regular state and mobile devices -->
           <span class="logo-lg"><b>Spring</b> PROJECT</span>
         </a>
@@ -53,7 +53,7 @@
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
               <!-- Messages: style can be found in dropdown.less-->
-              <li class="dropdown messages-menu">
+              <!-- <li class="dropdown messages-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-envelope-o"></i>
                   <span class="label label-success">4</span>
@@ -61,9 +61,9 @@
                 <ul class="dropdown-menu">
                   <li class="header">You have 4 messages</li>
                   <li>
-                    <!-- inner menu: contains the actual data -->
+                    inner menu: contains the actual data
                     <ul class="menu">
-                      <li><!-- start message -->
+                      <li>start message
                         <a href="#">
                           <div class="pull-left">
                             <img src="/resources/dist/img/user7-128x128.jpg" class="img-circle" alt="User Image"/>
@@ -74,7 +74,7 @@
                           </h4>
                           <p>Why not buy a new awesome theme?</p>
                         </a>
-                      </li><!-- end message -->
+                      </li>end message
                       <li>
                         <a href="#">
                           <div class="pull-left">
@@ -128,7 +128,7 @@
                   <li class="footer"><a href="#">See All Messages</a></li>
                 </ul>
               </li>
-              <!-- Notifications: style can be found in dropdown.less -->
+              Notifications: style can be found in dropdown.less
               <li class="dropdown notifications-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-bell-o"></i>
@@ -137,7 +137,7 @@
                 <ul class="dropdown-menu">
                   <li class="header">You have 10 notifications</li>
                   <li>
-                    <!-- inner menu: contains the actual data -->
+                    inner menu: contains the actual data
                     <ul class="menu">
                       <li>
                         <a href="#">
@@ -170,7 +170,7 @@
                   <li class="footer"><a href="#">View all</a></li>
                 </ul>
               </li>
-              <!-- Tasks: style can be found in dropdown.less -->
+              Tasks: style can be found in dropdown.less
               <li class="dropdown tasks-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-flag-o"></i>
@@ -179,9 +179,9 @@
                 <ul class="dropdown-menu">
                   <li class="header">You have 9 tasks</li>
                   <li>
-                    <!-- inner menu: contains the actual data -->
+                    inner menu: contains the actual data
                     <ul class="menu">
-                      <li><!-- Task item -->
+                      <li>Task item
                         <a href="#">
                           <h3>
                             Design some buttons
@@ -193,8 +193,8 @@
                             </div>
                           </div>
                         </a>
-                      </li><!-- end task item -->
-                      <li><!-- Task item -->
+                      </li>end task item
+                      <li>Task item
                         <a href="#">
                           <h3>
                             Create a nice theme
@@ -206,8 +206,8 @@
                             </div>
                           </div>
                         </a>
-                      </li><!-- end task item -->
-                      <li><!-- Task item -->
+                      </li>end task item
+                      <li>Task item
                         <a href="#">
                           <h3>
                             Some task I need to do
@@ -219,8 +219,8 @@
                             </div>
                           </div>
                         </a>
-                      </li><!-- end task item -->
-                      <li><!-- Task item -->
+                      </li>end task item
+                      <li>Task item
                         <a href="#">
                           <h3>
                             Make beautiful transitions
@@ -232,14 +232,14 @@
                             </div>
                           </div>
                         </a>
-                      </li><!-- end task item -->
+                      </li>end task item
                     </ul>
                   </li>
                   <li class="footer">
                     <a href="#">View all tasks</a>
                   </li>
                 </ul>
-              </li>
+              </li> -->
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -256,7 +256,7 @@
                     </p>
                   </li>
                   <!-- Menu Body -->
-                  <li class="user-body">
+<!--                   <li class="user-body">
                     <div class="col-xs-4 text-center">
                       <a href="#">Followers</a>
                     </div>
@@ -266,22 +266,22 @@
                     <div class="col-xs-4 text-center">
                       <a href="#">Friends</a>
                     </div>
-                  </li>
+                  </li> -->
                   <!-- Menu Footer-->
-                  <li class="user-footer">
+<!--                   <li class="user-footer">
                     <div class="pull-left">
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
                       <a href="#" class="btn btn-default btn-flat">Sign out</a>
                     </div>
-                  </li>
+                  </li> -->
                 </ul>
               </li>
               <!-- Control Sidebar Toggle Button -->
-              <li>
+<!--               <li>
                 <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </nav>
@@ -302,14 +302,14 @@
             </div>
           </div>
           <!-- search form -->
-          <form action="#" method="get" class="sidebar-form">
+          <!-- <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
               <input type="text" name="q" class="form-control" placeholder="Search..."/>
               <span class="input-group-btn">
                 <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
               </span>
             </div>
-          </form>
+          </form> -->
           <!-- /.search form -->
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
@@ -376,7 +376,8 @@
               </a>
               <ul class="treeview-menu">
                 <li class="active"><a href="../../Feed/list"><i class="fa fa-circle-o"></i> Feed Page</a></li>
-                <li><a href="../../Crawl/CrawlList"><i class="fa fa-circle-o"></i> Crawler Page</a></li>
+                <li><a href="../../Crawl/CrawlList"><i class="fa fa-circle-o"></i> Crawler Page1</a></li>
+                <li><a href="../../Crawl/CrawlList2"><i class="fa fa-circle-o"></i> Crawler Page2</a></li>
                <!--
                 <li><a href="editors.html"><i class="fa fa-circle-o"></i> Editors</a></li> 
                -->
@@ -443,10 +444,10 @@
               </ul>
             </li>
             <li><a href="/resources/documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li> -->
-            <li class="header">LABELS</li>
+            <!-- <li class="header">LABELS</li>
             <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
             <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+            <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li> -->
           </ul>
         </section>
         <!-- /.sidebar -->

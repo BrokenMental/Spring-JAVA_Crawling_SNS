@@ -40,4 +40,12 @@ public class CrawlerNews {
 	}
 
 
+	@Override
+	public String toString() {
+		return "CrawlerNews [URL=" + URL + ", doc=" + doc + ", el=" + el + ", getURL()=" + getURL() + ", getDoc()="
+				+ getDoc() + ", getEl()=" + getEl() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ ", toString()=" + super.toString() + "]";
+	}
+
+
 }

@@ -31,6 +31,10 @@
 		</table>
 	</c:forEach>
 </div>
-<!-- /.col (left) -->
-<!--  /.row -->
-<!-- /.content -->
+
+<script type="text/javascript">
+	$('.grid').masonry({
+		itemSelector : '.grid-item',
+		columnWidth : 160
+	});
+</script>

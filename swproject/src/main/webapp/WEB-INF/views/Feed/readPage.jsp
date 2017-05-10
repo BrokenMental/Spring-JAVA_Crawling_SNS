@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ include file="../include/header.jsp"%>
 <!-- Main content -->
-<script>
+<script type="text/javascript">
 	$(document).ready(function() {
 		var formObj = $("form[role='form']"); // formObj는 아래에 나오는 form태그를 의미한다.
 
@@ -21,9 +21,11 @@
 		});
 
 		$(".btn-primary").on("click", function() {
-			formObj.attr("method", "get");
+			
+			self.location = "/Feed/list";
+			/* formObj.attr("method", "get");
 			formObj.attr("action", "/Feed/list");
-			formObj.submit(); 
+			formObj.submit(); */ 
 			
 			// window.history.back(); // 완료알림창이 뜬다.
 		});
@@ -41,6 +43,11 @@
 
 				<div class="box-body">
 					<div class="form-group">
+						<label for="exampleInputEmail1">Number</label> <input type="text"
+							name='F_Number' class="form-control" value="${feedVO.f_Number}"
+							readonly="readonly">
+					</div>
+					<div class="form-group">
 						<label for="exampleInputEmail1">ID</label> <input type="text"
 							name='ID' class="form-control" value="${feedVO.ID}"
 							readonly="readonly">
@@ -57,13 +64,13 @@
 					</div>
 				</div>
 
-				<form role="form" action="modifyPage" method="post">
+<%-- 				<form role="form" action="modifyPage" method="post">
 					<input type='hidden' name='f_Number' value="${feedVO.f_Number}"> <input
 						type='hidden' name='page' value="${cri.page}"> <input
 						type='hidden' name='perPageNum' value="${cri.perPageNum}">
 					<input type='hidden' name='searchType' value="${cri.searchType}">
 					<input type='hidden' name='keyword' value="${cri.keyword}">
-				</form>
+				</form> --%>
 
 				<!-- /.box-body -->
 				<div class="box-footer">

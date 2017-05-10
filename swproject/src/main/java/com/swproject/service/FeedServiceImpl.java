@@ -18,8 +18,8 @@ public class FeedServiceImpl implements FeedService {
 	private FeedDAO dao;
 	
 	@Override
-	public void regist(FeedVO board)throws Exception {
-		dao.create(board);
+	public void regist(FeedVO feed)throws Exception {
+		dao.create(feed);
 	}
 	
 	@Override

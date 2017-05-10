@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+request.setCharacterEncoding("utf-8");
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<% 
+java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy-MM-dd"); //yyyy.MM.dd. HH:mm:ss
+String now = formatter.format(new java.util.Date());
+%>
 <%@ include file="../include/header.jsp"%>
 <!-- Main content -->
 <section class="content">
@@ -14,18 +19,18 @@
 				<form role="form" method="post">
 					<div class="box-body">
 						<div class="form-group">
-							<label for="exampleInputEmail1">Title</label>
-							<input type="text" name='title' class = "form-control" placeholder="Enter Title">
+							<label for="exampleInputEmail1">ID</label>
+							<input type="text" name='ID' class = "form-control" value="user00">
 						</div>
 						<div class="form-group">
-							<label for="exampleInputPassword1">Content</label>
-							<textarea class="form-control" name="content" rows="3"
-								placeholder="Enter ..."></textarea>
+							<label for="exampleInputPassword1">Feed</label>
+							<textarea class="form-control" name="MyFeed" rows="3"
+								placeholder="Enter Feed"></textarea>
 						</div>
-						<div class="form-group">
-							<label for="exampleInputEmail1">Writer</label> <input type="text"
-								name="writer" class="form-control" placeholder="Enter Writer">
-						</div>
+						<!-- <div class="form-group">
+							<label for="exampleInputEmail1">Time</label> <input type="text"
+								name="f_Time" class="form-control">
+						</div> -->
 					</div>
 					<!--  /.box-body -->
 					<div class="box-footer">

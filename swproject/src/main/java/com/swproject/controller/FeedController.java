@@ -30,11 +30,11 @@ public class FeedController {
 
 	@Inject
 	private FeedService service;
-	
+
 	@InitBinder // Date형 사용시 값을 넘길때 null이면 오류가 뜨는것을 방지
 	public void initBinder(WebDataBinder binder) {
-	    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-	    binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd. HH:mm:ss");
+		binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
 	}
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
@@ -75,6 +75,11 @@ public class FeedController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String registPOST(FeedVO feed, RedirectAttributes rttr) throws Exception {
 
+		java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy.MM.dd. HH:mm:ss"); // yyyy.MM.dd. HH:mm:ss
+		String now = formatter.format(new java.util.Date());
+		feed.setF_Time(now);
+		logger.info("글 작성시간 : "+now);
+
 		logger.info("regist post ...........");
 		logger.info(feed.toString());
 
@@ -86,7 +91,8 @@ public class FeedController {
 	}
 
 	@RequestMapping(value = "/removePage", method = RequestMethod.POST)
-	public String remove(@RequestParam("F_Number") int F_Number, SearchCriteria cri, RedirectAttributes rttr) throws Exception {
+	public String remove(@RequestParam("F_Number") int F_Number, SearchCriteria cri, RedirectAttributes rttr)
+			throws Exception {
 
 		service.remove(F_Number);
 
@@ -100,21 +106,21 @@ public class FeedController {
 		return "redirect:/Feed/list";
 	}
 
-/*	@RequestMapping(value = "/modifyPage", method = RequestMethod.POST)
-	public String modifyPagingPOST(FeedVO board, SearchCriteria cri, RedirectAttributes rttr) throws Exception {
-
-		logger.info(cri.toString());
-		service.modify(board);
-
-		rttr.addAttribute("page", cri.getPage());
-		rttr.addAttribute("perPageNum", cri.getPerPageNum());
-		rttr.addAttribute("searchType", cri.getSearchType());
-		rttr.addAttribute("keyword", cri.getKeyword());
-
-		rttr.addFlashAttribute("msg", "SUCCESS");
-
-		logger.info(rttr.toString());
-
-		return "redirct:/sboard/list";
-	}*/
+	/*
+	 * @RequestMapping(value = "/modifyPage", method = RequestMethod.POST)
+	 * public String modifyPagingPOST(FeedVO board, SearchCriteria cri,
+	 * RedirectAttributes rttr) throws Exception {
+	 * 
+	 * logger.info(cri.toString()); service.modify(board);
+	 * 
+	 * rttr.addAttribute("page", cri.getPage()); rttr.addAttribute("perPageNum",
+	 * cri.getPerPageNum()); rttr.addAttribute("searchType",
+	 * cri.getSearchType()); rttr.addAttribute("keyword", cri.getKeyword());
+	 * 
+	 * rttr.addFlashAttribute("msg", "SUCCESS");
+	 * 
+	 * logger.info(rttr.toString());
+	 * 
+	 * return "redirct:/sboard/list"; }
+	 */
 }

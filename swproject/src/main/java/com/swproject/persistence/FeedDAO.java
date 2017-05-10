@@ -13,7 +13,7 @@ public interface FeedDAO {
 	public void update(FeedVO vo) throws Exception;
 	public void delete(Integer F_Number) throws Exception;
 	
-	public List<FeedVO> listAll() throws Exception;
+	//public List<FeedVO> listAll() throws Exception;
 	public List<FeedVO> listCriteria(Criteria cri) throws Exception;
 	public List<FeedVO> listSearch(SearchCriteria cri) throws Exception;
 	

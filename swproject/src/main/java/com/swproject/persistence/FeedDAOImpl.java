@@ -39,10 +39,10 @@ public class FeedDAOImpl implements FeedDAO {
 		session.delete(namespace + ".delete", F_Number);
 	}
 
-	@Override
+	/*@Override
 	public List<FeedVO> listAll()throws Exception {
 		return session.selectList(namespace + ".listAll");
-	}
+	}*/
 
 	@Override
 	public List<FeedVO> listPage(int page) throws Exception {

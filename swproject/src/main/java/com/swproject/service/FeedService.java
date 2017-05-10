@@ -16,7 +16,7 @@ public interface FeedService {
 	
 	public void remove(Integer F_Number)throws Exception;
 	
-	public List<FeedVO> listAll()throws Exception;
+	//public List<FeedVO> listAll()throws Exception;
 
 	public List<FeedVO> listCriteria(Criteria cri)throws Exception;
 	

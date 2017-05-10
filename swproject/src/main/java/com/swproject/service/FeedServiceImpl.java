@@ -37,10 +37,10 @@ public class FeedServiceImpl implements FeedService {
 		dao.delete(F_Number);
 	}
 	
-	@Override
+	/*@Override
 	public List<FeedVO> listAll()throws Exception {
 		return dao.listAll();
-	}
+	}*/
 	
 	@Override
 	public List<FeedVO> listCriteria(Criteria cri)throws Exception {

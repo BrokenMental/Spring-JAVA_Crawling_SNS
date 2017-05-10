@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!-- <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%> -->
 <%@ page session="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <script>
@@ -14,7 +14,6 @@
 
 <%@ include file="../include/header.jsp"%>
 <!-- Main content -->
-<section class="content">
 <div class="row">
 	<!--  left column -->
 	<div class="col-md-12">
@@ -62,8 +61,7 @@
 								<td><a
 									href='/Feed/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&f_Number=${Feed.f_Number}'>${Feed.myFeed}</a></td>
 								<td>${Feed.ID}</td>
-								<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
-										value="${Feed.f_Time}" /></td>
+								<td>${Feed.f_Time}</td> <!-- fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${Feed.f_Time}"  -->
 							</tr>
 						</c:forEach>
 					</table>
@@ -96,7 +94,7 @@
 	</div>
 	<!-- /.col (left) -->
 </div>
-<!--  /.row --> </section>
+<!--  /.row -->
 <div style="bottom: 0px;">
 	<%@ include file="../include/footer.jsp"%>
 </div>

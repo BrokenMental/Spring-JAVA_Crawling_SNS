@@ -32,7 +32,6 @@
 
 	});
 </script>
-<section class="content">
 <div class="row">
 	<!--  left column -->
 	<div class="col-md-12">
@@ -83,7 +82,7 @@
 	</div>
 	<!-- /.col (left) -->
 </div>
-<!--  /.row --> </section>
+<!--  /.row -->
 <div style="bottom: 0px;">
 	<%@ include file="../include/footer.jsp"%>
 </div>

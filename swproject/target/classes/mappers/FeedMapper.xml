@@ -6,9 +6,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.swproject.mapper.FeedMapper">
 
 	<insert id="create">
-		insert into Feed (ID, MyFeed) <!-- F_Time -->
+		insert into Feed (ID, MyFeed, F_Time)
 		values(#{ID},
-		#{MyFeed}) <!-- #{F_Time} -->
+		#{MyFeed}, #{F_Time})
 	</insert>
 	
 	<select id="read" resultType="com.swproject.domain.FeedVO">

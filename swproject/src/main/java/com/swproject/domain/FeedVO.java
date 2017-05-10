@@ -1,13 +1,11 @@
 package com.swproject.domain;
 
-import java.util.Date;
-
 public class FeedVO {
 
 	private String ID;
 	private Integer F_Number;
 	private String MyFeed;
-	private Date F_Time;
+	private String F_Time;
 	
 	public String getID() {
 		return ID;
@@ -27,13 +25,13 @@ public class FeedVO {
 	public void setMyFeed(String myFeed) {
 		MyFeed = myFeed;
 	}
-	public Date getF_Time() {
+	public String getF_Time() {
 		return F_Time;
 	}
-	public void setF_Time(Date f_Time) {
+	public void setF_Time(String f_Time) {
 		F_Time = f_Time;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "FeedVO [ID=" + ID + ", F_Number=" + F_Number + ", MyFeed=" + MyFeed + ", F_Time=" + F_Time

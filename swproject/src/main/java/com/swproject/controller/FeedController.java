@@ -31,7 +31,7 @@ public class FeedController {
 	@Inject
 	private FeedService service;
 	
-	@InitBinder
+	@InitBinder // Date형 사용시 값을 넘길때 null이면 오류가 뜨는것을 방지
 	public void initBinder(WebDataBinder binder) {
 	    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 	    binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));

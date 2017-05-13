@@ -25,8 +25,7 @@
 				<td><a
 					href='/Feed/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&f_Number=${Feed.f_Number}'>${Feed.myFeed}</a></td>
 				<td>${Feed.ID}</td>
-				<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
-						value="${Feed.f_Time}" /></td>
+				<td>${Feed.f_Time}</td>
 			</tr>
 		</table>
 	</c:forEach>

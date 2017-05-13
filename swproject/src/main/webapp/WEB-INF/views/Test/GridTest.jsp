@@ -16,15 +16,19 @@
 		<table class="grid-item">
 			<tr>
 				<th style="width: 10px">F_Number</th>
-				<th>MyFeed</th>
-				<th>ID</th>
-				<th>Time</th>
+				<td>${Feed.f_Number}</td>
 			</tr>
 			<tr>
-				<td>${Feed.f_Number}</td>
+				<th>MyFeed</th>
 				<td><a
 					href='/Feed/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&f_Number=${Feed.f_Number}'>${Feed.myFeed}</a></td>
+			</tr>
+			<tr>
+				<th>ID</th>
 				<td>${Feed.ID}</td>
+			</tr>
+			<tr>
+				<th>Time</th>
 				<td>${Feed.f_Time}</td>
 			</tr>
 		</table>

@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.swproject.mapper.CrawlMapper">
 	<insert id="create">
-		insert into Crawler (N_Title, URL)
+		insert into crawler (N_Title, URL)
 		values(#{N_Title}, #{URL})
 	</insert>
 </mapper>

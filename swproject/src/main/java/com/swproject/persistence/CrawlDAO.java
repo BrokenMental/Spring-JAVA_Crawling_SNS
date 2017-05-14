@@ -1,5 +1,8 @@
 package com.swproject.persistence;
 
-public class CrawlDAO {
+import com.swproject.domain.CrawlerVO;
 
+public interface CrawlDAO {
+
+	public void create(CrawlerVO vo) throws Exception;
 }

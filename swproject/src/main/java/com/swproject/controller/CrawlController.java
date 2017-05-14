@@ -2,6 +2,8 @@ package com.swproject.controller;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import org.jsoup.Jsoup;
 import org.jsoup.select.Elements;
 import org.slf4j.Logger;
@@ -14,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.swproject.domain.CrawlerNews;
 import com.swproject.domain.CrawlerSNS;
+import com.swproject.domain.CrawlerVO;
+import com.swproject.service.CrawlService;
 
 import twitter4j.Status;
 import twitter4j.Twitter;
@@ -23,9 +27,12 @@ import twitter4j.TwitterFactory;
 @RequestMapping("/Crawl/*")
 public class CrawlController {
 	private static final Logger logger = LoggerFactory.getLogger(FeedController.class);
+	
+	@Inject
+	private CrawlService service;
 
 	@RequestMapping(value = "/CrawlList", method = RequestMethod.GET)
-	public void CrawlPage(@ModelAttribute("el") Elements el, Model model) throws Exception {
+	public void CrawlPage(@ModelAttribute("el") Elements el,CrawlerVO Crawl, Model model) throws Exception {
 		CrawlerNews Craw = new CrawlerNews();
 		Craw.setURL("https://news.google.co.kr");
 		Craw.setDoc(Jsoup.connect(Craw.getURL()).get());
@@ -35,6 +42,8 @@ public class CrawlController {
 		model.addAttribute("list", el);
 
 		logger.info("CrawlController .........1");
+		
+		service.insert(Crawl);
 	}
 
 	@RequestMapping(value = "/CrawlList2", method = RequestMethod.GET)

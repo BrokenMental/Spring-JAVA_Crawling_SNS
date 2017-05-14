@@ -1,5 +1,9 @@
 package com.swproject.service;
 
-public class CrawlService {
+import com.swproject.domain.CrawlerVO;
+
+public interface CrawlService {
+	
+	public void insert(CrawlerVO Crawl)throws Exception;
 
 }

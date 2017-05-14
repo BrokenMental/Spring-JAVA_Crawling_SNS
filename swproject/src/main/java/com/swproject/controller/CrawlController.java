@@ -5,6 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.jsoup.Jsoup;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.swproject.domain.CrawlerNews;
 import com.swproject.domain.CrawlerSNS;
 import com.swproject.domain.CrawlerVO;
-import com.swproject.service.CrawlService;
+import com.swproject.persistence.CrawlDAO;
 
 import twitter4j.Status;
 import twitter4j.Twitter;
@@ -29,7 +30,7 @@ public class CrawlController {
 	private static final Logger logger = LoggerFactory.getLogger(FeedController.class);
 	
 	@Inject
-	private CrawlService service;
+	private CrawlDAO dao;
 
 	@RequestMapping(value = "/CrawlList", method = RequestMethod.GET)
 	public void CrawlPage(@ModelAttribute("el") Elements el,CrawlerVO Crawl, Model model) throws Exception {
@@ -40,10 +41,19 @@ public class CrawlController {
 
 		el = Craw.getEl();
 		model.addAttribute("list", el);
+		
+		for(Element temp : el){ // 페이지에 뿌려주는것과 DB에 넣어주는것을 따로 해야한다.
+			Crawl.setC_Group("News");
+			Crawl.setN_Title(temp.text().toString());
+			Crawl.setURL(temp.attr("href").toString());
+			
+			if(!Crawl.getN_Title().equals(temp.text())){ //집어넣은 값이랑 긁어온 제목이랑 같지 않을경우에만 DB에 넣기
+				dao.create(Crawl); // Feed에선 Service 계층이 필요했지만 크롤링을 하는 페이지에선 Service가 필요없기 때문에 DAO에 바로 넣어준다.
+			}
+		}
 
 		logger.info("CrawlController .........1");
 		
-		service.insert(Crawl);
 	}
 
 	@RequestMapping(value = "/CrawlList2", method = RequestMethod.GET)

@@ -7,7 +7,14 @@ public class CrawlerVO {
 	private String N_Title;
 	private String URL;
 	private String S_Content;
+	private String S_User;
 
+	public String getS_User() {
+		return S_User;
+	}
+	public void setS_User(String s_User) {
+		S_User = s_User;
+	}
 	public int getC_Number() {
 		return C_Number;
 	}
@@ -42,10 +49,10 @@ public class CrawlerVO {
 	@Override
 	public String toString() {
 		return "CrawlerVO [C_Number=" + C_Number + ", C_Group=" + C_Group + ", N_Title=" + N_Title + ", URL=" + URL
-				+ ", S_Content=" + S_Content + ", getC_Number()=" + getC_Number() + ", getC_Group()=" + getC_Group()
-				+ ", getN_Title()=" + getN_Title() + ", getURL()=" + getURL() + ", getS_Content()=" + getS_Content()
-				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
-				+ "]";
+				+ ", S_Content=" + S_Content + ", S_User=" + S_User + ", getS_User()=" + getS_User()
+				+ ", getC_Number()=" + getC_Number() + ", getC_Group()=" + getC_Group() + ", getN_Title()="
+				+ getN_Title() + ", getURL()=" + getURL() + ", getS_Content()=" + getS_Content() + ", getClass()="
+				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
 
 }

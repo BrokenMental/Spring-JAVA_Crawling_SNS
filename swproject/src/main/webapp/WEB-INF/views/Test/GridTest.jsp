@@ -33,6 +33,30 @@
 			</tr>
 		</table>
 	</c:forEach>
+	<c:forEach items="${list1}" var="Crawl">
+		<table class="grid-item grid-item--width2 grid-item--height2">
+			<tr>
+				<th>Title</th>
+				<td style="width: 50%">${Crawl.text()}</td>
+			</tr>
+			<tr>
+				<th>URL</th>
+				<td>${Crawl.attr("href")}</td>
+			</tr>
+		</table>
+	</c:forEach>
+	<c:forEach items="${list2}" var="Crawl2">
+		<table class="grid-item grid-item--width3 grid-item--height3">
+			<tr>
+				<th>User</th>
+				<td>${Crawl2.getUser().getScreenName()}</td>
+			</tr>
+			<tr>
+				<th>Content</th>
+				<td>${Crawl2.getText()}</td>
+			</tr>
+		</table>
+	</c:forEach>
 </div>
 
 <script type="text/javascript">

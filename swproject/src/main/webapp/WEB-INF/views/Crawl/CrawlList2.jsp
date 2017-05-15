@@ -6,7 +6,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ include file="../include/header.jsp"%>
 <!-- Main content -->
-<section class="content">
 <div class="row">
 	<!--  left column -->
 	<div class="col-md-12">
@@ -36,7 +35,7 @@
 	</div>
 	<!-- /.col (left) -->
 </div>
-<!--  /.row --> </section>
+<!--  /.row -->
 <div style="bottom: 0px;">
 	<%@ include file="../include/footer.jsp"%>
 </div>

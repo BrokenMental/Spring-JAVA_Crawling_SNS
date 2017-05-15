@@ -4,8 +4,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.swproject.mapper.CrawlMapper">
-	<insert id="create">
-		insert into crawler (N_Title, URL)
-		values(#{N_Title}, #{URL})
+	<insert id="create1">
+		<!-- insert into crawler (N_Title, URL, C_Group)
+		values(#{N_Title}, #{URL}, #{C_Group}) -->
+		insert into crawler (N_Title, URL, C_Group)
+		select #{N_Title}, #{URL}, #{C_Group} from dual
+		where not exists (select * from crawler where N_Title=#{N_Title})
+	</insert>
+	<insert id="create2">
+		insert into crawler (S_User, S_Content, C_Group)
+		select #{S_User}, #{S_Content}, #{C_Group} from dual
+		where not exists (select * from crawler where S_Content=#{S_Content})
 	</insert>
 </mapper>

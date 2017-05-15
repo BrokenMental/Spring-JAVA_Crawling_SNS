@@ -106,21 +106,4 @@ public class FeedController {
 		return "redirect:/Feed/list";
 	}
 
-	/*
-	 * @RequestMapping(value = "/modifyPage", method = RequestMethod.POST)
-	 * public String modifyPagingPOST(FeedVO board, SearchCriteria cri,
-	 * RedirectAttributes rttr) throws Exception {
-	 * 
-	 * logger.info(cri.toString()); service.modify(board);
-	 * 
-	 * rttr.addAttribute("page", cri.getPage()); rttr.addAttribute("perPageNum",
-	 * cri.getPerPageNum()); rttr.addAttribute("searchType",
-	 * cri.getSearchType()); rttr.addAttribute("keyword", cri.getKeyword());
-	 * 
-	 * rttr.addFlashAttribute("msg", "SUCCESS");
-	 * 
-	 * logger.info(rttr.toString());
-	 * 
-	 * return "redirct:/sboard/list"; }
-	 */
 }

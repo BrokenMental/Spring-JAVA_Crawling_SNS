@@ -12,7 +12,52 @@
 <!-- Main content -->
 <div class="gird">
 	<!--  left column -->
-	<c:forEach items="${list}" var="Feed">
+	<c:forEach items="${test}" var="Test">
+	${service.listSearchCriteria(cri).get(0).getF_Number()}
+	-------------
+	
+	<%-- 
+		<table class="grid-item">
+			<tr>
+				<th style="width: 10px">F_Number</th>
+				<td>${Test.get(0).get(0)}</td>
+			</tr>
+			<tr>
+				<th>MyFeed</th>
+				<td><a
+					href='/Feed/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&f_Number=${Test.get(0).get(0)}'>${Test.get(0).get(1)}</a></td>
+			</tr>
+			<tr>
+				<th>ID</th>
+				<td>${Test.get(0).get(2)}</td>
+			</tr>
+			<tr>
+				<th>Time</th>
+				<td>${Test.get(0).get(3)}</td>
+			</tr>
+		</table>
+		<table class="grid-item grid-item--width2 grid-item--height2">
+			<tr>
+				<th>Title</th>
+				<td style="width: 50%">${Test.get(1).get(0)}</td>
+			</tr>
+			<tr>
+				<th>URL</th>
+				<td>${Test.get(1).get(1)}</td>
+			</tr>
+		</table>
+		<table class="grid-item grid-item--width3 grid-item--height3">
+			<tr>
+				<th>User</th>
+				<td>${Test.get(2).get(0)}</td>
+			</tr>
+			<tr>
+				<th>Content</th>
+				<td>${Test.get(2).get(1)}</td>
+			</tr>
+		</table> --%>
+	</c:forEach>
+	<%-- <c:forEach items="${list}" var="Feed">
 		<table class="grid-item">
 			<tr>
 				<th style="width: 10px">F_Number</th>
@@ -56,7 +101,7 @@
 				<td>${Crawl2.getText()}</td>
 			</tr>
 		</table>
-	</c:forEach>
+	</c:forEach> --%>
 </div>
 
 <script type="text/javascript">

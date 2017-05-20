@@ -38,6 +38,10 @@ public class CrawlController {
 		Craw.setURL("https://news.google.co.kr");
 		Craw.setDoc(Jsoup.connect(Craw.getURL()).get());
 		Craw.setEl(Craw.getDoc().select("div.esc-lead-article-title-wrapper a"));
+		
+		java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy.MM.dd. HH:mm:ss"); // yyyy.MM.dd. HH:mm:ss
+		String now = formatter.format(new java.util.Date());
+		Crawl.setC_Time(now);
 
 		el = Craw.getEl();
 		model.addAttribute("list", el);
@@ -63,6 +67,10 @@ public class CrawlController {
 		CS.setUser(gt.verifyCredentials());
 		CS.setList(gt.getHomeTimeline());
 		List<Status> cl = CS.getList();
+
+		java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy.MM.dd. HH:mm:ss"); // yyyy.MM.dd. HH:mm:ss
+		String now = formatter.format(new java.util.Date());
+		Crawl.setC_Time(now);
 
 		model.addAttribute("list2", cl);
 

@@ -1,6 +1,7 @@
 package com.swproject.controller;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -76,6 +77,14 @@ public class HomeController {
 		List<Status> cl = CS.getList();
 
 		model.addAttribute("list2", cl);
+		
+		List<String> temp = new ArrayList<String>();
+		temp.add(service.listSearchCriteria(cri).toString());
+		temp.add(el.toString());
+		temp.add(cl.toString());
+		
+		model.addAttribute("tt", temp);
+		
 
 		logger.info("TestPage get ...........");
 	}

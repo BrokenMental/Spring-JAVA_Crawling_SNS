@@ -8,7 +8,14 @@ public class CrawlerVO {
 	private String URL;
 	private String S_Content;
 	private String S_User;
+	private String C_Time;
 
+	public String getC_Time() {
+		return C_Time;
+	}
+	public void setC_Time(String c_Time) {
+		C_Time = c_Time;
+	}
 	public String getS_User() {
 		return S_User;
 	}
@@ -49,10 +56,11 @@ public class CrawlerVO {
 	@Override
 	public String toString() {
 		return "CrawlerVO [C_Number=" + C_Number + ", C_Group=" + C_Group + ", N_Title=" + N_Title + ", URL=" + URL
-				+ ", S_Content=" + S_Content + ", S_User=" + S_User + ", getS_User()=" + getS_User()
-				+ ", getC_Number()=" + getC_Number() + ", getC_Group()=" + getC_Group() + ", getN_Title()="
-				+ getN_Title() + ", getURL()=" + getURL() + ", getS_Content()=" + getS_Content() + ", getClass()="
-				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+				+ ", S_Content=" + S_Content + ", S_User=" + S_User + ", C_Time=" + C_Time + ", getC_Time()="
+				+ getC_Time() + ", getS_User()=" + getS_User() + ", getC_Number()=" + getC_Number() + ", getC_Group()="
+				+ getC_Group() + ", getN_Title()=" + getN_Title() + ", getURL()=" + getURL() + ", getS_Content()="
+				+ getS_Content() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
 	}
 
 }

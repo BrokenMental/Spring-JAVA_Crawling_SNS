@@ -27,24 +27,9 @@ public class FeedServiceImpl implements FeedService {
 		return dao.read(F_Number);
 	}
 	
-/*	@Override
-	public void modify(FeedVO board) throws Exception {
-		dao.update(board);
-	}*/
-	
 	@Override
 	public void remove(Integer F_Number)throws Exception {
 		dao.delete(F_Number);
-	}
-	
-	/*@Override
-	public List<FeedVO> listAll()throws Exception {
-		return dao.listAll();
-	}*/
-	
-	@Override
-	public List<FeedVO> listCriteria(Criteria cri)throws Exception {
-		return dao.listCriteria(cri);
 	}
 
 	@Override
@@ -53,12 +38,27 @@ public class FeedServiceImpl implements FeedService {
 	}
 
 	@Override
-	public int listCountCriteria(Criteria cri) throws Exception {
-		return dao.countPaging(cri);
-	}
-
-	@Override
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		return dao.listSearchCount(cri);
 	}
+	
+	/*@Override
+	public void modify(FeedVO board) throws Exception {
+		dao.update(board);
+	}*/
+	
+	/*@Override
+	public List<FeedVO> listAll()throws Exception {
+		return dao.listAll();
+	}*/
+	
+	/*@Override
+	public List<FeedVO> listCriteria(Criteria cri)throws Exception {
+		return dao.listCriteria(cri);
+	}*/
+
+	/*@Override
+	public int listCountCriteria(Criteria cri) throws Exception {
+		return dao.countPaging(cri);
+	}*/
 }

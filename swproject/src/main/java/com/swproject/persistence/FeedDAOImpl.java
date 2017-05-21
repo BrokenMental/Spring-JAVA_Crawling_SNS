@@ -39,11 +39,6 @@ public class FeedDAOImpl implements FeedDAO {
 		session.delete(namespace + ".delete", F_Number);
 	}
 
-	/*@Override
-	public List<FeedVO> listAll()throws Exception {
-		return session.selectList(namespace + ".listAll");
-	}*/
-
 	@Override
 	public List<FeedVO> listPage(int page) throws Exception {
 		if (page <= 0) {
@@ -51,16 +46,6 @@ public class FeedDAOImpl implements FeedDAO {
 		}
 		page = (page - 1) * 10;
 		return session.selectList(namespace + ".listPage", page);
-	}
-
-	@Override
-	public List<FeedVO> listCriteria(Criteria cri) throws Exception {
-		return session.selectList(namespace + ".listCriteria", cri);
-	}
-
-	@Override
-	public int countPaging(Criteria cri) throws Exception {
-		return session.selectOne(namespace + ".countPaging", cri);
 	}
 
 	@Override
@@ -72,4 +57,19 @@ public class FeedDAOImpl implements FeedDAO {
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		return session.selectOne(namespace + ".listSearchCount", cri);
 	}
+
+	/*@Override
+	public List<FeedVO> listAll()throws Exception {
+		return session.selectList(namespace + ".listAll");
+	}*/
+
+	/*@Override
+	public List<FeedVO> listCriteria(Criteria cri) throws Exception {
+		return session.selectList(namespace + ".listCriteria", cri);
+	}*/
+
+	/*@Override
+	public int countPaging(Criteria cri) throws Exception {
+		return session.selectOne(namespace + ".countPaging", cri);
+	}*/
 }

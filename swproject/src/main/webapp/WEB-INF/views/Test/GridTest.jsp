@@ -9,55 +9,66 @@
 <link href="/resources/bootstrap/css/test.css" rel="stylesheet"
 	type="text/css" />
 </head>
+<%@ include file="../include/header.jsp"%>
 <!-- Main content -->
-<div class="gird">
+<div class="row">
 	<!--  left column -->
-	<c:forEach items="${list}" var="Test">
-		<table class="grid-item">
-			<tr>
-				<th style="width: 10px">F_Number</th>
-				<td>${Test.f_Number}</td>
-			</tr>
-			<tr>
-				<th>MyFeed</th>
-				<td><a
-					href='/Feed/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&f_Number=${Test.f_Number}'>${Test.myFeed}</a></td>
-			</tr>
-			<tr>
-				<th>ID</th>
-				<td>${Test.ID}</td>
-			</tr>
-			<tr>
-				<th>Time</th>
-				<td>${Test.f_Time}</td>
-			</tr>
-		</table>
-	</c:forEach>
-	<c:forEach items="${list1}" var="Test1">
-		<table class="grid-item">
-			<tr>
-				<th>Title</th>
-				<td style="width: 50%">${Test1.getN_Title()}</td>
-			</tr>
-			<tr>
-				<th>URL</th>
-				<td>${Test1.getURL()}</td>
-			</tr>
-		</table>
-	</c:forEach>
-	<c:forEach items="${list2}" var="Test2">
-		<table class="grid-item">
-			<tr>
-				<th>User</th>
-				<td>${Test2.getS_User()}</td>
-			</tr>
-			<tr>
-				<th>Content</th>
-				<td>${Test2.getS_Content()}</td>
-			</tr>
-		</table>
-	</c:forEach>
-	<%-- <c:forEach items="${list}" var="Feed">
+	<div class="col-md-12">
+		<!--  general form elements -->
+		<div class="box">
+			<div class="box">
+				<div class="box-header with-border">
+					<h3 class="box-title">Test PAGE</h3>
+				</div>
+				<div class="box-body">
+					<div class="gird">
+						<!--  left column -->
+						<c:forEach items="${list}" var="Test">
+							<table class="grid-item">
+								<tr>
+									<th style="width: 10px">F_Number</th>
+									<td>${Test.f_Number}</td>
+								</tr>
+								<tr>
+									<th>MyFeed</th>
+									<td><a
+										href='/Feed/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&f_Number=${Test.f_Number}'>${Test.myFeed}</a></td>
+								</tr>
+								<tr>
+									<th>ID</th>
+									<td>${Test.ID}</td>
+								</tr>
+								<tr>
+									<th>Time</th>
+									<td>${Test.f_Time}</td>
+								</tr>
+							</table>
+						</c:forEach>
+						<c:forEach items="${list1}" var="Test1">
+							<table class="grid-item">
+								<tr>
+									<th>Title</th>
+									<td style="width: 50%">${Test1.getN_Title()}</td>
+								</tr>
+								<tr>
+									<th>URL</th>
+									<td>${Test1.getURL()}</td>
+								</tr>
+							</table>
+						</c:forEach>
+						<c:forEach items="${list2}" var="Test2">
+							<table class="grid-item">
+								<tr>
+									<th>User</th>
+									<td>${Test2.getS_User()}</td>
+								</tr>
+								<tr>
+									<th>Content</th>
+									<td>${Test2.getS_Content()}</td>
+								</tr>
+							</table>
+						</c:forEach>
+						<%-- <c:forEach items="${list}" var="Feed">
 		<table class="grid-item">
 			<tr>
 				<th style="width: 10px">F_Number</th>
@@ -102,6 +113,13 @@
 			</tr>
 		</table>
 	</c:forEach> --%>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col (left) -->
 </div>
 
 <script type="text/javascript">

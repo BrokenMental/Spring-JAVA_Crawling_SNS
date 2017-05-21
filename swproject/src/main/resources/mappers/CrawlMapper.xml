@@ -11,9 +11,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select #{N_Title}, #{URL}, #{C_Group}, #{C_Time} from dual
 		where not exists (select * from crawler where N_Title=#{N_Title})
 	</insert>
+	
 	<insert id="create2">
 		insert into crawler (S_User, S_Content, C_Group, C_Time)
 		select #{S_User}, #{S_Content}, #{C_Group}, #{C_Time} from dual
 		where not exists (select * from crawler where S_Content=#{S_Content})
 	</insert>
+	
+	<select id="read1" resultType="CrawlerVO">
+		select C_Number, C_Group, N_Title, URL
+		from Crawler where
+		C_Number = #{C_Number}
+	</select>
+	
+	<select id="read2" resultType="CrawlerVO">
+		select C_Number, C_Group, S_Content, S_User
+		from Crawler where
+		C_Number = #{C_Number}
+	</select>
 </mapper>

@@ -19,6 +19,7 @@ import com.swproject.domain.CrawlerNews;
 import com.swproject.domain.CrawlerSNS;
 import com.swproject.domain.CrawlerVO;
 import com.swproject.persistence.CrawlDAO;
+import com.swproject.service.CrawlService;
 
 import twitter4j.Status;
 import twitter4j.Twitter;
@@ -30,7 +31,7 @@ public class CrawlController {
 	private static final Logger logger = LoggerFactory.getLogger(FeedController.class);
 
 	@Inject
-	private CrawlDAO dao;
+	private CrawlService service;
 
 	@RequestMapping(value = "/CrawlList", method = RequestMethod.GET)
 	public void CrawlPage(@ModelAttribute("el") Elements el, CrawlerVO Crawl, Model model) throws Exception {
@@ -51,8 +52,7 @@ public class CrawlController {
 			Crawl.setN_Title(temp.text().toString());
 			Crawl.setURL(temp.attr("href").toString());
 
-			dao.create1(Crawl); // Feed에선 Service 계층이 필요했지만 크롤링을 하는 페이지에선
-								// Service가 필요없기 때문에 DAO에 바로 넣어준다.
+			service.create1(Crawl);
 		}
 
 		logger.info("CrawlController .........1");
@@ -79,7 +79,7 @@ public class CrawlController {
 			Crawl.setS_User(temp1.getUser().getScreenName().toString());
 			Crawl.setS_Content(temp1.getText().toString());
 
-			dao.create2(Crawl);
+			service.create2(Crawl);
 		}
 
 		logger.info("CrawlController .........2");

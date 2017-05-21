@@ -28,6 +28,7 @@ import com.swproject.domain.CrawlerVO;
 import com.swproject.domain.FeedVO;
 import com.swproject.domain.PageMaker;
 import com.swproject.domain.SearchCriteria;
+import com.swproject.service.CrawlService;
 import com.swproject.service.FeedService;
 
 import twitter4j.Status;
@@ -43,7 +44,10 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
 	@Inject
-	private FeedService service;
+	private FeedService service1;
+	
+	@Inject
+	private CrawlService service2;
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -62,10 +66,18 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/Test/GridTest", method = RequestMethod.GET)
-	public void test(@ModelAttribute("el") Elements el, @ModelAttribute("cri") SearchCriteria cri, CrawlerVO Crawl, FeedVO Feed, Model model) throws Exception {
+	public void test(@ModelAttribute("cri") SearchCriteria cri, CrawlerVO Crawl, Model model) throws Exception {
+
+
+		System.out.println(cri);
+		model.addAttribute("list", service1.listSearchCriteria(cri));
+		
+		model.addAttribute("list1",service2.listTest1(Crawl));
+		model.addAttribute("list2",service2.listTest2(Crawl));
+		
 		//model.addAttribute("list", service.listSearchCriteria(cri));
 		
-		CrawlerNews Craw = new CrawlerNews();
+		/*CrawlerNews Craw = new CrawlerNews();
 		Craw.setURL("https://news.google.co.kr");
 		Craw.setDoc(Jsoup.connect(Craw.getURL()).get());
 		Craw.setEl(Craw.getDoc().select("div.esc-lead-article-title-wrapper a"));
@@ -95,7 +107,7 @@ public class HomeController {
 		temp.add(1, test2);
 		temp.add(2, test3);
 
-		System.out.println("test1 : " + temp.size());
+		System.out.println("test1 : " + temp.size());*/
 		//System.out.println("test2 : " + temp.get(1));
 		//System.out.println("test3 : " + temp.get(2));
 		

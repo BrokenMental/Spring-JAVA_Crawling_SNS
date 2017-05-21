@@ -24,8 +24,10 @@
 						</tr>
 						<c:forEach items="${list2}" var="Crawl2">
 							<tr>
-								<td>${Crawl2.getUser().getScreenName()}</td>
-								<td>${Crawl2.getText()}</td>
+								<td>${Crawl2.getS_User()}</td>
+								<td>${Crawl2.getS_Content()}</td>
+								<%-- <td>${Crawl2.getUser().getScreenName()}</td>
+								<td>${Crawl2.getText()}</td> --%>
 							</tr>
 						</c:forEach>
 					</table>

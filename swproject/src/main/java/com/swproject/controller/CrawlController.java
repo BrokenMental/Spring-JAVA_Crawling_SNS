@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.swproject.domain.CrawlerNews;
 import com.swproject.domain.CrawlerSNS;
 import com.swproject.domain.CrawlerVO;
-import com.swproject.persistence.CrawlDAO;
 import com.swproject.service.CrawlService;
 
 import twitter4j.Status;
@@ -32,9 +31,9 @@ public class CrawlController {
 
 	@Inject
 	private CrawlService service;
-
-	@RequestMapping(value = "/CrawlList", method = RequestMethod.GET)
-	public void CrawlPage(@ModelAttribute("el") Elements el, CrawlerVO Crawl, Model model) throws Exception {
+	
+	@RequestMapping(value = "/CrawlList", method = {RequestMethod.GET, RequestMethod.POST})
+	public void CrawlPage1(@ModelAttribute("el") Elements el, CrawlerVO Crawl, Model model) throws Exception {
 		CrawlerNews Craw = new CrawlerNews();
 		Craw.setURL("https://news.google.co.kr");
 		Craw.setDoc(Jsoup.connect(Craw.getURL()).get());
@@ -43,9 +42,9 @@ public class CrawlController {
 		java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy.MM.dd. HH:mm:ss"); // yyyy.MM.dd. HH:mm:ss
 		String now = formatter.format(new java.util.Date());
 		Crawl.setC_Time(now);
-
+		
 		el = Craw.getEl();
-		model.addAttribute("list", el);
+		//model.addAttribute("list1", el);
 
 		for (Element temp : el) { // 페이지에 뿌려주는것과 DB에 넣어주는것을 따로 해야한다.
 			Crawl.setC_Group("News");
@@ -55,11 +54,14 @@ public class CrawlController {
 			service.create1(Crawl);
 		}
 
-		logger.info("CrawlController .........1");
+		System.out.println(Crawl);
+		model.addAttribute("list1",service.listCrawl1(Crawl));
+		
+		logger.info("CrawlPage1 .........");
 
 	}
 
-	@RequestMapping(value = "/CrawlList2", method = RequestMethod.GET)
+	@RequestMapping(value = "/CrawlList2", method = {RequestMethod.GET, RequestMethod.POST})
 	public void CrawlPage2(CrawlerVO Crawl, Model model) throws Exception {
 		CrawlerSNS CS = new CrawlerSNS();
 		CS.setTwitter(TwitterFactory.getSingleton());
@@ -72,7 +74,7 @@ public class CrawlController {
 		String now = formatter.format(new java.util.Date());
 		Crawl.setC_Time(now);
 
-		model.addAttribute("list2", cl);
+		//model.addAttribute("list2", cl);
 
 		for (Status temp1 : cl) {
 			Crawl.setC_Group("SNS");
@@ -82,7 +84,10 @@ public class CrawlController {
 			service.create2(Crawl);
 		}
 
-		logger.info("CrawlController .........2");
+		System.out.println(Crawl);
+		model.addAttribute("list2",service.listCrawl2(Crawl));
+
+		logger.info("CrawlPage2 .........");
 	}
 
 }

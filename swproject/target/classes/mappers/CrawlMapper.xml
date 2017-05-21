@@ -18,15 +18,29 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where not exists (select * from crawler where S_Content=#{S_Content})
 	</insert>
 	
-	<select id="read1" resultType="CrawlerVO">
+	<select id="listNews" resultType="CrawlerVO">
 		select C_Number, C_Group, N_Title, URL
-		from Crawler where
-		C_Number = #{C_Number}
+		from Crawler
+		where C_Group = #{C_Group}
 	</select>
 	
-	<select id="read2" resultType="CrawlerVO">
+	<select id="listSNS" resultType="CrawlerVO">
 		select C_Number, C_Group, S_Content, S_User
-		from Crawler where
-		C_Number = #{C_Number}
+		from Crawler
+		where C_Group = #{C_Group}
+	</select>
+	
+	<select id="listTest1" resultType="CrawlerVO">
+		select C_Number, C_Group, N_Title, URL
+		from Crawler
+		where C_Group = 'News'
+		limit 10
+	</select>
+	
+	<select id="listTest2" resultType="CrawlerVO">
+		select C_Number, C_Group, S_Content, S_User
+		from Crawler
+		where C_Group = 'SNS'
+		limit 10
 	</select>
 </mapper>

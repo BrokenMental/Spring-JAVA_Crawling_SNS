@@ -12,50 +12,50 @@
 <!-- Main content -->
 <div class="gird">
 	<!--  left column -->
-	<c:forEach items="${test}" var="Test">
-	${service.listSearchCriteria(cri).get(0).getF_Number()}
-	-------------
-	
-	<%-- 
+	<c:forEach items="${list}" var="Test">
 		<table class="grid-item">
 			<tr>
 				<th style="width: 10px">F_Number</th>
-				<td>${Test.get(0).get(0)}</td>
+				<td>${Test.f_Number}</td>
 			</tr>
 			<tr>
 				<th>MyFeed</th>
 				<td><a
-					href='/Feed/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&f_Number=${Test.get(0).get(0)}'>${Test.get(0).get(1)}</a></td>
+					href='/Feed/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&f_Number=${Test.f_Number}'>${Test.myFeed}</a></td>
 			</tr>
 			<tr>
 				<th>ID</th>
-				<td>${Test.get(0).get(2)}</td>
+				<td>${Test.ID}</td>
 			</tr>
 			<tr>
 				<th>Time</th>
-				<td>${Test.get(0).get(3)}</td>
+				<td>${Test.f_Time}</td>
 			</tr>
 		</table>
-		<table class="grid-item grid-item--width2 grid-item--height2">
+	</c:forEach>
+	<c:forEach items="${list1}" var="Test1">
+		<table class="grid-item">
 			<tr>
 				<th>Title</th>
-				<td style="width: 50%">${Test.get(1).get(0)}</td>
+				<td style="width: 50%">${Test1.getN_Title()}</td>
 			</tr>
 			<tr>
 				<th>URL</th>
-				<td>${Test.get(1).get(1)}</td>
+				<td>${Test1.getURL()}</td>
 			</tr>
 		</table>
-		<table class="grid-item grid-item--width3 grid-item--height3">
+	</c:forEach>
+	<c:forEach items="${list2}" var="Test2">
+		<table class="grid-item">
 			<tr>
 				<th>User</th>
-				<td>${Test.get(2).get(0)}</td>
+				<td>${Test2.getS_User()}</td>
 			</tr>
 			<tr>
 				<th>Content</th>
-				<td>${Test.get(2).get(1)}</td>
+				<td>${Test2.getS_Content()}</td>
 			</tr>
-		</table> --%>
+		</table>
 	</c:forEach>
 	<%-- <c:forEach items="${list}" var="Feed">
 		<table class="grid-item">

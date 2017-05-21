@@ -22,10 +22,12 @@
 							<th>Title</th>
 							<th>URL</th>
 						</tr>
-						<c:forEach items="${list}" var="Crawl">
+						<c:forEach items="${list1}" var="Crawl">
 							<tr>
-								<td style="width: 50%">${Crawl.text()}</td>
-								<td>${Crawl.attr("href")}</td>
+								<td style="width: 50%">${Crawl.getN_Title()}</td>
+								<td>${Crawl.getURL()}</td>
+								<%-- <td style="width: 50%">${Crawl.text()}</td>
+								<td>${Crawl.attr("href")}</td> --%>
 							</tr>
 						</c:forEach>
 					</table>

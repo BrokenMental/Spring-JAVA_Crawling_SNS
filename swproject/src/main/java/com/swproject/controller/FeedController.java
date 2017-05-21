@@ -72,7 +72,6 @@ public class FeedController {
 		java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy.MM.dd. HH:mm:ss"); // yyyy.MM.dd. HH:mm:ss
 		String now = formatter.format(new java.util.Date());
 		feed.setF_Time(now);
-		logger.info("글 작성시간 : "+now);
 
 		logger.info("regist post ...........");
 		logger.info(feed.toString());

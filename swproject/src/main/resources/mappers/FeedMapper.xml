@@ -11,11 +11,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		#{MyFeed}, #{F_Time})
 	</insert>
 	
-	<select id="read" resultType="com.swproject.domain.FeedVO">
+	<!-- <select id="read" resultType="com.swproject.domain.FeedVO">
 		select F_Number, MyFeed, ID, F_Time
 		from Feed where
 		F_Number = #{F_Number}
-	</select>
+	</select> -->
 
 	<update id="update">
 		update Feed set MyFeed = #{MyFeed}

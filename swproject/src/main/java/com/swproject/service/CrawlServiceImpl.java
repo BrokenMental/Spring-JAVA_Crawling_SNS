@@ -7,6 +7,8 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.swproject.domain.CrawlerVO;
+import com.swproject.domain.FeedVO;
+import com.swproject.domain.SearchCriteria;
 import com.swproject.persistence.CrawlDAO;
 
 @Service
@@ -44,4 +46,15 @@ public class CrawlServiceImpl implements CrawlService {
 	public List<CrawlerVO> listTest2(CrawlerVO crawl)throws Exception{
 		return dao.listTest2(crawl);
 	}
+
+	@Override
+	public List<CrawlerVO> listSearchCriteria(SearchCriteria cri)throws Exception {
+		return dao.listSearch(cri);
+	}
+
+	@Override
+	public int listSearchCount(SearchCriteria cri) throws Exception {
+		return dao.listSearchCount(cri);
+	}
+	
 }

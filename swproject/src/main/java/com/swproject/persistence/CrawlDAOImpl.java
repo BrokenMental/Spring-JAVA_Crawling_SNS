@@ -10,6 +10,8 @@ import org.springframework.stereotype.Repository;
 import com.swproject.domain.CrawlerNews;
 import com.swproject.domain.CrawlerSNS;
 import com.swproject.domain.CrawlerVO;
+import com.swproject.domain.FeedVO;
+import com.swproject.domain.SearchCriteria;
 
 @Repository
 public class CrawlDAOImpl implements CrawlDAO {
@@ -48,4 +50,15 @@ public class CrawlDAOImpl implements CrawlDAO {
 	public List<CrawlerVO> listTest2(CrawlerVO crawl) throws Exception{
 		return session.selectList(namespace + ".listTest2", crawl);
 	}
+
+	@Override
+	public List<CrawlerVO> listSearch(SearchCriteria cri) throws Exception {
+		return session.selectList(namespace + ".listSearch", cri);
+	}
+
+	@Override
+	public int listSearchCount(SearchCriteria cri) throws Exception {
+		return session.selectOne(namespace + ".listSearchCount", cri);
+	}
+
 }

@@ -35,9 +35,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<![CDATA[select ID, F_Number, MyFeed, F_Time from Feed where F_Number >0 order by F_Number desc, F_Time desc limit #{page}, 10]]>
 	</select> -->
 
-	<select id="listCriteria" resultType="FeedVO">
+	<!-- <select id="listCriteria" resultType="FeedVO">
 	<![CDATA[select ID,  F_Number, MyFeed, F_Time from Feed where F_Number >0 order by F_Number desc, F_Time desc limit #{pageStart}, #{perPageNum}]]>
-	</select>
+	</select> -->
 
 	<select id="countPaging" resultType="int">
 	<![CDATA[select count(F_Number) from Feed where F_Number > 0 ]]>

@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.swproject.domain.CrawlerNews;
 import com.swproject.domain.CrawlerSNS;
 import com.swproject.domain.CrawlerVO;
+import com.swproject.domain.PageMaker;
+import com.swproject.domain.SearchCriteria;
 import com.swproject.service.CrawlService;
 
 import twitter4j.Status;
@@ -33,7 +35,7 @@ public class CrawlController {
 	private CrawlService service;
 	
 	@RequestMapping(value = "/CrawlList", method = {RequestMethod.GET, RequestMethod.POST})
-	public void CrawlPage1(@ModelAttribute("el") Elements el, CrawlerVO Crawl, Model model) throws Exception {
+	public void CrawlPage1(@ModelAttribute("cri") SearchCriteria cri, @ModelAttribute("el") Elements el, CrawlerVO Crawl, Model model) throws Exception {
 		CrawlerNews Craw = new CrawlerNews();
 		Craw.setURL("https://news.google.co.kr");
 		Craw.setDoc(Jsoup.connect(Craw.getURL()).get());
@@ -58,6 +60,14 @@ public class CrawlController {
 		model.addAttribute("list1",service.listCrawl1(Crawl));
 		
 		logger.info("CrawlPage1 .........");
+		
+		// 페이징 처리
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+
+		pageMaker.setTotalCount(service.listSearchCount(cri));
+
+		model.addAttribute("pageMaker", pageMaker);
 
 	}
 

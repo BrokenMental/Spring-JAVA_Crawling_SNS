@@ -43,4 +43,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where C_Group = 'SNS'
 		limit 10
 	</select>
+	
+	<select id="listSearch" resultType="CrawlerVO">
+	<![CDATA[select * from Crawler where C_Number >0]]>
+		<![CDATA[order by C_Number desc
+		limit #{pageStart}, #{perPageNum}]]>
+	</select>
+	
+	<select id="listSearchCount" resultType="int">
+	<![CDATA[select count(C_Number) from Crawler where C_Number >0 ]]>
+		<!-- <include refid="search"></include> -->
+	</select>
 </mapper>

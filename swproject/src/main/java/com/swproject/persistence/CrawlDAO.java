@@ -3,6 +3,8 @@ package com.swproject.persistence;
 import java.util.List;
 
 import com.swproject.domain.CrawlerVO;
+import com.swproject.domain.FeedVO;
+import com.swproject.domain.SearchCriteria;
 
 public interface CrawlDAO {
 
@@ -13,4 +15,8 @@ public interface CrawlDAO {
 	public List<CrawlerVO> listCrawl2(CrawlerVO sns) throws Exception;
 	public List<CrawlerVO> listTest1(CrawlerVO crawl) throws Exception;
 	public List<CrawlerVO> listTest2(CrawlerVO crawl) throws Exception;
+
+	public List<CrawlerVO> listSearch(SearchCriteria cri) throws Exception;
+	
+	public int listSearchCount(SearchCriteria cri) throws Exception;
 }

@@ -32,7 +32,7 @@
 						</c:forEach>
 					</table>
 				</div>
-<%-- 				<div class="box-footer">
+				<div class="box-footer">
 					<div class="text-center">
 						<ul class="pagination">
 							<c:if test="${pageMaker.prev}">
@@ -54,7 +54,7 @@
 							</c:if>
 						</ul>
 					</div>
-				</div> --%>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.swproject.mapper.ViewMapper">
+	<select id="allview" resultType="ViewVO">
+		select ID, MyFeed, F_Time
+		from Feed
+		union all
+		select N_Title, URL, S_Content
+		from Crawler
+	</select>
+</mapper>

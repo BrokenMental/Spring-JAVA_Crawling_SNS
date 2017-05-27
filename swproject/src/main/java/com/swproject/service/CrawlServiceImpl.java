@@ -7,7 +7,6 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.swproject.domain.CrawlerVO;
-import com.swproject.domain.FeedVO;
 import com.swproject.domain.SearchCriteria;
 import com.swproject.persistence.CrawlDAO;
 

@@ -22,12 +22,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select C_Number, C_Group, N_Title, URL
 		from Crawler
 		where C_Group = #{C_Group}
+		order by C_Time desc
 	</select>
 	
 	<select id="listSNS" resultType="CrawlerVO">
 		select C_Number, C_Group, S_Content, S_User
 		from Crawler
 		where C_Group = #{C_Group}
+		order by C_Time desc
 	</select>
 	
 	<select id="listTest1" resultType="CrawlerVO">

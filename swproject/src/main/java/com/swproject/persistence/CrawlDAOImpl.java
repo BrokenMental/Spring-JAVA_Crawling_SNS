@@ -7,10 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.swproject.domain.CrawlerNews;
-import com.swproject.domain.CrawlerSNS;
 import com.swproject.domain.CrawlerVO;
-import com.swproject.domain.FeedVO;
 import com.swproject.domain.SearchCriteria;
 
 @Repository

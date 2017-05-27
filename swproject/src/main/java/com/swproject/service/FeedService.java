@@ -2,7 +2,6 @@ package com.swproject.service;
 
 import java.util.List;
 
-import com.swproject.domain.Criteria;
 import com.swproject.domain.FeedVO;
 import com.swproject.domain.SearchCriteria;
 

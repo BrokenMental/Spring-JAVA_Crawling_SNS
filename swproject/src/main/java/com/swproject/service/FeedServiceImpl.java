@@ -6,7 +6,6 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.swproject.domain.Criteria;
 import com.swproject.domain.FeedVO;
 import com.swproject.domain.SearchCriteria;
 import com.swproject.persistence.FeedDAO;

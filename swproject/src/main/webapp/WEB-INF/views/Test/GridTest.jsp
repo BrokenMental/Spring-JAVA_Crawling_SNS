@@ -23,16 +23,60 @@
 				<div class="box-body">
 					<div class="gird">
 						<!--  left column -->
-						<c:forEach items="${list}" var="Test">
+						<%-- <c:forEach items="${test}" var="Test">
 							<table class="grid-item">
 								<tr>
-									<th style="width: 10px">F_Number</th>
-									<td>${Test.f_Number}</td>
+									<th style="width: 10px">C_Number</th>
+									<td>${Test.get(0).get(0).c_Number}</td>
+								</tr>
+								<tr>
+									<th>C_Group</th>
+									<td>${Test.get(0).get(0).c_Group}</td>
+								</tr>
+								<tr>
+									<th>ID</th>
+									<td>${Test.get(0).get(0).ID}</td>
+								</tr>
+								<tr>
+									<th>Time</th>
+									<td>${Test.get(0).get(0).c_Time}</td>
+								</tr>
+							</table>
+							<c:if test="${Test.get(0).get(0).n_Title != '' || Test.get(0).get(0).n_Title ne null}">
+							<table class="grid-item" style="background:white">
+								<tr>
+									<th style="width: 10px">Title</th>
+									<td>${Test.get(0).get(0).n_Title}</td>
+								</tr>
+								<tr>
+									<th>URL</th>
+									<td>${Test.get(0).get(0).URL}</td>
+								</tr>
+							</table>
+							</c:if>
+							<c:if test="${Test.get(0).get(0).s_Content != '' || Test.get(0).get(0).s_Content ne null}">
+							<table class="grid-item" style="background:skyblue">
+								<tr>
+									<th style="width: 10px">S_Content</th>
+									<td>${Test.get(0).get(0).s_Content}</td>
+								</tr>
+								<tr>
+									<th>S_User</th>
+									<td>${Test.get(0).get(0).s_User}</td>
+								</tr>
+							</table>
+							</c:if>
+						</c:forEach> --%>
+						<c:forEach items="${view}" var="Test">
+							<c:if test="${Test.myFeed != '' || Test.myFeed ne null}">
+							<table class="grid-item">
+								<tr>
+									<th style="width: 10px">C_Number</th>
+									<%-- <td>${Test.c_Number}</td> --%>
 								</tr>
 								<tr>
 									<th>MyFeed</th>
-									<td><a
-										href='/Feed/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&f_Number=${Test.f_Number}'>${Test.myFeed}</a></td>
+									<td>${Test.myFeed}</td>
 								</tr>
 								<tr>
 									<th>ID</th>
@@ -43,76 +87,32 @@
 									<td>${Test.f_Time}</td>
 								</tr>
 							</table>
-						</c:forEach>
-						<c:forEach items="${list1}" var="Test1">
-							<table class="grid-item">
+							</c:if>
+							<c:if test="${Test.n_Title != '' || Test.n_Title ne null}">
+							<table class="grid-item" style="background:white">
 								<tr>
-									<th>Title</th>
-									<td style="width: 50%">${Test1.getN_Title()}</td>
+									<th style="width: 10px">Title</th>
+									<td>${Test.n_Title}</td>
 								</tr>
 								<tr>
 									<th>URL</th>
-									<td>${Test1.getURL()}</td>
+									<td>${Test.URL}</td>
 								</tr>
 							</table>
-						</c:forEach>
-						<c:forEach items="${list2}" var="Test2">
-							<table class="grid-item">
+							</c:if>
+							<c:if test="${Test.s_Content != '' || Test.s_Content ne null}">
+							<table class="grid-item" style="background:skyblue">
 								<tr>
-									<th>User</th>
-									<td>${Test2.getS_User()}</td>
+									<th style="width: 10px">S_Content</th>
+									<td>${Test.s_Content}</td>
 								</tr>
 								<tr>
-									<th>Content</th>
-									<td>${Test2.getS_Content()}</td>
+									<th>S_User</th>
+									<%-- <td>${Test.s_User}</td> --%>
 								</tr>
 							</table>
+							</c:if>
 						</c:forEach>
-						<%-- <c:forEach items="${list}" var="Feed">
-		<table class="grid-item">
-			<tr>
-				<th style="width: 10px">F_Number</th>
-				<td>${Feed.f_Number}</td>
-			</tr>
-			<tr>
-				<th>MyFeed</th>
-				<td><a
-					href='/Feed/readPage${pageMaker.makeSearch(pageMaker.cri.page)}&f_Number=${Feed.f_Number}'>${Feed.myFeed}</a></td>
-			</tr>
-			<tr>
-				<th>ID</th>
-				<td>${Feed.ID}</td>
-			</tr>
-			<tr>
-				<th>Time</th>
-				<td>${Feed.f_Time}</td>
-			</tr>
-		</table>
-	</c:forEach>
-	<c:forEach items="${list1}" var="Crawl">
-		<table class="grid-item grid-item--width2 grid-item--height2">
-			<tr>
-				<th>Title</th>
-				<td style="width: 50%">${Crawl.text()}</td>
-			</tr>
-			<tr>
-				<th>URL</th>
-				<td>${Crawl.attr("href")}</td>
-			</tr>
-		</table>
-	</c:forEach>
-	<c:forEach items="${list2}" var="Crawl2">
-		<table class="grid-item grid-item--width3 grid-item--height3">
-			<tr>
-				<th>User</th>
-				<td>${Crawl2.getUser().getScreenName()}</td>
-			</tr>
-			<tr>
-				<th>Content</th>
-				<td>${Crawl2.getText()}</td>
-			</tr>
-		</table>
-	</c:forEach> --%>
 					</div>
 				</div>
 			</div>
@@ -120,6 +120,9 @@
 	</div>
 </div>
 <!-- /.col (left) -->
+
+<div style="bottom: 0px;">
+	<%@ include file="../include/footer.jsp"%>
 </div>
 
 <script type="text/javascript">

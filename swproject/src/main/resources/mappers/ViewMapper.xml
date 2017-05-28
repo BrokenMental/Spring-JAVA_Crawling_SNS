@@ -5,10 +5,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.swproject.mapper.ViewMapper">
 	<select id="allview" resultType="ViewVO">
-		select ID, MyFeed, F_Time
+		select ID, MyFeed, F_Time, F_Group
 		from Feed
-		union all
-		select N_Title, URL, S_Content
+		union
+		select N_Title, URL, C_Time, C_Group
+		from Crawler
+		union
+		select S_Content, S_User, C_Time, C_Group
 		from Crawler
 	</select>
 </mapper>

@@ -80,17 +80,21 @@ public class HomeController {
 		ArrayList<ArrayList<?>> temp = new ArrayList<ArrayList<?>>();
 		ArrayList<List> Ltest1 = new ArrayList<List>();
 		Ltest1.add(service.listTest1(Crawl));
+		//Ltest1 = service.listTest1(Crawl);
 		
 		int t1 = service.listTest1(Crawl).size();
 		for(int i=0; i>t1; i++){
 			Ltest1.add(service.listTest1(Crawl));
 		}
+		
+		
 		ArrayList<List> Ltest2 = new ArrayList<List>();
 		
 		Ltest2.add(service.listTest2(Crawl));
 		temp.add(Ltest1);
 		temp.add(Ltest2);
-		
+		System.out.println(Ltest1.get(0).size());
+		System.out.println(Ltest2.get(0).size());
 		model.addAttribute("test",temp);
 	}*/
 

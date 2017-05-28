@@ -24,25 +24,7 @@
 					<div class="gird">
 						<!--  left column -->
 						<%-- <c:forEach items="${test}" var="Test">
-							<table class="grid-item">
-								<tr>
-									<th style="width: 10px">C_Number</th>
-									<td>${Test.get(0).get(0).c_Number}</td>
-								</tr>
-								<tr>
-									<th>C_Group</th>
-									<td>${Test.get(0).get(0).c_Group}</td>
-								</tr>
-								<tr>
-									<th>ID</th>
-									<td>${Test.get(0).get(0).ID}</td>
-								</tr>
-								<tr>
-									<th>Time</th>
-									<td>${Test.get(0).get(0).c_Time}</td>
-								</tr>
-							</table>
-							<c:if test="${Test.get(0).get(0).n_Title != '' || Test.get(0).get(0).n_Title ne null}">
+							<c:if test="${Test.get(0).get(0).c_Group == 'News' || Test.get(0).get(0).c_Group eq 'News'}">
 							<table class="grid-item" style="background:white">
 								<tr>
 									<th style="width: 10px">Title</th>
@@ -54,7 +36,7 @@
 								</tr>
 							</table>
 							</c:if>
-							<c:if test="${Test.get(0).get(0).s_Content != '' || Test.get(0).get(0).s_Content ne null}">
+							<c:if test="${Test.get(0).get(0).c_Group == 'SNS' || Test.get(0).get(0).c_Group eq 'SNS'}">
 							<table class="grid-item" style="background:skyblue">
 								<tr>
 									<th style="width: 10px">S_Content</th>
@@ -67,12 +49,12 @@
 							</table>
 							</c:if>
 						</c:forEach> --%>
-						<c:forEach items="${view}" var="Test">
-							<c:if test="${Test.myFeed != '' || Test.myFeed ne null}">
+						<c:forEach items="${view}" var="Test" varStatus="status">
+							<c:if test="${Test.f_Group == 'Feed' || Test.f_Group eq 'Feed'}">
 							<table class="grid-item">
 								<tr>
-									<th style="width: 10px">C_Number</th>
-									<%-- <td>${Test.c_Number}</td> --%>
+									<th style="width: 10px">F_Number</th>
+									<td>${Test.f_Number}</td>
 								</tr>
 								<tr>
 									<th>MyFeed</th>
@@ -88,7 +70,7 @@
 								</tr>
 							</table>
 							</c:if>
-							<c:if test="${Test.n_Title != '' || Test.n_Title ne null}">
+							<c:if test="${Test.c_Group == 'News' || Test.c_Group eq 'News'}">
 							<table class="grid-item" style="background:white">
 								<tr>
 									<th style="width: 10px">Title</th>
@@ -100,7 +82,7 @@
 								</tr>
 							</table>
 							</c:if>
-							<c:if test="${Test.s_Content != '' || Test.s_Content ne null}">
+							<c:if test="${Test.c_Group == 'SNS' || Test.c_Group eq 'SNS'}">
 							<table class="grid-item" style="background:skyblue">
 								<tr>
 									<th style="width: 10px">S_Content</th>
@@ -108,7 +90,7 @@
 								</tr>
 								<tr>
 									<th>S_User</th>
-									<%-- <td>${Test.s_User}</td> --%>
+									<td>${Test.s_User}</td>
 								</tr>
 							</table>
 							</c:if>

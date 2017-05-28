@@ -6,10 +6,12 @@ public class ViewVO {
 	private Integer F_Number;
 	private String MyFeed;
 	private String F_Time;
+	private String F_Group;
 	private String N_Title;
 	private String URL;
 	private String S_Content;
 	private String S_User;
+	private String C_Group;
 	
 	public String getID() {
 		return ID;
@@ -59,14 +61,27 @@ public class ViewVO {
 	public void setS_User(String s_User) {
 		S_User = s_User;
 	}
-
+	public String getF_Group() {
+		return F_Group;
+	}
+	public void setF_Group(String f_Group) {
+		F_Group = f_Group;
+	}
+	public String getC_Group() {
+		return C_Group;
+	}
+	public void setC_Group(String c_Group) {
+		C_Group = c_Group;
+	}
+	
 	@Override
 	public String toString() {
 		return "ViewVO [ID=" + ID + ", F_Number=" + F_Number + ", MyFeed=" + MyFeed + ", F_Time=" + F_Time
-				+ ", N_Title=" + N_Title + ", URL=" + URL + ", S_Content=" + S_Content + ", S_User=" + S_User
-				+ ", getID()=" + getID() + ", getF_Number()=" + getF_Number() + ", getMyFeed()=" + getMyFeed()
-				+ ", getF_Time()=" + getF_Time() + ", getN_Title()=" + getN_Title() + ", getURL()=" + getURL()
-				+ ", getS_Content()=" + getS_Content() + ", getS_User()=" + getS_User() + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+				+ ", F_Group=" + F_Group + ", N_Title=" + N_Title + ", URL=" + URL + ", S_Content=" + S_Content
+				+ ", S_User=" + S_User + ", C_Group=" + C_Group + ", getID()=" + getID() + ", getF_Number()="
+				+ getF_Number() + ", getMyFeed()=" + getMyFeed() + ", getF_Time()=" + getF_Time() + ", getN_Title()="
+				+ getN_Title() + ", getURL()=" + getURL() + ", getS_Content()=" + getS_Content() + ", getS_User()="
+				+ getS_User() + ", getF_Group()=" + getF_Group() + ", getC_Group()=" + getC_Group() + ", getClass()="
+				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
 }

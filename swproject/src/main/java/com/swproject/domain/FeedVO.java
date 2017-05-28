@@ -6,6 +6,7 @@ public class FeedVO {
 	private Integer F_Number;
 	private String MyFeed;
 	private String F_Time;
+	private String F_Group;
 	
 	public String getID() {
 		return ID;
@@ -31,13 +32,20 @@ public class FeedVO {
 	public void setF_Time(String f_Time) {
 		F_Time = f_Time;
 	}
+	public String getF_Group() {
+		return F_Group;
+	}
+	public void setF_Group(String f_Group) {
+		F_Group = f_Group;
+	}
 	
 	@Override
 	public String toString() {
 		return "FeedVO [ID=" + ID + ", F_Number=" + F_Number + ", MyFeed=" + MyFeed + ", F_Time=" + F_Time
-				+ ", getID()=" + getID() + ", getF_Number()=" + getF_Number() + ", getMyFeed()=" + getMyFeed()
-				+ ", getF_Time()=" + getF_Time() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
+				+ ", F_Group=" + F_Group + ", getID()=" + getID() + ", getF_Number()=" + getF_Number()
+				+ ", getMyFeed()=" + getMyFeed() + ", getF_Time()=" + getF_Time() + ", getF_Group()=" + getF_Group()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
 	}
 	
 }

@@ -17,6 +17,10 @@
 								name='ID' class="form-control" value="user00">
 						</div>
 						<div class="form-group">
+							<label for="exampleInputEmail1">Group</label> <input type="text"
+								name='F_Group' class="form-control" value="Feed">
+						</div>
+						<div class="form-group">
 							<label for="exampleInputPassword1">Feed</label>
 							<textarea class="form-control" name="MyFeed" rows="3"
 								placeholder="Enter Feed"></textarea>

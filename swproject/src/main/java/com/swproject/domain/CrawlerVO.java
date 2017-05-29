@@ -2,7 +2,7 @@ package com.swproject.domain;
 
 public class CrawlerVO {
 
-	private int C_Number;
+	private Integer C_Number;
 	private String C_Group;
 	private String N_Title;
 	private String URL;
@@ -25,7 +25,7 @@ public class CrawlerVO {
 	public int getC_Number() {
 		return C_Number;
 	}
-	public void setC_Number(int c_Number) {
+	public void setC_Number(Integer c_Number) {
 		C_Number = c_Number;
 	}
 	public String getC_Group() {

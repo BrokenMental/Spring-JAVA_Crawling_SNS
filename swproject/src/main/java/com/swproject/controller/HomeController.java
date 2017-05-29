@@ -26,15 +26,6 @@ import com.swproject.service.TotalService;
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-
-	/*@Inject
-	private ViewService service;*/
-
-	/*@Inject
-	private FeedService service1;*/
-	
-	/*@Inject
-	private CrawlService service2;*/
 	
 	@Inject
 	private TotalService service;
@@ -55,32 +46,9 @@ public class HomeController {
 		
 		return "home";
 	}
-	
-	/*@RequestMapping(value = "/Test/GridTest", method = RequestMethod.GET)
-	public void test(@ModelAttribute("cri") SearchCriteria cri, ViewVO view, Model model) throws Exception {
-
-		model.addAttribute("view",service.allview(view));
-		
-		logger.info("TestPage get ...........");
-	}*/
 
 	@RequestMapping(value = "/Test/GridTest", method = RequestMethod.GET)
 	public void test(TotalVO Total, Model model) throws Exception {
-
-		//ArrayList<ArrayList<?>> temp = new ArrayList<ArrayList<?>>();
-		//ArrayList<List> Ltest1 = new ArrayList<List>();
-		//Ltest1.add(service.listTest1(Crawl));
-		//Ltest1 = service.listTest1(Crawl);
-		
-		//int t1 = service.listTest1(Crawl).size();
-		//for(int i=0; i>t1; i++){
-		//	Ltest1.add(service.listTest1(Crawl));
-		//}
-		//temp.add(Ltest1);
-		//temp.add(Ltest2);
-		
-		//ArrayList<List> Ltest2 = new ArrayList<List>();
-		//Ltest2.add(service.listTest2(Crawl));
 		
 		ArrayList<TotalVO> Lmaster = new ArrayList<TotalVO>();
 		for(int i = 0; i<10; i++){
@@ -88,83 +56,6 @@ public class HomeController {
 			Lmaster.add(service.listTest1(Total).get(i));
 			Lmaster.add(service.listTest2(Total).get(i));
 		}
-		
-		
-		
-		/*ArrayList<List> Lmaster = new ArrayList<List>();
-		Lmaster.add(service.listTest0(Total));
-		Lmaster.add(service.listTest1(Total));
-		Lmaster.add(service.listTest2(Total));*/
-		
-		/*ArrayList<List> Lmaster = new ArrayList<List>();
-		for(int i = 0; i<=10; i++){
-				Lmaster.add(service.listTest0(Total));
-				Lmaster.add(service.listTest1(Total));
-				Lmaster.add(service.listTest2(Total));
-		}*/
-		
-		/*int flag = 1;
-		int LSize = service.listTest0(Total).size() + service.listTest1(Total).size() + service.listTest2(Total).size();
-		List[] Lma = new List[LSize];
-		for(int i = 0; i<LSize; i++){
-			if(flag == 1){
-				Lma[i] = service.listTest0(Total);
-				flag ++;
-			}else if(flag == 2){
-				Lma[i] = service.listTest1(Total);
-				flag ++;
-			}else if(flag == 3){
-				Lma[i] = service.listTest2(Total);
-				flag = 1;
-			}
-		}*/
-
-		//System.out.println("Lma[0] : " +Lma[0]);
-		//System.out.println("Lma[1] : " +Lma[1]);
-		//System.out.println("Lma[2] : " +Lma[2]);
-
-		System.out.println("Lmaster.get(0) : "+Lmaster.get(0));
-		System.out.println("Lmaster.get(1) : "+Lmaster.get(1));
-		System.out.println("Lmaster.get(2) : "+Lmaster.get(2));
-		//System.out.println("Lmaster.get(0).get(0) : "+Lmaster.get(0).get(0));
-		//System.out.println("Lmaster.get(0).get(1) : "+Lmaster.get(0).get(1));
-
-		System.out.println("service.listTest0(Total).get(0) : "+service.listTest0(Total).get(0));
-		System.out.println("service.listTest1(Total).get(0) : "+service.listTest1(Total).get(0));
-		System.out.println("service.listTest2(Total).get(0) : "+service.listTest2(Total).get(0));
-		
-		//model.addAttribute("test",Lma[1]);
 		model.addAttribute("test",Lmaster);
 	}
-
-	/*@RequestMapping(value = "/Test/GridTest", method = RequestMethod.GET)
-	public void test(@ModelAttribute("cri") SearchCriteria cri, ViewVO view, Model model) throws Exception {
-
-		Map map;
-		List list = new ArrayList();
-		
-		//ArrayList<ArrayList<?>> temp = new ArrayList<ArrayList<?>>();
-		ArrayList<List> test1 = new ArrayList<List>();
-		//test1.add(Feed.getF_Number().toString());
-		test1.add(service.listSearchCriteria(cri));
-		ArrayList<Elements> test2 = new ArrayList<Elements>();
-		test2.add(Craw.getEl());
-		ArrayList<List> test3 = new ArrayList<List>();
-		test3.add(CS.getList());
-		
-		map = new HashMap();
-		map.put("test1", service.listSearchCriteria(cri));
-		map.put("test2", Craw.getEl());
-		map.put("test3", CS.getList());
-		list.add(map);
-		
-		HashMap getMap[] = new HashMap[list.size()];
-		getMap[0] = (HashMap)list.get(0);
-		getMap[1] = (HashMap)list.get(1);
-		getMap[2] = (HashMap)list.get(2);
-		System.out.println("test1 : " + getMap);
-		
-		logger.info("TestPage get ...........");
-	}*/
-
 }

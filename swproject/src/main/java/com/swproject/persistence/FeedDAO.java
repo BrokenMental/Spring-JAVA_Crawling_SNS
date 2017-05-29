@@ -16,6 +16,7 @@ public interface FeedDAO {
 	
 	public int listSearchCount(SearchCriteria cri) throws Exception;
 	List<FeedVO> listPage(int page) throws Exception;
+	public List<FeedVO> listTest0(FeedVO feed) throws Exception;
 
 	//public List<FeedVO> listAll() throws Exception;
 	//public List<FeedVO> listCriteria(Criteria cri) throws Exception;

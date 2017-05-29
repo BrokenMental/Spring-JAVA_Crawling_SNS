@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.swproject.domain.CrawlerNews;
 import com.swproject.domain.CrawlerSNS;
 import com.swproject.domain.CrawlerVO;
+import com.swproject.domain.FeedVO;
 import com.swproject.domain.SearchCriteria;
 import com.swproject.domain.ViewVO;
 import com.swproject.service.CrawlService;
@@ -40,14 +41,14 @@ public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
+	/*@Inject
+	private ViewService service;*/
+
 	@Inject
-	private ViewService service;
+	private FeedService service1;
 	
-	/*@Inject
-	private FeedService service;*/
-	
-	/*@Inject
-	private CrawlService service;*/
+	@Inject
+	private CrawlService service2;
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -66,37 +67,82 @@ public class HomeController {
 		return "home";
 	}
 	
-	@RequestMapping(value = "/Test/GridTest", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/Test/GridTest", method = RequestMethod.GET)
 	public void test(@ModelAttribute("cri") SearchCriteria cri, ViewVO view, Model model) throws Exception {
 
 		model.addAttribute("view",service.allview(view));
 		
 		logger.info("TestPage get ...........");
-	}
+	}*/
 
-	/*@RequestMapping(value = "/Test/GridTest", method = RequestMethod.GET)
-	public void test(CrawlerVO Crawl, Model model) throws Exception {
+	@RequestMapping(value = "/Test/GridTest", method = RequestMethod.GET)
+	public void test(FeedVO Feed, CrawlerVO Crawl, Model model) throws Exception {
 
-		ArrayList<ArrayList<?>> temp = new ArrayList<ArrayList<?>>();
-		ArrayList<List> Ltest1 = new ArrayList<List>();
-		Ltest1.add(service.listTest1(Crawl));
+		//ArrayList<ArrayList<?>> temp = new ArrayList<ArrayList<?>>();
+		//ArrayList<List> Ltest1 = new ArrayList<List>();
+		//Ltest1.add(service.listTest1(Crawl));
 		//Ltest1 = service.listTest1(Crawl);
 		
-		int t1 = service.listTest1(Crawl).size();
-		for(int i=0; i>t1; i++){
-			Ltest1.add(service.listTest1(Crawl));
+		//int t1 = service.listTest1(Crawl).size();
+		//for(int i=0; i>t1; i++){
+		//	Ltest1.add(service.listTest1(Crawl));
+		//}
+		//temp.add(Ltest1);
+		//temp.add(Ltest2);
+		
+		//ArrayList<List> Ltest2 = new ArrayList<List>();
+		//Ltest2.add(service.listTest2(Crawl));
+		
+		int flag = 1;
+		ArrayList<List> Lmaster = new ArrayList<List>();
+		int LSize = service1.listTest0(Feed).size() + service2.listTest1(Crawl).size() + service2.listTest2(Crawl).size();
+		for(int i = 1; i<=LSize; i++){
+			if(flag == 1){
+				Lmaster.add(service1.listTest0(Feed));
+				flag ++;
+			}else if(flag == 2){
+				Lmaster.add(service2.listTest1(Crawl));
+				flag ++;
+			}else if(flag == 3){
+				Lmaster.add(service2.listTest2(Crawl));
+				flag = 1;
+			}
 		}
 		
+		/*int flag = 1;
+		int LSize = service1.listSearchCriteria(cri).size() + service2.listTest1(Crawl).size() + service2.listTest2(Crawl).size();
+		List[] Lma = new List[LSize];
+		for(int i = 1; i<=LSize; i++){
+			if(flag == 1){
+				Lma[i] = service1.listSearchCriteria(cri);
+				flag ++;
+			}else if(flag == 2){
+				Lma[i] = service2.listTest1(Crawl);
+				flag ++;
+			}else if(flag == 3){
+				Lma[i] = service2.listTest2(Crawl);
+				flag = 1;
+			}
+		}*/
 		
-		ArrayList<List> Ltest2 = new ArrayList<List>();
+		//System.out.println("Lma[0] : " +Lma[0]);
+		//System.out.println("Lma[1] : " +Lma[1]);
+		//System.out.println("Lma[2] : " +Lma[2]);
+		//System.out.println("Lma[0] : " +Lma[0]);
+		//System.out.println("Lma[1] : " +Lma[1]);
+		//System.out.println("Lma[2] : " +Lma[2]);
 		
-		Ltest2.add(service.listTest2(Crawl));
-		temp.add(Ltest1);
-		temp.add(Ltest2);
-		System.out.println(Ltest1.get(0).size());
-		System.out.println(Ltest2.get(0).size());
-		model.addAttribute("test",temp);
-	}*/
+		System.out.println("Lmaster.get(0).get(0) : "+Lmaster.get(0).get(0));
+		System.out.println("Lmaster.get(0).get(1) : "+Lmaster.get(0).get(1));
+		System.out.println("Lmaster.get(0) : "+Lmaster.get(0));
+		System.out.println("Lmaster.get(1) : "+Lmaster.get(1));
+		System.out.println("Lmaster.get(2) : "+Lmaster.get(2));
+		System.out.println("Lmaster.get(3) : "+Lmaster.get(3));
+		//model.addAttribute("test",temp);
+		
+		//model.addAttribute("test",Lma);
+		model.addAttribute("test",Lmaster);
+	}
 
 	/*@RequestMapping(value = "/Test/GridTest", method = RequestMethod.GET)
 	public void test(@ModelAttribute("cri") SearchCriteria cri, ViewVO view, Model model) throws Exception {

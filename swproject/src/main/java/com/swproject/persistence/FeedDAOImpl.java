@@ -56,6 +56,11 @@ public class FeedDAOImpl implements FeedDAO {
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		return session.selectOne(namespace + ".listSearchCount", cri);
 	}
+	
+	@Override
+	public List<FeedVO> listTest0(FeedVO feed) throws Exception{
+		return session.selectList(namespace + ".listTest0", feed);
+	}
 
 	/*@Override
 	public List<FeedVO> listAll()throws Exception {

@@ -17,6 +17,8 @@ public interface FeedService {
 	
 	public int listSearchCount(SearchCriteria cri) throws Exception;
 	
+	public List<FeedVO> listTest0(FeedVO feed) throws Exception;
+	
 	// public void modify(FeedVO board)throws Exception;
 	
 	//public List<FeedVO> listAll()throws Exception;

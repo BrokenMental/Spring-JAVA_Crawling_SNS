@@ -41,6 +41,11 @@ public class FeedServiceImpl implements FeedService {
 		return dao.listSearchCount(cri);
 	}
 	
+	@Override
+	public List<FeedVO> listTest0(FeedVO feed) throws Exception{
+		return dao.listTest0(feed);
+	}
+	
 	/*@Override
 	public void modify(FeedVO board) throws Exception {
 		dao.update(board);

@@ -5,25 +5,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.swproject.mapper.TotalMapper">
 
-	<select id="listTest0" resultType="FeedVO">
-		select F_Number, MyFeed, ID, F_Time
+	<select id="listTest0" resultType="TotalVO">
+		select F_Number, MyFeed, ID, F_Time, F_Group
 		from Feed
 		where F_Group = 'Feed'
-		limit 10
+		order by F_Number desc limit 10
 	</select>
 
-	<select id="listTest1" resultType="CrawlerVO">
+	<select id="listTest1" resultType="TotalVO">
 		select C_Number, C_Group, N_Title, URL
 		from Crawler
 		where C_Group = 'News'
-		limit 10
+		order by C_Number desc limit 10
 	</select>
 	
-	<select id="listTest2" resultType="CrawlerVO">
+	<select id="listTest2" resultType="TotalVO">
 		select C_Number, C_Group, S_Content, S_User
 		from Crawler
 		where C_Group = 'SNS'
-		limit 10
+		order by C_Number desc limit 10
 	</select>
 	
 </mapper>

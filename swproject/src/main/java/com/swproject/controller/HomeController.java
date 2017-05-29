@@ -8,30 +8,15 @@ import java.util.Locale;
 
 import javax.inject.Inject;
 
-import org.jsoup.Jsoup;
-import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.swproject.domain.CrawlerNews;
-import com.swproject.domain.CrawlerSNS;
-import com.swproject.domain.CrawlerVO;
-import com.swproject.domain.FeedVO;
-import com.swproject.domain.SearchCriteria;
-import com.swproject.domain.ViewVO;
-import com.swproject.service.CrawlService;
-import com.swproject.service.FeedService;
+import com.swproject.domain.TotalVO;
 import com.swproject.service.TotalService;
-import com.swproject.service.ViewService;
-
-import twitter4j.Status;
-import twitter4j.Twitter;
-import twitter4j.TwitterFactory;
 
 
 /**
@@ -80,7 +65,7 @@ public class HomeController {
 	}*/
 
 	@RequestMapping(value = "/Test/GridTest", method = RequestMethod.GET)
-	public void test(FeedVO Feed, CrawlerVO Crawl, Model model) throws Exception {
+	public void test(TotalVO Total, Model model) throws Exception {
 
 		//ArrayList<ArrayList<?>> temp = new ArrayList<ArrayList<?>>();
 		//ArrayList<List> Ltest1 = new ArrayList<List>();
@@ -98,81 +83,68 @@ public class HomeController {
 		//Ltest2.add(service.listTest2(Crawl));
 		
 		int flag = 1;
-		ArrayList<List> Lmaster = new ArrayList<List>();
-		int LSize = service.listTest0(Feed).size() + service.listTest1(Crawl).size() + service.listTest2(Crawl).size();
+		ArrayList<TotalVO> Lmaster = new ArrayList<TotalVO>();
+		int LSize = service.listTest0(Total).size() + service.listTest1(Total).size() + service.listTest2(Total).size();
 		for(int i = 1; i<=LSize; i++){
 			if(flag == 1){
-				Lmaster.add(service.listTest0(Feed));
+				Lmaster.add(service.listTest0(Total).get(i));
 				flag ++;
 			}else if(flag == 2){
-				Lmaster.add(service.listTest1(Crawl));
+				Lmaster.add(service.listTest1(Total).get(i));
 				flag ++;
 			}else if(flag == 3){
-				Lmaster.add(service.listTest2(Crawl));
+				Lmaster.add(service.listTest2(Total).get(i));
 				flag = 1;
 			}
 		}
 		
+		
+		
+		/*ArrayList<List> Lmaster = new ArrayList<List>();
+		Lmaster.add(service.listTest0(Total));
+		Lmaster.add(service.listTest1(Total));
+		Lmaster.add(service.listTest2(Total));*/
+		
+		/*ArrayList<List> Lmaster = new ArrayList<List>();
+		for(int i = 0; i<=10; i++){
+				Lmaster.add(service.listTest0(Total));
+				Lmaster.add(service.listTest1(Total));
+				Lmaster.add(service.listTest2(Total));
+		}*/
+		
 		/*int flag = 1;
-		int LSize = service1.listSearchCriteria(cri).size() + service2.listTest1(Crawl).size() + service2.listTest2(Crawl).size();
+		int LSize = service.listTest0(Total).size() + service.listTest1(Total).size() + service.listTest2(Total).size();
 		List[] Lma = new List[LSize];
-		for(int i = 1; i<=LSize; i++){
+		for(int i = 0; i<LSize; i++){
 			if(flag == 1){
-				Lma[i] = service1.listSearchCriteria(cri);
+				Lma[i] = service.listTest0(Total);
 				flag ++;
 			}else if(flag == 2){
-				Lma[i] = service2.listTest1(Crawl);
+				Lma[i] = service.listTest1(Total);
 				flag ++;
 			}else if(flag == 3){
-				Lma[i] = service2.listTest2(Crawl);
+				Lma[i] = service.listTest2(Total);
 				flag = 1;
 			}
 		}*/
-		
+
 		//System.out.println("Lma[0] : " +Lma[0]);
 		//System.out.println("Lma[1] : " +Lma[1]);
 		//System.out.println("Lma[2] : " +Lma[2]);
-		//System.out.println("Lma[0] : " +Lma[0]);
-		//System.out.println("Lma[1] : " +Lma[1]);
-		//System.out.println("Lma[2] : " +Lma[2]);
-		
-		System.out.println("Lmaster.get(0).get(0) : "+Lmaster.get(0).get(0));
-		System.out.println("Lmaster.get(0).get(1) : "+Lmaster.get(0).get(1));
+
 		System.out.println("Lmaster.get(0) : "+Lmaster.get(0));
 		System.out.println("Lmaster.get(1) : "+Lmaster.get(1));
 		System.out.println("Lmaster.get(2) : "+Lmaster.get(2));
-		System.out.println("Lmaster.get(3) : "+Lmaster.get(3));
-		//model.addAttribute("test",temp);
+		//System.out.println("Lmaster.get(0).get(0) : "+Lmaster.get(0).get(0));
+		//System.out.println("Lmaster.get(0).get(1) : "+Lmaster.get(0).get(1));
+
+		System.out.println("service.listTest0(Total).get(0) : "+service.listTest0(Total).get(0));
+		System.out.println("service.listTest1(Total).get(0) : "+service.listTest1(Total).get(0));
+		System.out.println("service.listTest2(Total).get(0) : "+service.listTest2(Total).get(0));
 		
-		//model.addAttribute("test",Lma);
+		//model.addAttribute("test",Lma[1]);
 		model.addAttribute("test",Lmaster);
 	}
-
-	/*@RequestMapping(value = "/Test/GridTest", method = RequestMethod.GET)
-	public void test(@ModelAttribute("cri") SearchCriteria cri, ViewVO view, Model model) throws Exception {
-
-		ArrayList<ArrayList<?>> temp = new ArrayList<ArrayList<?>>();
-		ArrayList<String> test1 = new ArrayList<String>();
-		//test1.add(Feed.getF_Number().toString());
-		test1.add(service.listSearchCriteria(cri).get(0).getF_Number().toString());
-		test1.add(service.listSearchCriteria(cri).get(0).getMyFeed());
-		test1.add(service.listSearchCriteria(cri).get(0).getID());
-		test1.add(service.listSearchCriteria(cri).get(0).getF_Time());
-		ArrayList<String> test2 = new ArrayList<String>();
-		test2.add(Craw.getEl().text());
-		test2.add(Craw.getEl().attr("href"));
-		ArrayList<String> test3 = new ArrayList<String>();
-		test3.add(CS.getList().get(0).getUser().getScreenName());
-		test3.add(CS.getList().get(0).getText());
-		
-		
-		temp.add(test1);
-		temp.add(test2);
-		temp.add(test3);
-		
-
-		logger.info("TestPage get ...........");
-	}*/
 
 	/*@RequestMapping(value = "/Test/GridTest", method = RequestMethod.GET)
 	public void test(@ModelAttribute("cri") SearchCriteria cri, ViewVO view, Model model) throws Exception {

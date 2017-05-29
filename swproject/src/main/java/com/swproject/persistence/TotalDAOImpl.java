@@ -7,8 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.swproject.domain.CrawlerVO;
-import com.swproject.domain.FeedVO;
+import com.swproject.domain.TotalVO;
 
 @Repository
 public class TotalDAOImpl implements TotalDAO {
@@ -18,17 +17,17 @@ public class TotalDAOImpl implements TotalDAO {
 	private SqlSession session;
 	
 	@Override
-	public List<FeedVO> listTest0(FeedVO feed) throws Exception{
-		return session.selectList(namespace + ".listTest0", feed);
+	public List<TotalVO> listTest0(TotalVO total) throws Exception{
+		return session.selectList(namespace + ".listTest0", total);
 	}
 	@Override
-	public List<CrawlerVO> listTest1(CrawlerVO crawl) throws Exception{
-		return session.selectList(namespace + ".listTest1", crawl);
+	public List<TotalVO> listTest1(TotalVO total) throws Exception{
+		return session.selectList(namespace + ".listTest1", total);
 	}
 
 	@Override
-	public List<CrawlerVO> listTest2(CrawlerVO crawl) throws Exception{
-		return session.selectList(namespace + ".listTest2", crawl);
+	public List<TotalVO> listTest2(TotalVO total) throws Exception{
+		return session.selectList(namespace + ".listTest2", total);
 	}
 
 }

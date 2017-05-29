@@ -82,20 +82,11 @@ public class HomeController {
 		//ArrayList<List> Ltest2 = new ArrayList<List>();
 		//Ltest2.add(service.listTest2(Crawl));
 		
-		int flag = 1;
 		ArrayList<TotalVO> Lmaster = new ArrayList<TotalVO>();
-		int LSize = service.listTest0(Total).size() + service.listTest1(Total).size() + service.listTest2(Total).size();
-		for(int i = 1; i<=LSize; i++){
-			if(flag == 1){
-				Lmaster.add(service.listTest0(Total).get(i));
-				flag ++;
-			}else if(flag == 2){
-				Lmaster.add(service.listTest1(Total).get(i));
-				flag ++;
-			}else if(flag == 3){
-				Lmaster.add(service.listTest2(Total).get(i));
-				flag = 1;
-			}
+		for(int i = 0; i<10; i++){
+			Lmaster.add(service.listTest0(Total).get(i));
+			Lmaster.add(service.listTest1(Total).get(i));
+			Lmaster.add(service.listTest2(Total).get(i));
 		}
 		
 		

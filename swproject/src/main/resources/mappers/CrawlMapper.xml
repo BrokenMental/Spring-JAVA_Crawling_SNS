@@ -5,8 +5,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.swproject.mapper.CrawlMapper">
 	<insert id="create1">
-		<!-- insert into crawler (N_Title, URL, C_Group)
-		values(#{N_Title}, #{URL}, #{C_Group}) -->
 		insert into crawler (N_Title, URL, C_Group, C_Time)
 		select #{N_Title}, #{URL}, #{C_Group}, #{C_Time} from dual
 		where not exists (select * from crawler where N_Title=#{N_Title})
@@ -32,20 +30,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		order by C_Time desc
 	</select>
 	
-	<select id="listTest1" resultType="CrawlerVO">
-		select C_Number, C_Group, N_Title, URL
-		from Crawler
-		where C_Group = 'News'
-		limit 10
-	</select>
-	
-	<select id="listTest2" resultType="CrawlerVO">
-		select C_Number, C_Group, S_Content, S_User
-		from Crawler
-		where C_Group = 'SNS'
-		limit 10
-	</select>
-	
 	<select id="listSearch" resultType="CrawlerVO">
 	<![CDATA[select * from Crawler where C_Number >0]]>
 		<![CDATA[order by C_Number desc
@@ -54,6 +38,5 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="listSearchCount" resultType="int">
 	<![CDATA[select count(C_Number) from Crawler where C_Number >0 ]]>
-		<!-- <include refid="search"></include> -->
 	</select>
 </mapper>

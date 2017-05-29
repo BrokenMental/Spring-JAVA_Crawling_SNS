@@ -17,37 +17,27 @@ public class CrawlServiceImpl implements CrawlService {
 	private CrawlDAO dao;
 	
 	@Override
-	public void create1(CrawlerVO crawl)throws Exception{
+	public void create1(CrawlerVO crawl) throws Exception{
 		dao.create1(crawl);
 	}
 	
 	@Override
-	public void create2(CrawlerVO crawl)throws Exception{
+	public void create2(CrawlerVO crawl) throws Exception{
 		dao.create2(crawl);
 	}
 	
 	@Override
-	public List<CrawlerVO> listCrawl1(CrawlerVO cn)throws Exception{
+	public List<CrawlerVO> listCrawl1(CrawlerVO cn) throws Exception{
 		return dao.listCrawl1(cn);
 	}
 
 	@Override
-	public List<CrawlerVO> listCrawl2(CrawlerVO sns)throws Exception{
+	public List<CrawlerVO> listCrawl2(CrawlerVO sns) throws Exception{
 		return dao.listCrawl2(sns);
-	}
-
-	@Override
-	public List<CrawlerVO> listTest1(CrawlerVO crawl)throws Exception{
-		return dao.listTest1(crawl);
 	}
 	
 	@Override
-	public List<CrawlerVO> listTest2(CrawlerVO crawl)throws Exception{
-		return dao.listTest2(crawl);
-	}
-
-	@Override
-	public List<CrawlerVO> listSearchCriteria(SearchCriteria cri)throws Exception {
+	public List<CrawlerVO> listSearchCriteria(SearchCriteria cri) throws Exception {
 		return dao.listSearch(cri);
 	}
 

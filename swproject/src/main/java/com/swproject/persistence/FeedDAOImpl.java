@@ -19,22 +19,22 @@ public class FeedDAOImpl implements FeedDAO {
 	private static String namespace = "com.swproject.mapper.FeedMapper";
 
 	@Override
-	public void create(FeedVO vo)throws Exception {
+	public void create(FeedVO vo) throws Exception {
 		session.insert(namespace + ".create", vo);
 	}
 
 	@Override
-	public FeedVO read(Integer F_Number)throws Exception {
+	public FeedVO read(Integer F_Number) throws Exception {
 		return session.selectOne(namespace+".read",F_Number);
 	}
 	
 	@Override
-	public void update(FeedVO vo)throws Exception {
+	public void update(FeedVO vo) throws Exception {
 		session.update(namespace + ".update", vo);
 	}
 
 	@Override
-	public void delete(Integer F_Number)throws Exception {
+	public void delete(Integer F_Number) throws Exception {
 		session.delete(namespace + ".delete", F_Number);
 	}
 
@@ -57,23 +57,4 @@ public class FeedDAOImpl implements FeedDAO {
 		return session.selectOne(namespace + ".listSearchCount", cri);
 	}
 	
-	@Override
-	public List<FeedVO> listTest0(FeedVO feed) throws Exception{
-		return session.selectList(namespace + ".listTest0", feed);
-	}
-
-	/*@Override
-	public List<FeedVO> listAll()throws Exception {
-		return session.selectList(namespace + ".listAll");
-	}*/
-
-	/*@Override
-	public List<FeedVO> listCriteria(Criteria cri) throws Exception {
-		return session.selectList(namespace + ".listCriteria", cri);
-	}*/
-
-	/*@Override
-	public int countPaging(Criteria cri) throws Exception {
-		return session.selectOne(namespace + ".countPaging", cri);
-	}*/
 }

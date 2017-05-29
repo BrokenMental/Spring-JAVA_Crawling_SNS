@@ -9,37 +9,24 @@ public class CrawlerNews {
 	private Document doc;
 	private Elements el;
 	
-	
 	public String getURL() {
 		return URL;
 	}
-
-
 	public void setURL(String uRL) {
 		URL = uRL;
 	}
-
-
 	public Document getDoc() {
 		return doc;
 	}
-
-
 	public void setDoc(Document doc) {
 		this.doc = doc;
 	}
-
-
 	public Elements getEl() {
 		return el;
 	}
-
-
 	public void setEl(Elements el) {
 		this.el = el;
 	}
-
-
 	@Override
 	public String toString() {
 		return "CrawlerNews [URL=" + URL + ", doc=" + doc + ", el=" + el + ", getURL()=" + getURL() + ", getDoc()="

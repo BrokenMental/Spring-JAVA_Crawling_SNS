@@ -19,12 +19,12 @@ public class CrawlDAOImpl implements CrawlDAO {
 	private static String namespace = "com.swproject.mapper.CrawlMapper";
 	
 	@Override
-	public void create1(CrawlerVO vo)throws Exception {
+	public void create1(CrawlerVO vo) throws Exception {
 		session.insert(namespace + ".create1", vo);
 	}
 	
 	@Override
-	public void create2(CrawlerVO vo)throws Exception {
+	public void create2(CrawlerVO vo) throws Exception {
 		session.insert(namespace + ".create2", vo);
 	}
 
@@ -36,16 +36,6 @@ public class CrawlDAOImpl implements CrawlDAO {
 	@Override
 	public List<CrawlerVO> listCrawl2(CrawlerVO sns) throws Exception{
 		return session.selectList(namespace + ".listSNS", sns);
-	}
-
-	@Override
-	public List<CrawlerVO> listTest1(CrawlerVO crawl) throws Exception{
-		return session.selectList(namespace + ".listTest1", crawl);
-	}
-
-	@Override
-	public List<CrawlerVO> listTest2(CrawlerVO crawl) throws Exception{
-		return session.selectList(namespace + ".listTest2", crawl);
 	}
 
 	@Override

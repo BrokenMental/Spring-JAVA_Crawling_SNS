@@ -12,9 +12,6 @@ public interface CrawlDAO {
 	
 	public List<CrawlerVO> listCrawl1(CrawlerVO cn) throws Exception;
 	public List<CrawlerVO> listCrawl2(CrawlerVO sns) throws Exception;
-	public List<CrawlerVO> listTest1(CrawlerVO crawl) throws Exception;
-	public List<CrawlerVO> listTest2(CrawlerVO crawl) throws Exception;
-
 	public List<CrawlerVO> listSearch(SearchCriteria cri) throws Exception;
 	
 	public int listSearchCount(SearchCriteria cri) throws Exception;

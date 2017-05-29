@@ -10,12 +10,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		values(#{ID},
 		#{MyFeed}, #{F_Time}, #{F_Group})
 	</insert>
-	
-	<!-- <select id="read" resultType="com.swproject.domain.FeedVO">
-		select F_Number, MyFeed, ID, F_Time
-		from Feed where
-		F_Number = #{F_Number}
-	</select> -->
 
 	<update id="update">
 		update Feed set MyFeed = #{MyFeed}
@@ -26,18 +20,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="delete">
 		delete from Feed where F_Number = #{F_Number}
 	</delete>
-
-	<!-- <select id="listAll" resultType="com.swproject.domain.FeedVO"> <![CDATA[ 
-		select ID, F_Number, MyFeed, F_Time from Feed where F_Number > 0 order by 
-		F_Number desc, F_Time desc ]]> </select> -->
-
-	<!-- <select id="listPage" resultType="FeedVO">
-	<![CDATA[select ID, F_Number, MyFeed, F_Time from Feed where F_Number >0 order by F_Number desc, F_Time desc limit #{page}, 10]]>
-	</select> -->
-
-	<!-- <select id="listCriteria" resultType="FeedVO">
-	<![CDATA[select ID,  F_Number, MyFeed, F_Time from Feed where F_Number >0 order by F_Number desc, F_Time desc limit #{pageStart}, #{perPageNum}]]>
-	</select> -->
 
 	<select id="countPaging" resultType="int">
 	<![CDATA[select count(F_Number) from Feed where F_Number > 0 ]]>
@@ -69,13 +51,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="listSearchCount" resultType="int">
 	<![CDATA[select count(F_Number) from Feed where F_Number >0 ]]>
 		<include refid="search"></include>
-	</select>
-	
-	<select id="listTest0" resultType="FeedVO">
-		select F_Number, MyFeed, ID, F_Time
-		from Feed
-		where F_Group = 'Feed'
-		limit 10
 	</select>
 
 </mapper>

@@ -46,7 +46,6 @@ public class CrawlController {
 		Crawl.setC_Time(now);
 		
 		el = Craw.getEl();
-		//model.addAttribute("list1", el);
 
 		for (Element temp : el) { // 페이지에 뿌려주는것과 DB에 넣어주는것을 따로 해야한다.
 			Crawl.setC_Group("News");
@@ -83,8 +82,6 @@ public class CrawlController {
 		java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy.MM.dd. HH:mm:ss"); // yyyy.MM.dd. HH:mm:ss
 		String now = formatter.format(new java.util.Date());
 		Crawl.setC_Time(now);
-
-		//model.addAttribute("list2", cl);
 
 		for (Status temp1 : cl) {
 			Crawl.setC_Group("SNS");

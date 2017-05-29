@@ -17,17 +17,17 @@ public class TotalDAOImpl implements TotalDAO {
 	private SqlSession session;
 	
 	@Override
-	public List<TotalVO> listTest0(TotalVO total) throws Exception{
-		return session.selectList(namespace + ".listTest0", total);
+	public List<TotalVO> listHome0(TotalVO total) throws Exception{
+		return session.selectList(namespace + ".listHome0", total);
 	}
 	@Override
-	public List<TotalVO> listTest1(TotalVO total) throws Exception{
-		return session.selectList(namespace + ".listTest1", total);
+	public List<TotalVO> listHome1(TotalVO total) throws Exception{
+		return session.selectList(namespace + ".listHome1", total);
 	}
 
 	@Override
-	public List<TotalVO> listTest2(TotalVO total) throws Exception{
-		return session.selectList(namespace + ".listTest2", total);
+	public List<TotalVO> listHome2(TotalVO total) throws Exception{
+		return session.selectList(namespace + ".listHome2", total);
 	}
 
 }

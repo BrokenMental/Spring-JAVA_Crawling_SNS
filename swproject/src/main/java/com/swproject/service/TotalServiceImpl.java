@@ -17,17 +17,17 @@ public class TotalServiceImpl implements TotalService {
 	private TotalDAO dao;
 	
 	@Override
-	public List<TotalVO> listTest0(TotalVO total) throws Exception{
-		return dao.listTest0(total);
+	public List<TotalVO> listHome0(TotalVO total) throws Exception{
+		return dao.listHome0(total);
 	}
 	@Override
-	public List<TotalVO> listTest1(TotalVO total)throws Exception{
-		return dao.listTest1(total);
+	public List<TotalVO> listHome1(TotalVO total) throws Exception{
+		return dao.listHome1(total);
 	}
 	
 	@Override
-	public List<TotalVO> listTest2(TotalVO total)throws Exception{
-		return dao.listTest2(total);
+	public List<TotalVO> listHome2(TotalVO total) throws Exception{
+		return dao.listHome2(total);
 	}
 
 }

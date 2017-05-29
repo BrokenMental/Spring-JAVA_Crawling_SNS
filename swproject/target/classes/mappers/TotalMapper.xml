@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.swproject.mapper.TotalMapper">
+
+	<select id="listTest0" resultType="FeedVO">
+		select F_Number, MyFeed, ID, F_Time
+		from Feed
+		where F_Group = 'Feed'
+		limit 10
+	</select>
+
+	<select id="listTest1" resultType="CrawlerVO">
+		select C_Number, C_Group, N_Title, URL
+		from Crawler
+		where C_Group = 'News'
+		limit 10
+	</select>
+	
+	<select id="listTest2" resultType="CrawlerVO">
+		select C_Number, C_Group, S_Content, S_User
+		from Crawler
+		where C_Group = 'SNS'
+		limit 10
+	</select>
+	
+</mapper>

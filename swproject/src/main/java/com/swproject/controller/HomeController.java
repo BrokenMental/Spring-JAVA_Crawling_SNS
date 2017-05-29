@@ -26,6 +26,7 @@ import com.swproject.domain.SearchCriteria;
 import com.swproject.domain.ViewVO;
 import com.swproject.service.CrawlService;
 import com.swproject.service.FeedService;
+import com.swproject.service.TotalService;
 import com.swproject.service.ViewService;
 
 import twitter4j.Status;
@@ -44,11 +45,14 @@ public class HomeController {
 	/*@Inject
 	private ViewService service;*/
 
-	@Inject
-	private FeedService service1;
+	/*@Inject
+	private FeedService service1;*/
+	
+	/*@Inject
+	private CrawlService service2;*/
 	
 	@Inject
-	private CrawlService service2;
+	private TotalService service;
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -95,16 +99,16 @@ public class HomeController {
 		
 		int flag = 1;
 		ArrayList<List> Lmaster = new ArrayList<List>();
-		int LSize = service1.listTest0(Feed).size() + service2.listTest1(Crawl).size() + service2.listTest2(Crawl).size();
+		int LSize = service.listTest0(Feed).size() + service.listTest1(Crawl).size() + service.listTest2(Crawl).size();
 		for(int i = 1; i<=LSize; i++){
 			if(flag == 1){
-				Lmaster.add(service1.listTest0(Feed));
+				Lmaster.add(service.listTest0(Feed));
 				flag ++;
 			}else if(flag == 2){
-				Lmaster.add(service2.listTest1(Crawl));
+				Lmaster.add(service.listTest1(Crawl));
 				flag ++;
 			}else if(flag == 3){
-				Lmaster.add(service2.listTest2(Crawl));
+				Lmaster.add(service.listTest2(Crawl));
 				flag = 1;
 			}
 		}

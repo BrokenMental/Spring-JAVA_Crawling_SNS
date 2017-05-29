@@ -1,9 +1,6 @@
 package com.swproject.controller;
 
-import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 
 import javax.inject.Inject;
@@ -34,22 +31,10 @@ public class HomeController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
+	public String home(TotalVO Total, Locale locale, Model model) throws Exception {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
-		return "home";
-	}
 
-	@RequestMapping(value = "/Test/GridTest", method = RequestMethod.GET)
-	public void test(TotalVO Total, Model model) throws Exception {
-		
 		ArrayList<TotalVO> Lmaster = new ArrayList<TotalVO>();
 		for(int i = 0; i<10; i++){
 			Lmaster.add(service.listTest0(Total).get(i));
@@ -57,5 +42,7 @@ public class HomeController {
 			Lmaster.add(service.listTest2(Total).get(i));
 		}
 		model.addAttribute("test",Lmaster);
+		
+		return "home";
 	}
 }

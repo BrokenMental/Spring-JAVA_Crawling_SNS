@@ -22,7 +22,7 @@ public class CrawlerVO {
 	public void setS_User(String s_User) {
 		S_User = s_User;
 	}
-	public int getC_Number() {
+	public Integer getC_Number() {
 		return C_Number;
 	}
 	public void setC_Number(Integer c_Number) {

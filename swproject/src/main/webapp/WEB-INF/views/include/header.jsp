@@ -378,7 +378,6 @@
                 <li class="active"><a href="../../Feed/list"><i class="fa fa-circle-o"></i> Feed Page</a></li>
                 <li><a href="../../Crawl/CrawlList"><i class="fa fa-circle-o"></i> Crawler Page1</a></li>
                 <li><a href="../../Crawl/CrawlList2"><i class="fa fa-circle-o"></i> Crawler Page2</a></li>
-                <li><a href="../../Test/GridTest"><i class="fa fa-circle-o"></i> Test Page</a></li>
                <!--
                 <li><a href="editors.html"><i class="fa fa-circle-o"></i> Editors</a></li> 
                -->

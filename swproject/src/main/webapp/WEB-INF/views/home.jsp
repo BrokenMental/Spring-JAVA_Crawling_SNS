@@ -18,53 +18,53 @@
 		<div class="box">
 			<div class="box">
 				<div class="box-header with-border">
-					<h3 class="box-title">Test PAGE</h3>
+					<h3 class="box-title">Home PAGE</h3>
 				</div>
 				<div class="box-body">
 					<div class="gird">
 						<!--  left column -->
-						<c:forEach items="${test}" var="Test">
-						<c:if test="${Test.f_Group == 'Feed' || Test.f_Group eq 'Feed'}">
+						<c:forEach items="${list}" var="List">
+						<c:if test="${List.f_Group == 'Feed' || List.f_Group eq 'Feed'}">
 							<table class="grid-item">
 								<tr>
 									<th style="width: 10px">F_Number</th>
-									<td>${Test.f_Number}</td>
+									<td>${List.f_Number}</td>
 								</tr>
 								<tr>
 									<th>MyFeed</th>
-									<td>${Test.myFeed}</td>
+									<td>${List.myFeed}</td>
 								</tr>
 								<tr>
 									<th>ID</th>
-									<td>${Test.ID}</td>
+									<td>${List.ID}</td>
 								</tr>
 								<tr>
 									<th>Time</th>
-									<td>${Test.f_Time}</td>
+									<td>${List.f_Time}</td>
 								</tr>
 							</table>
 							</c:if>
-							<c:if test="${Test.c_Group == 'News' || Test.c_Group eq 'News'}">
+							<c:if test="${List.c_Group == 'News' || List.c_Group eq 'News'}">
 							<table class="grid-item" style="background:white">
 								<tr>
 									<th style="width: 10px">Title</th>
-									<td>${Test.n_Title}</td>
+									<td>${List.n_Title}</td>
 								</tr>
 								<tr>
 									<th>URL</th>
-									<td>${Test.URL}</td>
+									<td>${List.URL}</td>
 								</tr>
 							</table>
 							</c:if>
-							<c:if test="${Test.c_Group == 'SNS' || Test.c_Group eq 'SNS'}">
+							<c:if test="${List.c_Group == 'SNS' || List.c_Group eq 'SNS'}">
 							<table class="grid-item" style="background:skyblue">
 								<tr>
 									<th style="width: 10px">S_Content</th>
-									<td>${Test.s_Content}</td>
+									<td>${List.s_Content}</td>
 								</tr>
 								<tr>
 									<th>S_User</th>
-									<td>${Test.s_User}</td>
+									<td>${List.s_User}</td>
 								</tr>
 							</table>
 							</c:if>

@@ -41,7 +41,7 @@ public class HomeController {
 			Lmaster.add(service.listHome1(Total).get(i));
 			Lmaster.add(service.listHome2(Total).get(i));
 		}
-		model.addAttribute("test",Lmaster);
+		model.addAttribute("list",Lmaster);
 		
 		return "home";
 	}

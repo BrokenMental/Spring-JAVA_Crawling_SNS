@@ -353,22 +353,13 @@
                 <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
                 <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
               </ul>
-            </li>
-             <li class="treeview">
-              <a href="#">
-                <i class="fa fa-laptop"></i>
-                <span>UI Elements</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="../UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-                <li><a href="../UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-                <li><a href="../UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-                <li><a href="../UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-                <li><a href="../UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-                <li><a href="../UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
-              </ul>
             </li> -->
+             <li class="treeview">
+              <a href="../../">
+                <i class="fa fa-laptop"></i>
+                <span>TimeLine</span>
+              </a>
+            </li>
             <li class="treeview active">
               <a href="#">
                 <i class="fa fa-edit"></i> <span>Menu</span>
@@ -378,9 +369,6 @@
                 <li class="active"><a href="../../Feed/list"><i class="fa fa-circle-o"></i> Feed Page</a></li>
                 <li><a href="../../Crawl/CrawlList"><i class="fa fa-circle-o"></i> Crawler Page1</a></li>
                 <li><a href="../../Crawl/CrawlList2"><i class="fa fa-circle-o"></i> Crawler Page2</a></li>
-               <!--
-                <li><a href="editors.html"><i class="fa fa-circle-o"></i> Editors</a></li> 
-               -->
               </ul>
             </li>
 <!--             <li class="treeview">

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.slf4j.Logger;
@@ -40,6 +41,11 @@ public class CrawlController {
 		Craw.setURL("https://news.google.co.kr");
 		Craw.setDoc(Jsoup.connect(Craw.getURL()).get());
 		Craw.setEl(Craw.getDoc().select("div.esc-lead-article-title-wrapper a"));
+		
+		/*Document ImageL = Jsoup.connect("https://news.google.co.kr").get();
+		Elements ImageLink = ImageL.select("img.esc-thumbnail-image");
+		String ILink = ImageLink.attr("src").toString();
+		model.addAttribute("LTest",ILink);*/
 		
 		java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy.MM.dd. HH:mm:ss"); // yyyy.MM.dd. HH:mm:ss
 		String now = formatter.format(new java.util.Date());

@@ -59,6 +59,13 @@
 	</div>
 	<!-- /.col (left) -->
 </div>
+<%-- <c:forEach items="${LTest}"var ="LTest">
+<table>
+<tr>
+<td>${LTest}</td>
+</tr>
+</table>
+</c:forEach> --%>
 <!--  /.row -->
 <div style="bottom: 0px;">
 	<%@ include file="../include/footer.jsp"%>

@@ -29,47 +29,47 @@
 									<table>
 										<tr>
 											<th style="width: 10px">F_Number</th>
-											<td>${List.f_Number}</td>
+											<td class="td-style">${List.f_Number}</td>
 										</tr>
 										<tr>
 											<th>MyFeed</th>
-											<td>${List.myFeed}</td>
+											<td class="td-style">${List.myFeed}</td>
 										</tr>
 										<tr>
 											<th>ID</th>
-											<td>${List.ID}</td>
+											<td class="td-style">${List.ID}</td>
 										</tr>
 										<tr>
 											<th>Time</th>
-											<td>${List.f_Time}</td>
+											<td class="td-style">${List.f_Time}</td>
 										</tr>
 									</table>
 								</div>
 							</c:if>
 							<c:if test="${List.c_Group == 'News' || List.c_Group eq 'News'}">
 								<div class="grid-item" style="background: white">
-									<table>
+									<table class="table-style">
 										<tr>
 											<th style="width: 10px">Title</th>
-											<td>${List.n_Title}</td>
+											<td class="td-style"><a href="${List.URL}">${List.n_Title}</a></td>
 										</tr>
 										<tr>
 											<th>URL</th>
-											<td>${List.URL}</td>
+											<td class="td-style">${List.URL}</td>
 										</tr>
 									</table>
 								</div>
 							</c:if>
 							<c:if test="${List.c_Group == 'SNS' || List.c_Group eq 'SNS'}">
 								<div class="grid-item" style="background: skyblue">
-									<table>
+									<table class="table-style">
 										<tr>
 											<th style="width: 10px">S_Content</th>
-											<td>${List.s_Content}</td>
+											<td class="td-style">${List.s_Content}</td>
 										</tr>
 										<tr>
 											<th>S_User</th>
-											<td>${List.s_User}</td>
+											<td class="td-style">${List.s_User}</td>
 										</tr>
 									</table>
 								</div>

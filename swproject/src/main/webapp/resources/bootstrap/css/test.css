@@ -2,11 +2,14 @@
 
 body { font-family: sans-serif; }
 
+.td-style { word-break:break-all }
+
 /* ---- grid ---- */
 
 .grid {
   background: #EEE;
-  max-width: 1400px;
+  max-width: 95%;
+  margin: auto;
 }
 
 /* clearfix */

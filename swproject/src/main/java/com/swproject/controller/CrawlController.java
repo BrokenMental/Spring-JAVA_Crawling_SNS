@@ -53,7 +53,7 @@ public class CrawlController {
 		
 		el = Craw.getEl();
 
-		for (Element temp : el) { // �럹�씠吏��뿉 肉뚮젮二쇰뒗寃껉낵 DB�뿉 �꽔�뼱二쇰뒗寃껋쓣 �뵲濡� �빐�빞�븳�떎.
+		for (Element temp : el) { // 페이지에 뿌려주는것과 DB에 넣어주는것을 따로 해야한다.
 			Crawl.setC_Group("News");
 			Crawl.setN_Title(temp.text().toString());
 			Crawl.setURL(temp.attr("href").toString());

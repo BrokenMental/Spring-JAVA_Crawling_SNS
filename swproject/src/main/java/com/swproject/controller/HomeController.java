@@ -36,7 +36,7 @@ public class HomeController {
 		
 
 		ArrayList<TotalVO> Lmaster = new ArrayList<TotalVO>();
-		for(int i = 0; i<10; i++){
+		for(int i = 0; i<20; i++){
 			Lmaster.add(service.listHome0(Total).get(i));
 			Lmaster.add(service.listHome1(Total).get(i));
 			Lmaster.add(service.listHome2(Total).get(i));

@@ -3,23 +3,28 @@
 }
 
 .table-style {
-	/* overflow: hidden; 
+	display: block;
+	overflow: hidden; 
 	text-overflow: ellipsis;
-	white-space: nowrap; */
-}
-
-* { box-sizing: border-box; }
-
-body { 
-	font-family: sans-serif;
+	/* 텍스트가 줄을 벗어났을경우 사용하는데 규칙이 필요함 
+	1. width가 고정적이어야 한다.
+	2. overflow: hidden을 사용하여 영역을 감춰야 한다.
+	3. 아래줄로 내려가는 것을 막기위해 white-space:nowrap이 필요하다.*/
+	white-space: nowrap;
 }
 
 /* ---- grid ---- */
 
+* { box-sizing: border-box; }
+
+body { font-family: sans-serif; }
+
+/* ---- grid ---- */
+
 .grid {
-	background: #EEE;
-	max-width: 95%;
-	margin: auto;
+  background: #EEE;
+  max-width: 98%;
+  margin: auto;
 }
 
 /* clearfix */
@@ -32,22 +37,15 @@ body {
 /* ---- grid-item ---- */
 
 .grid-item {
-	width: 150px;
-	height: 40%;
-	float: left;
-	background: #D26;
-	border: 2px solid #333;
-	border-color: hsla(0, 0%, 0%, 0.5);
-	border-radius: 5px;/* 
-	overflow: hidden; 
-	text-overflow: ellipsis;
-	white-space: nowrap; */
+  width: 250px;
+  height: 120px;
+  float: left;
+  background: #D26;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 5px;
 }
 
-.grid-item--width2 { width: 320px; }
-.grid-item--width3 { width: 480px; }
-.grid-item--width4 { width: 640px; }
-
 .grid-item--height2 { height: 160px; }
-.grid-item--height3 { height: 200px; }
+.grid-item--height3 { height: 100px; }
 .grid-item--height4 { height: 150px; }

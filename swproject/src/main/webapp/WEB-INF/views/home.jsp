@@ -7,13 +7,7 @@
 <head>
 <!-- CSS TEST -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script type="text/javascript" src="/resources/bootstrap/js/masonry.pkgd.min.js"></script>
-<script>
-	$('.grid').masonry({
-	  itemSelector: '.grid-item',
-	  columnWidth: 160
-	});
-</script>
+<script type="text/javascript" src="/resources/bootstrap/js/masonry.pkgd.min.js"></script> 
 <link href="/resources/bootstrap/css/test.css" rel="stylesheet" type="text/css" />
 </head>
 <%@ include file="include/header.jsp"%>
@@ -28,7 +22,7 @@
 					<h3 class="box-title">Home PAGE</h3>
 				</div>
 				<div class="box-body">
-					<div class="grid">
+					<div class="grid" data-masonry='{ "itemSelector": ".grid-item"}'>
 						<!--  left column -->
 						<c:forEach items="${list}" var="List">
 							<c:if test="${List.f_Group == 'Feed' || List.f_Group eq 'Feed'}">
@@ -54,7 +48,7 @@
 								</div>
 							</c:if>
 							<c:if test="${List.c_Group == 'News' || List.c_Group eq 'News'}">
-								<div class="grid-item " style="background: white">
+								<div class="grid-item grid-item--height2" style="background: white">
 									<table class="table-style">
 										<tr>
 											<th style="width: 10px">Title</th>
@@ -68,7 +62,7 @@
 								</div>
 							</c:if>
 							<c:if test="${List.c_Group == 'SNS' || List.c_Group eq 'SNS'}">
-								<div class="grid-item" style="background: skyblue">
+								<div class="grid-item grid-item--height3" style="background: skyblue">
 									<table class="table-style">
 										<tr>
 											<th style="width: 10px">S_Content</th>

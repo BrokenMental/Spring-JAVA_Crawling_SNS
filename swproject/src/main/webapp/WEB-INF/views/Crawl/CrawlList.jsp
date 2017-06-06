@@ -19,40 +19,19 @@
 					<table class="table table-bordered">
 						<tr>
 							<th>Title</th>
+							<th>IMG</th>
 							<th>URL</th>
 						</tr>
 						<c:forEach items="${list1}" var="Crawl">
 							<tr>
-								<td style="width: 50%">${Crawl.getN_Title()}</td>
-								<td>${Crawl.getURL()}</td>
+								<td style="width: 50%">${Crawl.n_Title}</td>
+								<td><img src="${Crawl.n_IMG}"></td>
+								<td>${Crawl.URL}</td>
 								<%-- <td style="width: 50%">${Crawl.text()}</td>
 								<td>${Crawl.attr("href")}</td> --%>
 							</tr>
 						</c:forEach>
 					</table>
-				</div>
-				<div class="box-footer">
-					<div class="text-center">
-						<ul class="pagination">
-							<c:if test="${pageMaker.prev}">
-								<li><a
-									href="list${pageMaker.makeSearch(pageMaker.startPage -1)}">&laquo;</a></li>
-							</c:if>
-
-							<c:forEach begin="${pageMaker.startPage}"
-								end="${pageMaker.endPage}" var="idx">
-								<li
-									<c:out value="${pageMaker.cri.page == idx?'class =active':''}"/>>
-									<a href="list${pageMaker.makeSearch(idx)}">${idx}</a>
-								</li>
-							</c:forEach>
-
-							<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-								<li><a
-									href="list${pageMaker.makeSearch(pageMaker.endPage +1)}">&raquo;</a></li>
-							</c:if>
-						</ul>
-					</div>
 				</div>
 			</div>
 		</div>

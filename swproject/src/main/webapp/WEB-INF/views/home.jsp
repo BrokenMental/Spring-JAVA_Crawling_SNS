@@ -8,7 +8,7 @@
 <!-- CSS TEST -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script type="text/javascript" src="/resources/bootstrap/js/masonry.pkgd.min.js"></script> 
-<link href="/resources/bootstrap/css/test.css" rel="stylesheet" type="text/css" />
+<link href="/resources/bootstrap/css/masonry_grid.css" rel="stylesheet" type="text/css" />
 </head>
 <%@ include file="include/header.jsp"%>
 <!-- Main content -->
@@ -27,25 +27,40 @@
 						<c:forEach items="${list}" var="List">
 							<c:if test="${List.f_Group == 'Feed' || List.f_Group eq 'Feed'}">
 								<div class="grid-item grid-color1">
-									<div>${List.f_Number}</div>
+									<div class="div-first">Feed | ${List.ID}</div>
+									<hr>
+									<div>${List.f_Number} | ${List.f_Time}</div>
+									<hr>
 									<div>${List.myFeed}</div>
-									<div>${List.ID}</div>
-									<div>${List.f_Time}</div>
 								</div>
 							</c:if>
 							<c:if test="${List.c_Group == 'News' || List.c_Group eq 'News'}">
 								<div class="grid-item grid-item--height2 grid-color2">
-									<a href="${List.URL}">${List.n_Title}</a>
+									<div class="div-first">NEWS | ${List.n_Source}</div>
+									<hr>
+									<div>
+										<p style="text-align:center;">
+											<a href="${List.URL}">
+												<img src="${List.n_IMG}">
+											</a>
+										</p>
+									</div>
+									<hr>
+									<div>
+										<a href="${List.URL}"><font color="black">${List.n_Title}</font></a>
+									</div>
 								</div>
 							</c:if>
 							<c:if test="${List.c_Group == 'SNS' || List.c_Group eq 'SNS'}">
-								<div class="grid-item grid-item--height3 grid-color3" style="background: skyblue">
-									<div style="height:70%;">
+								<div class="grid-item grid-item--height3 grid-color3">
+									<div class="div-first">SNS | ${List.s_User}</div>
+									<hr>
+									<div style="height:40%;">
 										${List.s_Content}
 									</div>
+									<hr>
 									<div>
-										<hr>
-										${List.s_User}
+										<a href="${List.s_Addr}"><font color="black">${List.s_Addr}</font></a>
 									</div>
 								</div>
 							</c:if>

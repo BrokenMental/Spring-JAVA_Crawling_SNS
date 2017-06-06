@@ -1,5 +1,10 @@
 .td-style {
+	rowspan: 3;
 	word-break:break-all;
+}
+
+.div-first {
+	height:2%
 }
 
 .table-style {
@@ -22,7 +27,6 @@ body { font-family: sans-serif; }
 /* ---- grid ---- */
 
 .grid {
-  background: #EEE;
   max-width: 98%;
   margin: auto;
 }
@@ -37,8 +41,8 @@ body { font-family: sans-serif; }
 /* ---- grid-item ---- */
 
 .grid-item {
-  width: 250px;
-  height: 120px;
+  width: 200px;
+  height: 180px;
   float: left;
   background: #D26;
   border: 2px solid #333;
@@ -46,6 +50,9 @@ body { font-family: sans-serif; }
   border-radius: 5px;
 }
 
-.grid-item--height2 { height: 160px; }
-.grid-item--height3 { height: 100px; }
-.grid-item--height4 { height: 150px; }
+.grid-item--height2 { height: 250px; }
+.grid-item--height3 { height: 240px; }
+
+.grid-color1 { background: #F4a460; }
+.grid-color2 { background: #87cefa; }
+.grid-color3 { background: #90ee90; }

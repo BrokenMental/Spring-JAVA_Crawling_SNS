@@ -13,14 +13,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<select id="listHome1" resultType="TotalVO">
-		select C_Number, C_Group, N_Title, URL
+		select C_Number, C_Group, N_Title, N_IMG, N_Source, URL
 		from Crawler
 		where C_Group = 'News'
 		order by C_Number desc limit 20
 	</select>
 	
 	<select id="listHome2" resultType="TotalVO">
-		select C_Number, C_Group, S_Content, S_User
+		select C_Number, C_Group, S_Content, S_Addr, S_User
 		from Crawler
 		where C_Group = 'SNS'
 		order by C_Number desc limit 20

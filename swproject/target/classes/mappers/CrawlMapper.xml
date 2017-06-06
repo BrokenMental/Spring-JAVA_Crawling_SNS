@@ -5,26 +5,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.swproject.mapper.CrawlMapper">
 	<insert id="create1">
-		insert into crawler (N_Title, URL, C_Group, C_Time)
-		select #{N_Title}, #{URL}, #{C_Group}, #{C_Time} from dual
+		insert into crawler (N_Title, N_IMG, N_Source, URL, C_Group, C_Time)
+		select #{N_Title}, #{N_IMG}, #{N_Source}, #{URL}, #{C_Group}, #{C_Time} from dual
 		where not exists (select * from crawler where N_Title=#{N_Title})
 	</insert>
 	
 	<insert id="create2">
-		insert into crawler (S_User, S_Content, C_Group, C_Time)
-		select #{S_User}, #{S_Content}, #{C_Group}, #{C_Time} from dual
+		insert into crawler (S_User, S_Content, S_Addr, C_Group, C_Time)
+		select #{S_User}, #{S_Content}, #{S_Addr}, #{C_Group}, #{C_Time} from dual
 		where not exists (select * from crawler where S_Content=#{S_Content})
 	</insert>
 	
 	<select id="listNews" resultType="CrawlerVO">
-		select C_Number, C_Group, N_Title, URL
+		select C_Number, C_Group, N_Title, N_IMG, N_Source, URL
 		from Crawler
 		where C_Group = #{C_Group}
 		order by C_Time desc
 	</select>
 	
 	<select id="listSNS" resultType="CrawlerVO">
-		select C_Number, C_Group, S_Content, S_User
+		select C_Number, C_Group, S_Content, S_Addr, S_User
 		from Crawler
 		where C_Group = #{C_Group}
 		order by C_Time desc

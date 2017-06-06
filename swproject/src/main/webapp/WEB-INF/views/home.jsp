@@ -26,53 +26,27 @@
 						<!--  left column -->
 						<c:forEach items="${list}" var="List">
 							<c:if test="${List.f_Group == 'Feed' || List.f_Group eq 'Feed'}">
-								<div class="grid-item">
-									<table class="table-style">
-										<tr>
-											<th style="width: 10px">F_Number</th>
-											<td class="td-style">${List.f_Number}</td>
-										</tr>
-										<tr>
-											<th>MyFeed</th>
-											<td class="td-style">${List.myFeed}</td>
-										</tr>
-										<tr>
-											<th>ID</th>
-											<td class="td-style">${List.ID}</td>
-										</tr>
-										<tr>
-											<th>Time</th>
-											<td class="td-style">${List.f_Time}</td>
-										</tr>
-									</table>
+								<div class="grid-item grid-color1">
+									<div>${List.f_Number}</div>
+									<div>${List.myFeed}</div>
+									<div>${List.ID}</div>
+									<div>${List.f_Time}</div>
 								</div>
 							</c:if>
 							<c:if test="${List.c_Group == 'News' || List.c_Group eq 'News'}">
-								<div class="grid-item grid-item--height2" style="background: white">
-									<table class="table-style">
-										<tr>
-											<th style="width: 10px">Title</th>
-											<td class="td-style"><a href="${List.URL}">${List.n_Title}</a></td>
-										</tr>
-										<tr>
-											<th>URL</th>
-											<td class="td-style">${List.URL}</td>
-										</tr>
-									</table>
+								<div class="grid-item grid-item--height2 grid-color2">
+									<a href="${List.URL}">${List.n_Title}</a>
 								</div>
 							</c:if>
 							<c:if test="${List.c_Group == 'SNS' || List.c_Group eq 'SNS'}">
-								<div class="grid-item grid-item--height3" style="background: skyblue">
-									<table class="table-style">
-										<tr>
-											<th style="width: 10px">S_Content</th>
-											<td class="td-style">${List.s_Content}</td>
-										</tr>
-										<tr>
-											<th>S_User</th>
-											<td class="td-style">${List.s_User}</td>
-										</tr>
-									</table>
+								<div class="grid-item grid-item--height3 grid-color3" style="background: skyblue">
+									<div style="height:70%;">
+										${List.s_Content}
+									</div>
+									<div>
+										<hr>
+										${List.s_User}
+									</div>
 								</div>
 							</c:if>
 						</c:forEach>

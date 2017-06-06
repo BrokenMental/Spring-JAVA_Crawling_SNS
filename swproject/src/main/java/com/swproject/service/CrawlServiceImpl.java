@@ -1,5 +1,6 @@
 package com.swproject.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -35,6 +36,20 @@ public class CrawlServiceImpl implements CrawlService {
 		
 	}
 	
+	public void split(CrawlerVO sns, Status temp1){
+		String crawl = temp1.getText().toString();
+		String content, addr;
+		int i = 0;
+		if(crawl.indexOf("http") != -1){
+			i = crawl.indexOf("http");
+			content = crawl.substring(0,i);
+			addr = crawl.substring(i+1);
+			
+			sns.setS_Content(content);
+			sns.setS_Addr('h'+addr);
+		}
+	}
+	
 	@Override
 	public void create1(CrawlerVO crawl) throws Exception{
 		dao.create1(crawl);
@@ -50,15 +65,20 @@ public class CrawlServiceImpl implements CrawlService {
 		CrawlerNews Craw = new CrawlerNews();
 		Craw.setURL("https://news.google.co.kr");
 		Craw.setDoc(Jsoup.connect(Craw.getURL()).get());
-		Craw.setEl(Craw.getDoc().select("div.esc-lead-article-title-wrapper a"));
-		
-		cn.setC_Time(time());
+		Craw.setEl(Craw.getDoc().select("div.esc-default-layout-wrapper"));
 
 		for (Element temp : Craw.getEl()) { // 페이지에 뿌려주는것과 DB에 넣어주는것을 따로 해야한다.
 			cn.setC_Group("News");
-			cn.setN_Title(temp.text().toString());
-			cn.setURL(temp.attr("href").toString());
-
+			if(temp.select("div.esc-thumbnail-image-wrapper img").attr("src").equals("")){
+				cn.setN_IMG(temp.select("div.esc-thumbnail-image-wrapper img").attr("imgsrc").toString());
+			}else{
+				cn.setN_IMG(temp.select("div.esc-thumbnail-image-wrapper img").attr("src").toString());
+			}
+			cn.setN_Source(temp.select("span.al-attribution-source").text());
+			cn.setN_Title(temp.select("div.esc-lead-article-title-wrapper a").text().toString());
+			cn.setURL(temp.select("div.esc-lead-article-title-wrapper a").attr("href").toString());
+			cn.setC_Time(time());
+			
 			service.create1(cn);
 		}
 
@@ -75,12 +95,11 @@ public class CrawlServiceImpl implements CrawlService {
 		CS.setList(gt.getHomeTimeline());
 		List<Status> cl = CS.getList();
 
-		sns.setC_Time(time());
-
 		for (Status temp1 : cl) {
 			sns.setC_Group("SNS");
 			sns.setS_User(temp1.getUser().getScreenName().toString());
-			sns.setS_Content(temp1.getText().toString());
+			split(sns, temp1);
+			sns.setC_Time(time());
 
 			service.create2(sns);
 		}

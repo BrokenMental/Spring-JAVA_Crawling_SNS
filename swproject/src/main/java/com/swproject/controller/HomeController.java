@@ -12,7 +12,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.swproject.domain.CrawlerVO;
 import com.swproject.domain.TotalVO;
+import com.swproject.service.CrawlService;
 import com.swproject.service.TotalService;
 
 
@@ -25,23 +27,28 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	@Inject
-	private TotalService service;
+	private TotalService service1;
+
+	@Inject
+	private CrawlService service2;
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(TotalVO Total, Locale locale, Model model) throws Exception {
+	public String home(TotalVO Total, Locale locale, CrawlerVO Crawl, Model model) throws Exception {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 
 		ArrayList<TotalVO> Lmaster = new ArrayList<TotalVO>();
 		for(int i = 0; i<20; i++){
-			Lmaster.add(service.listHome0(Total).get(i));
-			Lmaster.add(service.listHome1(Total).get(i));
-			Lmaster.add(service.listHome2(Total).get(i));
+			Lmaster.add(service1.listHome0(Total).get(i));
+			Lmaster.add(service1.listHome1(Total).get(i));
+			Lmaster.add(service1.listHome2(Total).get(i));
 		}
 		model.addAttribute("list",Lmaster);
+		model.addAttribute("list1",service2.listCrawl1(Crawl));
+		model.addAttribute("list2",service2.listCrawl2(Crawl));
 		
 		return "home";
 	}

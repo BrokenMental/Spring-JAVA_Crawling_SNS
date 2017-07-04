@@ -63,20 +63,18 @@ public class CrawlServiceImpl implements CrawlService {
 	@Override
 	public List<CrawlerVO> listCrawl1(CrawlerVO cn) throws Exception{
 		CrawlerNews Craw = new CrawlerNews();
-		Craw.setURL("https://news.google.co.kr");
+		Craw.setURL("https://news.google.co.kr/news/?ned=kr"); // µÚ¿¡ ºÎ°¡ÀûÀÎ krÀ» ºÙÀÌÁö ¾ÊÀ¸¸é ¿µ¹®ÆäÀÌÁö¸¦ ²ø°í¿Â´Ù.
 		Craw.setDoc(Jsoup.connect(Craw.getURL()).get());
-		Craw.setEl(Craw.getDoc().select("div.esc-default-layout-wrapper"));
+		Craw.setEl(Craw.getDoc().select("c-wiz.PaqQNc"));
 
-		for (Element temp : Craw.getEl()) { // í˜ì´ì§€ì— ë¿Œë ¤ì£¼ëŠ”ê²ƒê³¼ DBì— ë„£ì–´ì£¼ëŠ”ê²ƒì„ ë”°ë¡œ í•´ì•¼í•œë‹¤.
+		for (Element temp : Craw.getEl()) {
 			cn.setC_Group("News");
-			if(temp.select("div.esc-thumbnail-image-wrapper img").attr("src").equals("")){
-				cn.setN_IMG(temp.select("div.esc-thumbnail-image-wrapper img").attr("imgsrc").toString());
-			}else{
-				cn.setN_IMG(temp.select("div.esc-thumbnail-image-wrapper img").attr("src").toString());
-			}
-			cn.setN_Source(temp.select("span.al-attribution-source").text());
-			cn.setN_Title(temp.select("div.esc-lead-article-title-wrapper a").text().toString());
-			cn.setURL(temp.select("div.esc-lead-article-title-wrapper a").attr("href").toString());
+			cn.setN_IMG(temp.select("div.X20oP img").attr("src").toString());
+			cn.setN_Source(temp.select("span.IH8C7b").text());
+			System.out.println(temp.select("span.IH8C7b").text());
+			cn.setN_Title(temp.select("a.nuEeue").text().toString());
+			System.out.println(temp.select("a.nuEeue").text().toString());
+			cn.setURL(temp.select("a.nuEeue").attr("href").toString());
 			cn.setC_Time(time());
 			
 			service.create1(cn);

@@ -11,10 +11,10 @@
 	display: block;
 	overflow: hidden; 
 	text-overflow: ellipsis;
-	/* 텍스트가 줄을 벗어났을경우 사용하는데 규칙이 필요함 
-	1. width가 고정적이어야 한다.
-	2. overflow: hidden을 사용하여 영역을 감춰야 한다.
-	3. 아래줄로 내려가는 것을 막기위해 white-space:nowrap이 필요하다.*/
+	/* �뀓�뒪�듃媛� 以꾩쓣 踰쀬뼱�궗�쓣寃쎌슦 �궗�슜�븯�뒗�뜲 洹쒖튃�씠 �븘�슂�븿 
+	1. width媛� 怨좎젙�쟻�씠�뼱�빞 �븳�떎.
+	2. overflow: hidden�쓣 �궗�슜�븯�뿬 �쁺�뿭�쓣 媛먯떠�빞 �븳�떎.
+	3. �븘�옒以꾨줈 �궡�젮媛��뒗 寃껋쓣 留됯린�쐞�빐 white-space:nowrap�씠 �븘�슂�븯�떎.*/
 	white-space: nowrap;
 }
 
@@ -50,7 +50,7 @@ body { font-family: sans-serif; }
   border-radius: 5px;
 }
 
-.grid-item--height2 { height: 250px; }
+.grid-item--height2 { height: 320px; }
 .grid-item--height3 { height: 240px; }
 
 .grid-color1 { background: #F4a460; }

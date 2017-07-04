@@ -70,10 +70,8 @@ public class CrawlServiceImpl implements CrawlService {
 		for (Element temp : Craw.getEl()) {
 			cn.setC_Group("News");
 			cn.setN_IMG(temp.select("div.X20oP img").attr("src").toString());
-			cn.setN_Source(temp.select("span.IH8C7b").text());
-			System.out.println(temp.select("span.IH8C7b").text());
+			cn.setN_Source(temp.select("span.IH8C7b Pc0Wt").text());
 			cn.setN_Title(temp.select("a.nuEeue").text().toString());
-			System.out.println(temp.select("a.nuEeue").text().toString());
 			cn.setURL(temp.select("a.nuEeue").attr("href").toString());
 			cn.setC_Time(time());
 			

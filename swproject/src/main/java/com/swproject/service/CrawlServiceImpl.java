@@ -1,6 +1,6 @@
 package com.swproject.service;
 
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -32,7 +32,7 @@ public class CrawlServiceImpl implements CrawlService {
 
 		java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy.MM.dd. HH:mm:ss"); // yyyy.MM.dd.
 																										// HH:mm:ss
-		String now = formatter.format(new java.util.Date());
+		String now = formatter.format(new Date());
 		return now;
 
 	}
@@ -49,6 +49,14 @@ public class CrawlServiceImpl implements CrawlService {
 			sns.setS_Content(content);
 			sns.setS_Addr('h' + addr);
 		}
+	}
+	
+	public boolean spaceCheck(String spaceCheck){
+		for(int i=0; i<spaceCheck.length(); i++){
+			if(spaceCheck.charAt(i) == ' ')
+				return true;
+		}
+		return false;
 	}
 
 	@Override
@@ -74,15 +82,21 @@ public class CrawlServiceImpl implements CrawlService {
 			cn.setC_Group("News");
 			cn.setN_IMG(temp.select("div.X20oP img").attr("src").toString());
 			
-			// 추가 뉴스제공사가 추가되니 뒤에껀 잘라주자
+			// 뉴스제공사가 여러개 붙어오는경우가 있다 추가 뉴스제공사를 잘라 set해주자.
 			String sp = temp.select("span.IH8C7b").text();
-			// 띄어쓰기가 없을경우 자르지말아야 한다.
-			int index = sp.indexOf(' ') + 1;
-			String Source = sp.substring(index, sp.length() - index);
-			cn.setN_Source(Source);
+			
+			if(spaceCheck(sp) == true){
+				int index = sp.indexOf(' ') + 1;
+				//System.out.println("sp.length() = "+sp.length());
+				//System.out.println("index = "+index);
+				String Source = sp.substring(0, index);
+				//System.out.println("Source = "+Source);
+				cn.setN_Source(Source);
+			}
+			//cn.setN_Source(sp);
 			
 			//cn.setN_Source(temp.select("span.IH8C7b").text());
-			System.out.println(cn.getN_Source());
+			//System.out.println(cn.getN_Source());
 			
 			cn.setN_Title(temp.select("a.nuEeue").text().toString());
 			cn.setURL(temp.select("a.nuEeue").attr("href").toString());

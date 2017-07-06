@@ -1,6 +1,7 @@
 package com.swproject.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import javax.inject.Inject;
@@ -40,7 +41,7 @@ public class HomeController {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 
-		ArrayList<TotalVO> Lmaster = new ArrayList<TotalVO>();
+		List<TotalVO> Lmaster = new ArrayList<TotalVO>();
 		for(int i = 0; i<20; i++){
 			Lmaster.add(service1.listHome0(Total).get(i));
 			Lmaster.add(service1.listHome1(Total).get(i));

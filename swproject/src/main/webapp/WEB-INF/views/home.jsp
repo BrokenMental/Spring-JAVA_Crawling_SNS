@@ -38,8 +38,8 @@
 								<div class="grid-item grid-item--height2 grid-color2">
 									<div class="div-first">NEWS | ${List.n_Source}</div>
 									<hr>
-									<div>
-										<p style="text-align:center;">
+									<div style="text-align:center;">
+										<p>
 											<a href="${List.URL}">
 												<img src="${List.n_IMG}">
 											</a>
@@ -55,7 +55,7 @@
 								<div class="grid-item grid-item--height3 grid-color3">
 									<div class="div-first">SNS | ${List.s_User}</div>
 									<hr>
-									<div style="height:40%;">
+									<div style="display:inline-block;">
 										${List.s_Content}
 									</div>
 									<hr>

@@ -1,5 +1,6 @@
 package com.swproject.service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -15,6 +16,7 @@ import com.swproject.domain.CrawlerVO;
 import com.swproject.domain.SearchCriteria;
 import com.swproject.persistence.CrawlDAO;
 
+import twitter4j.MediaEntity;
 import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterFactory;
@@ -72,9 +74,7 @@ public class CrawlServiceImpl implements CrawlService {
 	@Override
 	public List<CrawlerVO> listCrawl1(CrawlerVO cn) throws Exception {
 		CrawlerNews Craw = new CrawlerNews();
-		Craw.setURL("https://news.google.co.kr/news/?ned=kr"); // µÚ¿¡ ºÎ°¡ÀûÀÎ krÀ»
-																// ºÙÀÌÁö ¾ÊÀ¸¸é
-																// ¿µ¹®ÆäÀÌÁö¸¦ ²ø°í¿Â´Ù.
+		Craw.setURL("https://news.google.co.kr/news/?ned=kr"); // ë’¤ì— ë¶€ê°€ì ì¸ krì„ ë¶™ì´ì§€ ì•Šìœ¼ë©´ ì˜ë¬¸í˜ì´ì§€ë¥¼ ëŒê³ ì˜¨ë‹¤.
 		Craw.setDoc(Jsoup.connect(Craw.getURL()).get());
 		Craw.setEl(Craw.getDoc().select("c-wiz.PaqQNc"));
 
@@ -82,7 +82,7 @@ public class CrawlServiceImpl implements CrawlService {
 			cn.setC_Group("News");
 			cn.setN_IMG(temp.select("div.X20oP img").attr("src").toString());
 			
-			// ´º½ºÁ¦°ø»ç°¡ ¿©·¯°³ ºÙ¾î¿À´Â°æ¿ì°¡ ÀÖ´Ù Ãß°¡ ´º½ºÁ¦°ø»ç¸¦ Àß¶ó setÇØÁÖÀÚ.
+			// ë‰´ìŠ¤ì œê³µì‚¬ê°€ ì—¬ëŸ¬ê°œ ë¶™ì–´ì˜¤ëŠ”ê²½ìš°ê°€ ìˆë‹¤ ì¶”ê°€ ë‰´ìŠ¤ì œê³µì‚¬ë¥¼ ì˜ë¼ setí•´ì£¼ì.
 			String sp = temp.select("span.IH8C7b").text();
 			
 			if(spaceCheck(sp) == true){
@@ -116,13 +116,27 @@ public class CrawlServiceImpl implements CrawlService {
 		CS.setUser(gt.verifyCredentials());
 		CS.setList(gt.getHomeTimeline());
 		List<Status> cl = CS.getList();
-
+		List<String> media = new ArrayList<String>();
+		
+		for (Status te : cl){ // img Url ê°€ì ¸ì˜¤ê¸°(ë§í¬ ì´ë¯¸ì§€ë‚˜ ë™ì˜ìƒì€ ì•ˆê°€ì ¸ì˜¤ëŠ”ë“¯...)
+			for(MediaEntity me : te.getMediaEntities()){
+				media.add(me.getMediaURL());
+			}
+		}
+		
 		for (Status temp1 : cl) {
 			sns.setC_Group("SNS");
 			sns.setS_User(temp1.getUser().getScreenName().toString());
+			/*if(!temp1.getMediaEntities().equals(null)){ // ì–´ì§¸ì„œì¸ì§€ ë™ì¼í•œ ì´ë¯¸ì§€ë¥¼ ì—¬ëŸ¬ë²ˆ ê°€ì ¸ì˜¨ë‹¤.
+				for(MediaEntity me : temp1.getMediaEntities()){
+					sns.setS_Addr(me.getMediaURL());
+				}
+			}else{
+				split(sns, temp1);
+			}*/
 			split(sns, temp1);
 			sns.setC_Time(time());
-
+			
 			service.create2(sns);
 		}
 		return dao.listCrawl2(sns);

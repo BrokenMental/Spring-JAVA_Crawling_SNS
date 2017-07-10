@@ -47,9 +47,14 @@ public class CrawlServiceImpl implements CrawlService {
 			i = crawl.indexOf("http");
 			content = crawl.substring(0, i);
 			addr = crawl.substring(i + 1);
-
+			if(spaceCheck(addr) == true){
+				int index = addr.indexOf(' ') + 1;
+				String link = addr.substring(0, index);
+				sns.setS_Addr('h' + link);
+			}else{
+				sns.setS_Addr('h' + addr);
+			}
 			sns.setS_Content(content);
-			sns.setS_Addr('h' + addr);
 		}
 	}
 	
@@ -74,7 +79,7 @@ public class CrawlServiceImpl implements CrawlService {
 	@Override
 	public List<CrawlerVO> listCrawl1(CrawlerVO cn) throws Exception {
 		CrawlerNews Craw = new CrawlerNews();
-		Craw.setURL("https://news.google.co.kr/news/?ned=kr"); // ë’¤ì— ë¶€ê°€ì ì¸ krì„ ë¶™ì´ì§€ ì•Šìœ¼ë©´ ì˜ë¬¸í˜ì´ì§€ë¥¼ ëŒê³ ì˜¨ë‹¤.
+		Craw.setURL("https://news.google.co.kr/news/?ned=kr"); // µÚ¿¡ ºÎ°¡ÀûÀÎ krÀ» ºÙÀÌÁö ¾ÊÀ¸¸é ¿µ¹®ÆäÀÌÁö¸¦ ²ø°í¿Â´Ù.
 		Craw.setDoc(Jsoup.connect(Craw.getURL()).get());
 		Craw.setEl(Craw.getDoc().select("c-wiz.PaqQNc"));
 
@@ -82,7 +87,7 @@ public class CrawlServiceImpl implements CrawlService {
 			cn.setC_Group("News");
 			cn.setN_IMG(temp.select("div.X20oP img").attr("src").toString());
 			
-			// ë‰´ìŠ¤ì œê³µì‚¬ê°€ ì—¬ëŸ¬ê°œ ë¶™ì–´ì˜¤ëŠ”ê²½ìš°ê°€ ìˆë‹¤ ì¶”ê°€ ë‰´ìŠ¤ì œê³µì‚¬ë¥¼ ì˜ë¼ setí•´ì£¼ì.
+			// ´º½ºÁ¦°ø»ç°¡ ¿©·¯°³ ºÙ¾î¿À´Â°æ¿ì°¡ ÀÖ´Ù Ãß°¡ ´º½ºÁ¦°ø»ç¸¦ Àß¶ó setÇØÁÖÀÚ.
 			String sp = temp.select("span.IH8C7b").text();
 			
 			if(spaceCheck(sp) == true){
@@ -118,7 +123,7 @@ public class CrawlServiceImpl implements CrawlService {
 		List<Status> cl = CS.getList();
 		List<String> media = new ArrayList<String>();
 		
-		for (Status te : cl){ // img Url ê°€ì ¸ì˜¤ê¸°(ë§í¬ ì´ë¯¸ì§€ë‚˜ ë™ì˜ìƒì€ ì•ˆê°€ì ¸ì˜¤ëŠ”ë“¯...)
+		for (Status te : cl){ // img Url °¡Á®¿À±â(¸µÅ© ÀÌ¹ÌÁö³ª µ¿¿µ»óÀº ¾È°¡Á®¿À´Âµí...)
 			for(MediaEntity me : te.getMediaEntities()){
 				media.add(me.getMediaURL());
 			}
@@ -127,7 +132,7 @@ public class CrawlServiceImpl implements CrawlService {
 		for (Status temp1 : cl) {
 			sns.setC_Group("SNS");
 			sns.setS_User(temp1.getUser().getScreenName().toString());
-			/*if(!temp1.getMediaEntities().equals(null)){ // ì–´ì§¸ì„œì¸ì§€ ë™ì¼í•œ ì´ë¯¸ì§€ë¥¼ ì—¬ëŸ¬ë²ˆ ê°€ì ¸ì˜¨ë‹¤.
+			/*if(!temp1.getMediaEntities().equals(null)){ // ¾îÂ°¼­ÀÎÁö µ¿ÀÏÇÑ ÀÌ¹ÌÁö¸¦ ¿©·¯¹ø °¡Á®¿Â´Ù.
 				for(MediaEntity me : temp1.getMediaEntities()){
 					sns.setS_Addr(me.getMediaURL());
 				}

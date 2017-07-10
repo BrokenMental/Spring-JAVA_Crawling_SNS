@@ -38,6 +38,11 @@
 								<div class="grid-item grid-item--height2 grid-color2">
 									<div class="div-first">NEWS | ${List.n_Source}</div>
 									<hr>
+									<c:choose>
+									<c:when test="${List.n_IMG == null }">
+										NO IMAGE
+									</c:when>
+									<c:otherwise>
 									<div style="text-align:center;">
 										<p>
 											<a href="${List.URL}">
@@ -45,6 +50,8 @@
 											</a>
 										</p>
 									</div>
+									</c:otherwise>
+									</c:choose>
 									<hr>
 									<div>
 										<a href="${List.URL}"><font color="black">${List.n_Title}</font></a>

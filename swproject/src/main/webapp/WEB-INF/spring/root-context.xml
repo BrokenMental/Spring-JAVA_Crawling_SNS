@@ -11,6 +11,12 @@
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property>
+		<!-- DB연결시 insert 되는 데이터들 중 한글이 깨지지 않게 하기 위해 UTF8으로 인코딩해주고,
+		트위터에서 크롤링 된 데이터들 중 이모티콘이 입력되도록 하기 위해
+		DB(Mysql)에 다음과 같은 명령문을 입력하여 문자가 깨지지 않도록 해주자 
+		alter database (table_name) character set = utf8mb4 collate = utf8mb4_unicode_ci
+		해당 명령어는 기존에 사용하던 인코딩방식 UTF8이 3바이트로 설계가 되어있는데 반해 이모티콘은 4바이트이기 때문에
+		해당 크기를 받을 수 있는 인코딩(UTF8MB4)으로 변경해주어야 한다. -->
 		<property name="url" value="jdbc:mysql://localhost:3306/swproject?useUnicode=true&amp;characterEncoding=utf8"></property>
 		<property name="username" value="root"></property>
 		<property name="password" value="1234"></property>

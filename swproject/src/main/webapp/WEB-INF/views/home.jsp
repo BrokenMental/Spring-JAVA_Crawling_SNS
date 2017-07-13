@@ -26,24 +26,26 @@
 						<!--  left column -->
 						<c:forEach items="${list}" var="List">
 							<c:if test="${List.f_Group == 'Feed' || List.f_Group eq 'Feed'}">
-								<div class="grid-item grid-color1">
-									<div class="div-first">Feed | ${List.ID}</div>
+								<div class="grid-item">
+									<div class="div-first grid-color1"><p style="font-weight:800;">Feed | ${List.ID}</p></div>
 									<hr>
-									<div>${List.f_Number} | ${List.f_Time}</div>
+									<div class="grid-color0">${List.f_Number} | ${List.f_Time}</div>
 									<hr>
-									<div>${List.myFeed}</div>
+									<div class="grid-color0">${List.myFeed}</div>
 								</div>
 							</c:if>
 							<c:if test="${List.c_Group == 'News' || List.c_Group eq 'News'}">
-								<div class="grid-item grid-item--height2 grid-color2">
-									<div class="div-first">NEWS | ${List.n_Source}</div>
+								<div class="grid-item">
+									<div class="div-first grid-color2"><p style="font-weight:800;">NEWS | ${List.n_Source}</p></div>
 									<hr>
 									<c:choose>
-									<c:when test="${List.n_IMG == null }">
+									<c:when test="${List.n_IMG == '' }">
+									<div class="grid-color0" style="text-align:center;">
 										NO IMAGE
+									</div>
 									</c:when>
 									<c:otherwise>
-									<div style="text-align:center;">
+									<div class="grid-color0" style="text-align:center;">
 										<p>
 											<a href="${List.URL}">
 												<img src="${List.n_IMG}">
@@ -53,20 +55,20 @@
 									</c:otherwise>
 									</c:choose>
 									<hr>
-									<div>
+									<div class="grid-color0">
 										<a href="${List.URL}"><font color="black">${List.n_Title}</font></a>
 									</div>
 								</div>
 							</c:if>
 							<c:if test="${List.c_Group == 'SNS' || List.c_Group eq 'SNS'}">
-								<div class="grid-item grid-item--height3 grid-color3">
-									<div class="div-first">SNS | ${List.s_User}</div>
+								<div class="grid-item">
+									<div class="div-first grid-color3"><p style="font-weight:800;">SNS | ${List.s_User}</p></div>
 									<hr>
-									<div style="display:inline-block;">
+									<div class="grid-color0" style="display:inline-block;">
 										${List.s_Content}
 									</div>
 									<hr>
-									<div>
+									<div class="grid-color0">
 										<a href="${List.s_Addr}"><font color="black">${List.s_Addr}</font></a>
 									</div>
 								</div>

@@ -4,7 +4,7 @@
 }
 
 .div-first {
-	height:2%
+	height:2%;
 }
 
 .table-style {
@@ -22,13 +22,15 @@
 
 * { box-sizing: border-box; }
 
-body { font-family: sans-serif; }
+body {
+	font-family: sans-serif;
+}
 
 /* ---- grid ---- */
 
 .grid {
   max-width: 98%;
-  margin: auto;
+  /* margin: auto; */
 }
 
 /* clearfix */
@@ -44,22 +46,26 @@ body { font-family: sans-serif; }
   width: 200px;
   /* height: 180px; */
   float: left;
-  background: #D26;
+  /* background: #D26; */
   border: 2px solid #333;
   border-color: hsla(0, 0%, 0%, 0.5);
   border-radius: 5px;
+  /* display:inline-block; */
+  margin-bottom: 2px;
+  margin-left: 2px;
 }
 
 .grid-item--height2 {
-	/* height: 320px; */
 	display:inline-block;
+	height: 320px;
 }
 
 .grid-item--height3 {
-	/* height: 240px; */
 	display:inline-block;
+	height: 240px;
 }
 
+.grid-color0 { background: #FFFFFF; }
 .grid-color1 { background: #F4a460; }
 .grid-color2 { background: #87cefa; }
 .grid-color3 { background: #90ee90; }

@@ -32,7 +32,7 @@ public class CrawlServiceImpl implements CrawlService {
 
 	public String time() {
 
-		java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy.MM.dd. HH:mm:ss"); // yyyy.MM.dd.
+		java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // yyyy.MM.dd.
 																										// HH:mm:ss
 		String now = formatter.format(new Date());
 		return now;

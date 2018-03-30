@@ -40,7 +40,6 @@ public class HomeController {
 	public String home(TotalVO Total, Locale locale, CrawlerVO Crawl, Model model) throws Exception {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
-
 		List<TotalVO> Lmaster = new ArrayList<TotalVO>();
 		for(int i = 0; i<20; i++){
 			Lmaster.add(service1.listHome0(Total).get(i));

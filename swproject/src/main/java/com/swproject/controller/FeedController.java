@@ -61,7 +61,7 @@ public class FeedController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String registPOST(FeedVO feed, RedirectAttributes rttr) throws Exception {
 
-		java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy.MM.dd. HH:mm:ss"); // yyyy.MM.dd. HH:mm:ss
+		java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // yyyy.MM.dd. HH:mm:ss
 		String now = formatter.format(new java.util.Date());
 		feed.setF_Time(now);
 

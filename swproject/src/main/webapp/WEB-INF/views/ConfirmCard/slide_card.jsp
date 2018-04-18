@@ -11,10 +11,10 @@
 	width: 430px;
 	height: 510px;
 	margin: auto;
+	display: block;
 }
 
 #divframe {
-	border: 1px solid white;
 	position: relative;
 	width: 410px;
 	height: 510px;
@@ -23,7 +23,6 @@
 
 #divbottom {
 	position: relative;
-	float: left;
 	width: 410px;
 	height: 32px;
 	text-align: center;
@@ -34,7 +33,6 @@
 	height: 25px;
 	position: relative;
 	float: left;
-	bottom: 15px;
 }
 
 #btnclick {
@@ -198,8 +196,8 @@ img {
 </style>
 </head>
 
-<%@ include file="../include/header.jsp"%>
 <body>
+	<%@ include file="../include/header.jsp"%>
 	<div id="divking">
 		<div id="divframe">
 			<div class="carddiv" onclick="divclick()">
@@ -626,8 +624,7 @@ img {
 		<button class="arrow" onclick="moveA(1)">&#62;</button>
 		<button id="btnclick" onclick="btnclick()">submit</button>
 	</div>
-	</div>
-	<div style="position:relative; bottom: 0px;">
+	<div id="footdiv">
 		<%@ include file="../include/footer.jsp"%>
 	</div>
 	<script>
@@ -678,7 +675,6 @@ img {
 		}
 
 		function btnclick() {
-			console.log(ArrayF);
 			location.href = "testvalue.html?ArrayF=" + ArrayF;
 		}
 	</script>

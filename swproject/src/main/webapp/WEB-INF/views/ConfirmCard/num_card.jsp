@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <html>
 
-<%@ include file="../include/header.jsp"%>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>크기 정하기</title>
@@ -10,7 +9,9 @@
 #divking {
 	position: relative;
 	width: 430px;
+	height: 770px;
 	margin: auto;
+	display: block;
 }
 
 #divframe {
@@ -22,7 +23,6 @@
 
 #divbottom {
 	position: relative;
-	float: left;
 	width: 410px;
 	height: 32px;
 	text-align: center;
@@ -33,7 +33,6 @@
 	height: 25px;
 	position: relative;
 	float: left;
-	bottom: 15px;
 }
 
 #btnclick {
@@ -112,6 +111,7 @@ video {
 </head>
 
 <body>
+	<%@ include file="../include/header.jsp"%>
 	<div id="divking">
 		<div id="divframe">
 			<div class="carddiv" onclick="divclick()">
@@ -353,7 +353,7 @@ video {
 			<button id="btnclick" onclick="btnclick()">submit</button>
 		</div>
 	</div>
-	<div style="bottom: 0px;">
+	<div id="footdiv">
 		<%@ include file="../include/footer.jsp"%>
 	</div>
 	<script>
@@ -404,7 +404,7 @@ video {
 		}
 
 		function btnclick() {
-			console.log(ArrayF);
+			
 			location.href = "testvalue.html?ArrayF=" + ArrayF;
 		}
 	</script>

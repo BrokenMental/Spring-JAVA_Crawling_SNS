@@ -9,7 +9,7 @@
 #divking {
 	position: relative;
 	width: 430px;
-	height: 510px;
+	height: 770px;
 	margin: auto;
 	display: block;
 }
@@ -263,7 +263,7 @@ img {
 					<p>
 						안녕하세요. <br> 고양이에용 냐옹
 					</p>
-					<img src="/resources/cat.jpg">
+					<img src="/resources/img/cat.jpg">
 				</div>
 			</div>
 			<div class="carddiv" onclick="divclick()">
@@ -287,13 +287,13 @@ img {
 					<p>
 						안녕하세요. <br> 고양이에용 냐옹
 					</p>
-					<img src="/resources/cat.jpg">
+					<img src="/resources/img/cat.jpg">
 				</div>
 				<div class="threediv">
 					<p>
 						안녕하세요. <br> 고양이에용 냐옹
 					</p>
-					<img src="/resources/cat.jpg">
+					<img src="/resources/img/cat.jpg">
 				</div>
 			</div>
 			<div class="carddiv" onclick="divclick()">
@@ -309,19 +309,19 @@ img {
 					<p>
 						안녕하세요. <br> 고양이에용 냐옹
 					</p>
-					<img src="/resources/cat.jpg">
+					<img src="/resources/img/cat.jpg">
 				</div>
 				<div class="fourdiv">
 					<p>
 						안녕하세요. <br> 고양이에용 냐옹
 					</p>
-					<img src="/resources/cat.jpg">
+					<img src="/resources/img/cat.jpg">
 				</div>
 				<div class="fourdiv">
 					<p>
 						안녕하세요. <br> 고양이에용 냐옹
 					</p>
-					<img src="/resources/cat.jpg">
+					<img src="/resources/img/cat.jpg">
 				</div>
 			</div>
 			<div class="carddiv" onclick="divclick()">
@@ -329,25 +329,25 @@ img {
 					<p>
 						안녕하세요. <br> 고양이에용 냐옹
 					</p>
-					<img src="/resources/cat.jpg">
+					<img src="/resources/img/cat.jpg">
 				</div>
 				<div class="fivediv">
 					<p>
 						안녕하세요. <br> 고양이에용 냐옹
 					</p>
-					<img src="/resources/cat.jpg">
+					<img src="/resources/img/cat.jpg">
 				</div>
 				<div class="fivediv">
 					<p>
 						안녕하세요. <br> 고양이에용 냐옹
 					</p>
-					<img src="/resources/cat.jpg">
+					<img src="/resources/img/cat.jpg">
 				</div>
 				<div class="fivediv">
 					<p>
 						안녕하세요. <br> 고양이에용 냐옹
 					</p>
-					<img src="/resources/cat.jpg">
+					<img src="/resources/img/cat.jpg">
 				</div>
 			</div>
 			<div class="carddiv" onclick="divclick()">
@@ -360,19 +360,19 @@ img {
 					<p>
 						안녕하세요. <br> 고양이에용 냐옹
 					</p>
-					<img src="/resources/cat.jpg">
+					<img src="/resources/img/cat.jpg">
 				</div>
 				<div class="sixdiv">
 					<p>
 						안녕하세요. <br> 고양이에용 냐옹
 					</p>
-					<img src="/resources/cat.jpg">
+					<img src="/resources/img/cat.jpg">
 				</div>
 				<div class="sixdiv">
 					<p>
 						안녕하세요. <br> 고양이에용 냐옹
 					</p>
-					<img src="/resources/cat.jpg">
+					<img src="/resources/img/cat.jpg">
 				</div>
 			</div>
 			<div class="carddiv" onclick="divclick()">
@@ -385,13 +385,13 @@ img {
 					<p>
 						안녕하세요. <br> 고양이에용 냐옹
 					</p>
-					<img src="/resources/cat.jpg">
+					<img src="/resources/img/cat.jpg">
 				</div>
 				<div class="svndiv">
 					<p>
 						안녕하세요. <br> 고양이에용 냐옹
 					</p>
-					<img src="/resources/cat.jpg">
+					<img src="/resources/img/cat.jpg">
 				</div>
 				<div class="svndiv">
 					<p>
@@ -412,7 +412,7 @@ img {
 					<p>
 						안녕하세요. <br> 고양이에용 냐옹
 					</p>
-					<img src="/resources/cat.jpg">
+					<img src="/resources/img/cat.jpg">
 				</div>
 				<div class="ehtdiv">
 					<p>
@@ -477,13 +477,13 @@ img {
 					<p>
 						안녕하세요. <br> 고양이에용 냐옹
 					</p>
-					<img src="/resources/cat.jpg">
+					<img src="/resources/img/cat.jpg">
 				</div>
 				<div class="tendiv">
 					<p>
 						안녕하세요. <br> 고양이에용 냐옹
 					</p>
-					<img src="/resources/cat.jpg">
+					<img src="/resources/img/cat.jpg">
 				</div>
 			</div>
 			<div class="carddiv" onclick="divclick()">
@@ -501,7 +501,7 @@ img {
 					<p>
 						안녕하세요. <br> 고양이에용 냐옹
 					</p>
-					<img src="/resources/cat.jpg">
+					<img src="/resources/img/cat.jpg">
 				</div>
 				<div class="elvdiv">
 					<p>
@@ -560,7 +560,7 @@ img {
 					<p>
 						안녕하세요. <br> 고양이에용 냐옹
 					</p>
-					<img src="/resources/cat.jpg">
+					<img src="/resources/img/cat.jpg">
 				</div>
 			</div>
 			<div class="carddiv" onclick="divclick()">
@@ -615,14 +615,8 @@ img {
 			<p id="numview"></p>
 			<button class="arrow" onclick="moveA(-1)">&#60;</button>
 			<button class="arrow" onclick="moveA(1)">&#62;</button>
-			<button id="btnclick" onclick="btnclick()">전송</button>
+		<button id="btnclick" onclick="btnclick()" class="btn btn-warning" >OK</button>
 		</div>
-	</div>
-	<div id="divbottom">
-		<p id="numview"></p>
-		<button class="arrow" onclick="moveA(-1)">&#60;</button>
-		<button class="arrow" onclick="moveA(1)">&#62;</button>
-		<button id="btnclick" onclick="btnclick()">submit</button>
 	</div>
 	<div id="footdiv">
 		<%@ include file="../include/footer.jsp"%>
@@ -675,7 +669,7 @@ img {
 		}
 
 		function btnclick() {
-			location.href = "testvalue.html?ArrayF=" + ArrayF;
+			location.href = "/ConfirmCard/testvalue2?ArrayF=" + ArrayF;
 		}
 	</script>
 </body>

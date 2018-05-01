@@ -350,7 +350,7 @@ video {
 			<p id="numview"></p>
 			<button class="arrow" onclick="moveA(-1)">&#60;</button>
 			<button class="arrow" onclick="moveA(1)">&#62;</button>
-			<button id="btnclick" onclick="btnclick()">submit</button>
+			<button id="btnclick" class="btn btn-warning" onclick="btnclick()">submit</button>
 		</div>
 	</div>
 	<div id="footdiv">
@@ -404,8 +404,7 @@ video {
 		}
 
 		function btnclick() {
-			
-			location.href = "testvalue.html?ArrayF=" + ArrayF;
+			location.href = "/ConfirmCard/testvalue1?ArrayF=" + ArrayF;
 		}
 	</script>
 </body>

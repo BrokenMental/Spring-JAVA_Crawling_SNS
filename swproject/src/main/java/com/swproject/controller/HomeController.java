@@ -43,7 +43,7 @@ public class HomeController {
 		return "ConfirmCard/num_card";
 	}
 
-	@RequestMapping(value = "/CardHome", method = RequestMethod.GET)
+	@RequestMapping(value = "/CardHome/cardHome", method = RequestMethod.GET)
 	public void home(TotalVO Total, Locale locale, CrawlerVO Crawl, Model model) throws Exception {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		

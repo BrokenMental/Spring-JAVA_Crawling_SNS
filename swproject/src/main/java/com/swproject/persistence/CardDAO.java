@@ -1,8 +1,7 @@
 package com.swproject.persistence;
 
-import org.springframework.stereotype.Repository;
+import com.swproject.domain.CardVO;
 
-@Repository
 public interface CardDAO {
-
+	public void insertCard(CardVO vo);
 }

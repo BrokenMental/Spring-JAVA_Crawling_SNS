@@ -1,8 +1,7 @@
 package com.swproject.service;
 
-import org.springframework.stereotype.Service;
+import com.swproject.domain.CardVO;
 
-@Service
 public interface CardService {
-		
+	public void insertCard(CardVO vo, String sent);
 }

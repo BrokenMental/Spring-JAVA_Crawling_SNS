@@ -37,7 +37,14 @@ public class HomeController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(TotalVO Total, Locale locale, CrawlerVO Crawl, Model model) throws Exception {
+	public String home(Locale locale) throws Exception {
+		logger.info("Welcome home! The client locale is {}.", locale);
+		
+		return "ConfirmCard/num_card";
+	}
+
+	@RequestMapping(value = "/CardHome/cardHome", method = RequestMethod.GET)
+	public void home(TotalVO Total, Locale locale, CrawlerVO Crawl, Model model) throws Exception {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		List<TotalVO> Lmaster = new ArrayList<TotalVO>();
@@ -49,7 +56,6 @@ public class HomeController {
 		model.addAttribute("list",Lmaster);
 		model.addAttribute("list1",service2.listCrawl1(Crawl));
 		model.addAttribute("list2",service2.listCrawl2(Crawl));
-		
-		return "home";
 	}
+	
 }

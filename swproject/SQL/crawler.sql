@@ -10,6 +10,6 @@ create table crawler (
 	n_img varchar(5000),
 	n_source varchar(50),
 	primary key(c_number)
-);
+) character set utf8mb4 collate utf8mb4_unicode_ci;
 
 alter database swproject character set=utf8mb4 collate utf8mb4_unicode_ci;

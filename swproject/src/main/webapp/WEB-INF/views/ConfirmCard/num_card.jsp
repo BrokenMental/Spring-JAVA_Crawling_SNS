@@ -6,6 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>크기 정하기</title>
 <style>
+h1 {
+	text-align: center;
+}
+
 #divking {
 	position: relative;
 	width: 430px;
@@ -29,6 +33,7 @@
 }
 
 #numview {
+	top: -18px;
 	width: 40px;
 	height: 25px;
 	position: relative;
@@ -111,7 +116,7 @@ video {
 </head>
 
 <body>
-	<%@ include file="../include/header.jsp"%>
+	<h1>크기 정하기</h1>
 	<div id="divking">
 		<div id="divframe">
 			<div class="carddiv" onclick="divclick()">
@@ -353,15 +358,17 @@ video {
 			<button id="btnclick" class="btn btn-warning" onclick="btnclick()">submit</button>
 		</div>
 	</div>
-	<div id="footdiv">
-		<%@ include file="../include/footer.jsp"%>
-	</div>
 	<script>
 		var num = 0;
 		var ArrayF = new Array();
 		var colorG = '#01DF01';
 		var colorR = '#FF0000';
 		var numview = document.getElementById('numview');
+		var arrow = document.getElementsByClassName('arrow');
+		var btnsubm = document.getElementById('btnclick');
+		
+		arrow[0].disabled = true;
+		btnsubm.disabled = true;
 		numview.innerHTML = "1/5";
 		var carddiv = document.getElementsByClassName('carddiv');
 		carddiv[0].style.display = 'block';
@@ -371,12 +378,20 @@ video {
 		function cunfirmdiv() {
 			for (var j = 0; j < carddiv.length; j++) {
 				if (carddiv[j].style.display == 'block') {
-					console.log(j);
 					return j;
 				}
 			}
 		}
 		function confirmnum(nb) {
+			if (nb == 0){
+				arrow[0].disabled = true;
+			}else if(nb == 4){
+				arrow[1].disabled = true;
+			}else{
+				arrow[0].disabled = false;
+				arrow[1].disabled = false;
+			}
+			
 			if (nb == -1) {
 				return 4;
 			} else if (nb == 5) {
@@ -391,6 +406,9 @@ video {
 			num = confirmnum(num + number);
 			numview.innerHTML = num + 1 + "/5";
 			carddiv[num].style.display = 'block';
+			if(num == 4){
+				btnsubm.disabled = false;
+			}
 		}
 		function divclick() {
 			num = cunfirmdiv();

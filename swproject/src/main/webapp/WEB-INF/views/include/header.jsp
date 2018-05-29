@@ -44,7 +44,7 @@
 
 		<header class="main-header">
 			<!-- Logo -->
-			<a href="../../CardHome/cardHome" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
+			<a href="/" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
 				<!-- <span class="logo-mini"><b>A</b>LT</span> --> <!-- logo for regular state and mobile devices -->
 				<span class="logo-lg"><b>Spring</b> PROJECT</span>
 			</a>
@@ -360,7 +360,7 @@
                 <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
               </ul>
             </li> -->
-					<li class="treeview"><a href="../../CardHome/cardHome"> <i
+					<li class="treeview"><a href="../../"> <i
 							class="fa fa-laptop"></i> <span>TimeLine</span>
 					</a></li>
 					<li class="treeview active"><a href="#"> <i

@@ -14,16 +14,17 @@ public class CardServiceImpl implements CardService {
 
 	@Override
 	public void insertCard(CardVO vo, String sent) {
-		if (sent.equals("num")) {
-			vo.setSent("num");
-			cDAO.insertCardnum(vo);
+		if (sent.equals("크기")) {
+			vo.setSent("크기");
 		} else {
-			vo.setSent("slide");
-			cDAO.insertCardslide(vo);
+			vo.setSent("컨텐츠");
 		}
+		cDAO.insertCard(vo);
+
+		
 		
 		// 임시 데이터
-		/*int Data = 0;
+		int Data = 0;
 		
 		int Sum[] = new int[] {0,};
 
@@ -71,7 +72,7 @@ public class CardServiceImpl implements CardService {
 				}
 			}
 			if(flag==false) break;
-		}*/
+		}
 		
 	}
 

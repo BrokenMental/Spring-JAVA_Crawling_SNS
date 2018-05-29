@@ -4,21 +4,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.swproject.mapper.CardMapper">
-	<insert id="cardinsertnum">
+	<insert id="cardinsert">
 		INSERT INTO CARD
-		VALUES (#{sent}
-		<foreach item="item" collection="val">
-			,#{item}
-		</foreach>
-		)
-	</insert>
-	
-	<insert id="cardinsertslide">
-		INSERT INTO CARD
-		VALUES (#{sent}
-		<foreach item="item" collection="val">
-			,#{item}
-		</foreach>
-		)
+		VALUES (#{val},#{sent})
 	</insert>
 </mapper>

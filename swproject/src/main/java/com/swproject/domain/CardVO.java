@@ -3,8 +3,16 @@ package com.swproject.domain;
 import java.util.Arrays;
 
 public class CardVO {
+	private boolean val[] = new boolean[15];
 	private String sent;
-	private boolean val[] = new boolean[] {false,false,false,false,false,false,false,false,false,false,false,false,false,false,false};
+
+	public boolean[] getVal() {
+		return val;
+	}
+
+	public void setVal(boolean[] val) {
+		this.val = val;
+	}
 
 	public String getSent() {
 		return sent;
@@ -14,14 +22,6 @@ public class CardVO {
 		this.sent = sent;
 	}
 	
-	public boolean[] getVal() {
-		return val;
-	}
-
-	public void setVal(boolean[] val) {
-		this.val = val;
-	}
-
 	@Override
 	public String toString() {
 		return "CardVO [val=" + Arrays.toString(val) + ", sent=" + sent + "]";

@@ -15,12 +15,7 @@ public class CardDAOImpl implements CardDAO {
 	private static String namespace = "com.swproject.mapper.CardMapper";
 	
 	@Override
-	public void insertCardnum(CardVO vo) {
-		session.insert(namespace + ".cardinsertnum", vo);
-	}
-	
-	@Override
-	public void insertCardslide(CardVO vo) {
-		session.insert(namespace + ".cardinsertslide", vo);
+	public void insertCard(CardVO vo) {
+		session.insert(namespace + ".cardinsert", vo);
 	}
 }

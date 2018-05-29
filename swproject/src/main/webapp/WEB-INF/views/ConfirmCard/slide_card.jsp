@@ -1,14 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <html>
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>컨텐츠 정하기</title>
 <style>
-h1 {
-	text-align: center;
-}
-
 #divking {
 	position: relative;
 	width: 430px;
@@ -32,7 +29,6 @@ h1 {
 }
 
 #numview {
-	top: -18px;
 	width: 40px;
 	height: 25px;
 	position: relative;
@@ -199,8 +195,9 @@ img {
 }
 </style>
 </head>
+
 <body>
-	<h1>컨텐츠 정하기</h1>
+	<%@ include file="../include/header.jsp"%>
 	<div id="divking">
 		<div id="divframe">
 			<div class="carddiv" onclick="divclick()">
@@ -209,7 +206,23 @@ img {
 						헤헤 후후 <br> 냥냥펀치!
 					</p>
 					<video width="190px" height="150px" controls="controls">
-						<source src="/resources/img/catcat.mp4" type="video/mp4" />
+						<source src="/resources/catcat.mp4" type="video/mp4" />
+					</video>
+				</div>
+				<div class="onediv">
+					<p>
+						헤헤 후후 <br> 냥냥펀치!
+					</p>
+					<video width="190px" height="150px" controls="controls">
+						<source src="/resources/catcat.mp4" type="video/mp4" />
+					</video>
+				</div>
+				<div class="onediv">
+					<p>
+						헤헤 후후 <br> 냥냥펀치!
+					</p>
+					<video width="190px" height="150px" controls="controls">
+						<source src="/resources/catcat.mp4" type="video/mp4" />
 					</video>
 				</div>
 				<div class="onediv">
@@ -220,22 +233,6 @@ img {
 						<source src="/resources/img/catcat.mp4" type="video/mp4" />
 					</video>
 				</div>
-				<div class="onediv">
-					<p>
-						헤헤 후후 <br> 냥냥펀치!
-					</p>
-					<video width="190px" height="150px" controls="controls">
-						<source src="/resources/img/catcat.mp4" type="video/mp4" />
-					</video>
-				</div>
-				<div class="onediv">
-					<p>
-						헤헤 후후 <br> 냥냥펀치!
-					</p>
-					<video width="190px" height="150px" controls="controls">
-						<source src="/resources/img/catcat.mp4" type="video/mp4" />
-					</video>
-				</div>
 			</div>
 			<div class="carddiv" onclick="divclick()">
 				<div class="twodiv">
@@ -251,7 +248,7 @@ img {
 						헤헤 후후 <br> 냥냥펀치!
 					</p>
 					<video width="190px" height="150px" controls="controls">
-						<source src="/resources/img/catcat.mp4" type="video/mp4" />
+						<source src="/resources/catcat.mp4" type="video/mp4" />
 					</video>
 				</div>
 				<div class="twodiv">
@@ -259,7 +256,7 @@ img {
 						헤헤 후후 <br> 냥냥펀치!
 					</p>
 					<video width="190px" height="150px" controls="controls">
-						<source src="/resources/img/catcat.mp4" type="video/mp4" />
+						<source src="/resources/catcat.mp4" type="video/mp4" />
 					</video>
 				</div>
 				<div class="twodiv">
@@ -275,7 +272,7 @@ img {
 						헤헤 후후 <br> 냥냥펀치!
 					</p>
 					<video width="190px" height="150px" controls="controls">
-						<source src="/resources/img/catcat.mp4" type="video/mp4" />
+						<source src="/resources/catcat.mp4" type="video/mp4" />
 					</video>
 				</div>
 				<div class="threediv">
@@ -283,7 +280,7 @@ img {
 						헤헤 후후 <br> 냥냥펀치!
 					</p>
 					<video width="190px" height="150px" controls="controls">
-						<source src="/resources/img/catcat.mp4" type="video/mp4" />
+						<source src="/resources/catcat.mp4" type="video/mp4" />
 					</video>
 				</div>
 				<div class="threediv">
@@ -305,7 +302,7 @@ img {
 						헤헤 후후 <br> 냥냥펀치!
 					</p>
 					<video width="190px" height="150px" controls="controls">
-						<source src="/resources/img/catcat.mp4" type="video/mp4" />
+						<source src="/resources/catcat.mp4" type="video/mp4" />
 					</video>
 				</div>
 				<div class="fourdiv">
@@ -401,7 +398,7 @@ img {
 						헤헤 후후 <br> 냥냥펀치!
 					</p>
 					<video width="190px" height="150px" controls="controls">
-						<source src="/resources/img/catcat.mp4" type="video/mp4" />
+						<source src="/resources/catcat.mp4" type="video/mp4" />
 					</video>
 				</div>
 			</div>
@@ -422,7 +419,7 @@ img {
 						헤헤 후후 <br> 냥냥펀치!
 					</p>
 					<video width="190px" height="150px" controls="controls">
-						<source src="/resources/img/catcat.mp4" type="video/mp4" />
+						<source src="/resources/catcat.mp4" type="video/mp4" />
 					</video>
 				</div>
 				<div class="ehtdiv">
@@ -430,7 +427,7 @@ img {
 						헤헤 후후 <br> 냥냥펀치!
 					</p>
 					<video width="190px" height="150px" controls="controls">
-						<source src="/resources/img/catcat.mp4" type="video/mp4" />
+						<source src="/resources/catcat.mp4" type="video/mp4" />
 					</video>
 				</div>
 			</div>
@@ -445,7 +442,7 @@ img {
 						헤헤 후후 <br> 냥냥펀치!
 					</p>
 					<video width="190px" height="150px" controls="controls">
-						<source src="/resources/img/catcat.mp4" type="video/mp4" />
+						<source src="/resources/catcat.mp4" type="video/mp4" />
 					</video>
 				</div>
 				<div class="ninediv">
@@ -453,7 +450,7 @@ img {
 						헤헤 후후 <br> 냥냥펀치!
 					</p>
 					<video width="190px" height="150px" controls="controls">
-						<source src="/resources/img/catcat.mp4" type="video/mp4" />
+						<source src="/resources/catcat.mp4" type="video/mp4" />
 					</video>
 				</div>
 				<div class="ninediv">
@@ -461,7 +458,7 @@ img {
 						헤헤 후후 <br> 냥냥펀치!
 					</p>
 					<video width="190px" height="150px" controls="controls">
-						<source src="/resources/img/catcat.mp4" type="video/mp4" />
+						<source src="/resources/catcat.mp4" type="video/mp4" />
 					</video>
 				</div>
 			</div>
@@ -511,7 +508,7 @@ img {
 						헤헤 후후 <br> 냥냥펀치!
 					</p>
 					<video width="190px" height="150px" controls="controls">
-						<source src="/resources/img/catcat.mp4" type="video/mp4" />
+						<source src="/resources/catcat.mp4" type="video/mp4" />
 					</video>
 				</div>
 			</div>
@@ -531,7 +528,7 @@ img {
 						헤헤 후후 <br> 냥냥펀치!
 					</p>
 					<video width="190px" height="150px" controls="controls">
-						<source src="/resources/img/catcat.mp4" type="video/mp4" />
+						<source src="/resources/catcat.mp4" type="video/mp4" />
 					</video>
 				</div>
 				<div class="twlvdiv">
@@ -539,7 +536,7 @@ img {
 						헤헤 후후 <br> 냥냥펀치!
 					</p>
 					<video width="190px" height="150px" controls="controls">
-						<source src="/resources/img/catcat.mp4" type="video/mp4" />
+						<source src="/resources/catcat.mp4" type="video/mp4" />
 					</video>
 				</div>
 			</div>
@@ -587,7 +584,7 @@ img {
 						헤헤 후후 <br> 냥냥펀치!
 					</p>
 					<video width="190px" height="150px" controls="controls">
-						<source src="/resources/img/catcat.mp4" type="video/mp4" />
+						<source src="/resources/catcat.mp4" type="video/mp4" />
 					</video>
 				</div>
 			</div>
@@ -621,17 +618,15 @@ img {
 		<button id="btnclick" onclick="btnclick()" class="btn btn-warning" >OK</button>
 		</div>
 	</div>
+	<div id="footdiv">
+		<%@ include file="../include/footer.jsp"%>
+	</div>
 	<script>
 		var num = 0;
 		var ArrayF = new Array();
 		var colorG = '#01DF01';
 		var colorR = '#FF0000';
 		var numview = document.getElementById('numview');
-		var arrow = document.getElementsByClassName('arrow');
-		var btnsubm = document.getElementById('btnclick');
-
-		arrow[0].disabled = true;
-		btnsubm.disabled = true;
 		numview.innerHTML = "1/15";
 		var carddiv = document.getElementsByClassName('carddiv');
 		carddiv[0].style.display = 'block';
@@ -641,20 +636,12 @@ img {
 		function cunfirmdiv() {
 			for (var j = 0; j < carddiv.length; j++) {
 				if (carddiv[j].style.display == 'block') {
+					console.log(j);
 					return j;
 				}
 			}
 		}
 		function confirmnum(nb) {
-			if (nb == 0){
-				arrow[0].disabled = true;
-			}else if(nb == 14){
-				arrow[1].disabled = true;
-			}else{
-				arrow[0].disabled = false;
-				arrow[1].disabled = false;
-			}
-			
 			if (nb == -1) {
 				return 14;
 			} else if (nb == 15) {
@@ -669,9 +656,6 @@ img {
 			num = confirmnum(num + number);
 			numview.innerHTML = num + 1 + "/15";
 			carddiv[num].style.display = 'block';
-			if(num == 14){
-				btnsubm.disabled = false;
-			}
 		}
 		function divclick() {
 			num = cunfirmdiv();

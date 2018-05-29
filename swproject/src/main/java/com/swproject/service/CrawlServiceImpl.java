@@ -8,7 +8,6 @@ import javax.inject.Inject;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 
 import com.swproject.domain.CrawlerNews;
@@ -80,45 +79,16 @@ public class CrawlServiceImpl implements CrawlService {
 	@Override
 	public List<CrawlerVO> listCrawl1(CrawlerVO cn) throws Exception {
 		CrawlerNews Craw = new CrawlerNews();
-		Craw.setURL("https://news.google.com/?hl=ko&gl=KR&ceid=KR:ko");
-		/* url 변경 : https://news.google.co.kr/news/?ned=kr*/ // 뒤에 부가적인 kr을 붙이지 않으면 영문페이지를 끌고온다.
+		Craw.setURL("https://news.google.co.kr/news/?ned=kr"); // 뒤에 부가적인 kr을 붙이지 않으면 영문페이지를 끌고온다.
 		Craw.setDoc(Jsoup.connect(Craw.getURL()).get());
-		Craw.setEl(Craw.getDoc().select("c-wiz.Erv9te"));
-		Elements temp = Craw.getEl();
-		
-		if(!temp.equals(null)){
-			Elements ctitle = temp.select("div.ZulkBc.qNiaOd span");
-			Elements csource = temp.select("div.PNwZO.zhsNkd span");
-			Elements tempurl = temp.select("a.ipQwMb");
-			//Elements cimg = temp.select("img.tvs3Id.dIH98c");
-			
-			for(int i=0; i<ctitle.size(); i++){
-				cn.setC_Group("News");
-				cn.setC_Time(time());
-				
-				// 이미지는 어떻게 넣어야 하냐...
-				/*if(cimg.eq(i).contains("<img")){
-					cn.setN_IMG(cimg.eq(i).attr("src"));
-				}else{
-					cn.setN_IMG("NO IMG");
-				}*/
-				
-				cn.setN_Source(csource.eq(i).text());
-				cn.setN_Title(ctitle.eq(i).text());
-				
-				String curl = tempurl.eq(i).select("a.ipQwMb").attr("href").replace(".", "https://news.google.com");
-				cn.setURL(curl);
-				service.create1(cn);
-			}
-		}
-		
-		// foreach가 통하지 않아 싹 갈아엎음
-		/*for (Element temp : Craw.getEl()) {
+		Craw.setEl(Craw.getDoc().select("c-wiz.PaqQNc"));
+
+		for (Element temp : Craw.getEl()) {
 			cn.setC_Group("News");
-			cn.setN_IMG(temp.select("div.xrnccd img").attr("src").toString());
+			cn.setN_IMG(temp.select("div.X20oP img").attr("src").toString());
 			
 			// 뉴스제공사가 여러개 붙어오는경우가 있다 추가 뉴스제공사를 잘라 set해주자.
-			String sp = temp.select("span.KbnJ8").text();
+			String sp = temp.select("span.IH8C7b").text();
 			
 			if(spaceCheck(sp) == true){
 				int index = sp.indexOf(' ') + 1;
@@ -131,20 +101,14 @@ public class CrawlServiceImpl implements CrawlService {
 			//cn.setN_Source(sp);
 			
 			//cn.setN_Source(temp.select("span.IH8C7b").text());
+			//System.out.println(cn.getN_Source());
 			
-			//System.out.println("이거 : "+temp.select("div.ZulkBc.qNiaOd span").eq(1).text().toString());
-			
-			cn.setN_Title(temp.select("div.ZulkBc.qNiaOd span").eq(numbr).text().toString());
-			numbr++;
-			
-			String tempurl = temp.select("a.ipQwMb").attr("href").toString();
-			String curl = tempurl.replace(".", "https://news.google.com");
-			cn.setURL(curl);
-			
+			cn.setN_Title(temp.select("a.nuEeue").text().toString());
+			cn.setURL(temp.select("a.nuEeue").attr("href").toString());
 			cn.setC_Time(time());
-			
+
 			service.create1(cn);
-		}*/
+		}
 
 		return dao.listCrawl1(cn);
 	}

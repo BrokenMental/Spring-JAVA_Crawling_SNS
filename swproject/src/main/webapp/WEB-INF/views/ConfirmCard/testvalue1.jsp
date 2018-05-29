@@ -1,20 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <html>
+
+<%@ include file="../include/header.jsp"%>
 <head>
 <title>result!</title>
 <style>
-h1 {
-	text-align: center;
-}
-
 #divking {
 	width: 180px;
 	margin: auto;
-}
-
-#divbottom {
-	margin-top : 5px;
 }
 </style>
 </head>
@@ -33,6 +27,9 @@ h1 {
 			</div>
 		</div>
 	</form>
+	<div style="bottom: 0px;">
+		<%@ include file="../include/footer.jsp"%>
+	</div>
 	<script>
 		var urlvalue = location.href.substr(location.href.lastIndexOf('=') + 1);
 		var urlsplit = urlvalue.split(',');
@@ -41,10 +38,6 @@ h1 {
 		for ( var i in urlsplit) {
 			valueview[i].value = urlsplit[i];
 			viewp[i] = i + 1;
-		}
-		
-		for (var j in valueview) {
-			valueview[j].readOnly = true;
 		}
 	</script>
 </body>

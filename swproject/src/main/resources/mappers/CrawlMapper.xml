@@ -7,13 +7,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="create1">
 		insert into crawler (N_Title, N_IMG, N_Source, URL, C_Group, C_Time)
 		select #{N_Title}, #{N_IMG}, #{N_Source}, #{URL}, #{C_Group}, #{C_Time} from dual
-		where not exists (select * from crawler where N_Title = #{N_Title} AND C_GROUP = 'NEWS' limit 15)
+		where not exists (select * from crawler where N_Title = #{N_Title})
 	</insert>
 	
 	<insert id="create2">
 		insert into crawler (S_User, S_Content, S_Addr, C_Group, C_Time)
 		select #{S_User}, #{S_Content}, #{S_Addr}, #{C_Group}, #{C_Time} from dual
-		where not exists (select * from crawler where (S_Content = #{S_Content} AND C_Group = 'SNS') limit 15)
+		where not exists (select * from crawler where S_Addr = #{S_Addr})
 		<!-- where not exists (select * from crawler where S_Content collate utf8mb4_unicode_ci = #{S_Content}) -->
 	</insert>
 	

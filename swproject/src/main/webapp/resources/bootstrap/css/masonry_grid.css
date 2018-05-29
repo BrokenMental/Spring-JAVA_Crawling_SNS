@@ -55,12 +55,12 @@ body {
   margin-left: 2px;
 }
 
-.grid-item--height2 {
+.grid-item-height2 {
 	display:inline-block;
 	height: 320px;
 }
 
-.grid-item--height3 {
+.grid-item-height3 {
 	display:inline-block;
 	height: 240px;
 }

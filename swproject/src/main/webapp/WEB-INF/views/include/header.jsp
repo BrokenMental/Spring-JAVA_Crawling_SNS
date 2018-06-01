@@ -360,15 +360,15 @@
                 <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
               </ul>
             </li> -->
-					<li class="treeview"><a href="../../CardHome/cardHome"> <i
+					<li class="active treeview"><a href="../../CardHome/cardHome"> <i
 							class="fa fa-laptop"></i> <span>TimeLine</span>
 					</a></li>
-					<li class="treeview active"><a href="#"> <i
+					<li class="treeview"><a href="#"> <i
 							class="fa fa-edit"></i> <span>Menu</span> <i
 							class="fa fa-angle-left pull-right"></i>
 					</a>
 						<ul class="treeview-menu">
-							<li class="active"><a href="../../Feed/list"><i
+							<li><a href="../../Feed/list"><i
 									class="fa fa-circle-o"></i> Feed Page</a></li>
 							<li><a href="../../Crawl/CrawlList"><i
 									class="fa fa-circle-o"></i> Crawler Page1</a></li>

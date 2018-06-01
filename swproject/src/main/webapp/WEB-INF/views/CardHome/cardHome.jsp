@@ -35,10 +35,10 @@
 								</div>
 							</c:if>
 							<c:if test="${List.c_Group == 'News' || List.c_Group eq 'News'}">
-								<div class="grid-item">
+								<div class="grid-item grid-item-height2">
 									<div class="div-first grid-color2"><p style="font-weight:800;">NEWS | ${List.n_Source}</p></div>
 									<hr>
-									<c:choose>
+									<%-- <c:choose>
 									<c:when test="${List.n_IMG == '' }">
 									<div class="grid-color0" style="text-align:center;">
 										NO IMAGE
@@ -54,14 +54,14 @@
 									</div>
 									</c:otherwise>
 									</c:choose>
-									<hr>
+									<hr> --%>
 									<div class="grid-color0">
 										<a href="${List.URL}"><font color="black">${List.n_Title}</font></a>
 									</div>
 								</div>
 							</c:if>
 							<c:if test="${List.c_Group == 'SNS' || List.c_Group eq 'SNS'}">
-								<div class="grid-item">
+								<div class="grid-item grid-item-height3">
 									<div class="div-first grid-color3"><p style="font-weight:800;">SNS | ${List.s_User}</p></div>
 									<hr>
 									<div class="grid-color0" style="display:inline-block;">

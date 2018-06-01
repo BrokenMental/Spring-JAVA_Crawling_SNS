@@ -4,7 +4,7 @@
 }
 
 .div-first {
-	height:2%;
+	height:10%;
 }
 
 .table-style {
@@ -21,7 +21,7 @@
 /* ---- grid ---- */
 
 * { box-sizing: border-box; }
-
+ 
 body {
 	font-family: sans-serif;
 }
@@ -55,14 +55,12 @@ body {
   margin-left: 2px;
 }
 
-.grid-item--height2 {
-	display:inline-block;
-	height: 320px;
+.grid-item-height2 {
+	height: 240px;
 }
 
-.grid-item--height3 {
-	display:inline-block;
-	height: 240px;
+.grid-item-height3 {
+	height: 320px;
 }
 
 .grid-color0 { background: #FFFFFF; }

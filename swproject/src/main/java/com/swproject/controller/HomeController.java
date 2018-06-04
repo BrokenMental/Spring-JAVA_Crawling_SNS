@@ -47,15 +47,29 @@ public class HomeController {
 	public void home(TotalVO Total, Locale locale, CrawlerVO Crawl, Model model) throws Exception {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
+		List<TotalVO> TotalFeed = service1.listHome0(Total);
+		List<TotalVO> TotalNews = service1.listHome1(Total);
+		List<TotalVO> TotalSns = service1.listHome2(Total);
 		List<TotalVO> Lmaster = new ArrayList<TotalVO>();
+		
+		// ArrayList에 사용자 입력에 따른 결과값의 필요 카드량을 입력받는다.
 		for(int i = 0; i<10; i++){
-			Lmaster.add(service1.listHome0(Total).get(i));
-			Lmaster.add(service1.listHome1(Total).get(i));
-			Lmaster.add(service1.listHome2(Total).get(i));
+			if(TotalFeed.size() < i){
+				Lmaster.add(TotalFeed.get(i));
+			}
+			if(TotalNews.size() < i){
+				Lmaster.add(TotalNews.get(i));
+			}
+			if(TotalSns.size() < i){
+				Lmaster.add(TotalSns.get(i));
+			}
 		}
+		
 		model.addAttribute("list",Lmaster);
-		model.addAttribute("list1",service2.listCrawl1(Crawl));
-		model.addAttribute("list2",service2.listCrawl2(Crawl));
+		
+		//DB결과값을 가져오면서 크롤링을 하니까 런타임이 오래걸린다.
+		//model.addAttribute("list1",service2.listCrawl1(Crawl));
+		//model.addAttribute("list2",service2.listCrawl2(Crawl));
 	}
 	
 }

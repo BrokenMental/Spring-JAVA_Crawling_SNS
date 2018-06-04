@@ -15,6 +15,7 @@ public class TotalVO {
 	private String URL;
 	private String S_Content;
 	private String S_Addr;
+	private String S_Img;
 	private String S_User;
 	
 	public Integer getF_Number() {
@@ -94,6 +95,12 @@ public class TotalVO {
 	}
 	public void setS_Addr(String s_Addr) {
 		S_Addr = s_Addr;
+	}
+	public String getS_Img() {
+		return S_Img;
+	}
+	public void setS_Img(String s_Img) {
+		S_Img = s_Img;
 	}
 	public String getS_User() {
 		return S_User;

@@ -1,15 +1,15 @@
 .td-style {
 	rowspan: 3;
-	word-break:break-all;
+	word-break: break-all;
 }
 
 .div-first {
-	height:10%;
+	height: 2%;
 }
 
 .table-style {
 	display: block;
-	overflow: hidden; 
+	overflow: hidden;
 	text-overflow: ellipsis;
 	/* �뀓�뒪�듃媛� 以꾩쓣 踰쀬뼱�궗�쓣寃쎌슦 �궗�슜�븯�뒗�뜲 洹쒖튃�씠 �븘�슂�븿 
 	1. width媛� 怨좎젙�쟻�씠�뼱�빞 �븳�떎.
@@ -19,51 +19,63 @@
 }
 
 /* ---- grid ---- */
+* {
+	box-sizing: border-box;
+}
 
-* { box-sizing: border-box; }
- 
 body {
 	font-family: sans-serif;
 }
 
 /* ---- grid ---- */
-
 .grid {
-  max-width: 98%;
-  /* margin: auto; */
+	max-width: 98%;
+	/* margin: auto; */
 }
 
 /* clearfix */
 .grid:after {
-  content: '';
-  display: block;
-  clear: both;
+	content: '';
+	display: block;
+	clear: both;
 }
 
 /* ---- grid-item ---- */
-
 .grid-item {
-  width: 200px;
-  /* height: 180px; */
-  float: left;
-  /* background: #D26; */
-  border: 2px solid #333;
-  border-color: hsla(0, 0%, 0%, 0.5);
-  border-radius: 5px;
-  /* display:inline-block; */
-  margin-bottom: 2px;
-  margin-left: 2px;
+	width: 200px;
+	/* height: 180px; */
+	float: left;
+	/* background: #D26; */
+	border: 2px solid #333;
+	border-color: hsla(0, 0%, 0%, 0.5);
+	border-radius: 5px;
+	/* display:inline-block; */
+	margin-bottom: 2px;
+	margin-left: 2px;
 }
 
 .grid-item-height2 {
-	height: 240px;
+	display: inline-block;
 }
 
 .grid-item-height3 {
-	height: 320px;
+	display: inline-block;
 }
 
-.grid-color0 { background: #FFFFFF; }
-.grid-color1 { background: #F4a460; }
-.grid-color2 { background: #87cefa; }
-.grid-color3 { background: #90ee90; }
+.grid-color0 {
+	background: #FFFFFF;
+}
+
+.grid-color1 {
+	background: #F4a460;
+}
+
+.grid-color2 {
+	background: #87cefa;
+	height: 20%;
+}
+
+.grid-color3 {
+	background: #90ee90;
+	height: 10%;
+}

@@ -21,11 +21,13 @@
 						<tr>
 							<th>User</th>
 							<th>Content</th>
+							<th>Image</th>
 						</tr>
 						<c:forEach items="${list2}" var="Crawl2">
 							<tr>
 								<td>${Crawl2.getS_User()}</td>
 								<td>${Crawl2.getS_Content()}</td>
+								<td><img src="${Crawl2.getS_Img()}" style="width:50px;"></td>
 								<%-- <td>${Crawl2.getUser().getScreenName()}</td>
 								<td>${Crawl2.getText()}</td> --%>
 							</tr>

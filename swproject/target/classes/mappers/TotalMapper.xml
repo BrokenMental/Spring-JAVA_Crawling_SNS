@@ -20,7 +20,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="listHome2" resultType="TotalVO">
-		select C_Number, C_Group, S_Content, S_Addr, S_User
+		select C_Number, C_Group, S_Content, S_Addr, S_Img, S_User
 		from Crawler
 		where C_Group = 'SNS'
 		order by C_Time desc limit 10

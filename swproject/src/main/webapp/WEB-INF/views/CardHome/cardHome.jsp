@@ -68,8 +68,9 @@
 										${List.s_Content}
 									</div>
 									<hr>
-									<div class="grid-color0">
-										<a href="${List.s_Addr}"><font color="black">${List.s_Addr}</font></a>
+									<div class="grid-color0" style="text-align:center;">
+										<%-- <a href="${List.s_Addr}"><font color="black">${List.s_Addr}</font></a> --%>
+										<a href="${List.s_Addr}"><img src="${List.s_Img}" style="width:100px; margin-bottom:5px;"></a>
 									</div>
 								</div>
 							</c:if>

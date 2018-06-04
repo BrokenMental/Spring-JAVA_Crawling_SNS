@@ -11,9 +11,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 	<insert id="create2">
-		insert into crawler (S_User, S_Content, S_Addr, C_Group, C_Time)
-		select #{S_User}, #{S_Content}, #{S_Addr}, #{C_Group}, #{C_Time} from dual
-		where not exists (select * from crawler where (S_Content = #{S_Content} AND C_Group = 'SNS') limit 10)
+		insert into crawler (S_User, S_Content, S_Addr, S_Img, C_Group, C_Time)
+		select #{S_User}, #{S_Content}, #{S_Addr}, #{S_Img}, #{C_Group}, #{C_Time} from dual
+		where not exists (select * from crawler where (S_Content = #{S_Content} AND C_Group = 'SNS') limit 20)
 		<!-- where not exists (select * from crawler where S_Content collate utf8mb4_unicode_ci = #{S_Content}) -->
 	</insert>
 	
@@ -25,7 +25,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="listSNS" resultType="CrawlerVO">
-		select C_Number, C_Group, S_Content, S_Addr, S_User
+		select C_Number, C_Group, S_Content, S_Addr, S_Img, S_User
 		from Crawler
 		where C_Group = #{C_Group}
 		order by C_Time desc

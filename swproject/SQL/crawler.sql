@@ -7,6 +7,7 @@ create table crawler (
 	s_user varchar(20),
 	c_time datetime not null,
 	s_addr varchar(500),
+	s_img varchar(500),
 	n_img varchar(5000),
 	n_source varchar(50),
 	primary key(c_number)

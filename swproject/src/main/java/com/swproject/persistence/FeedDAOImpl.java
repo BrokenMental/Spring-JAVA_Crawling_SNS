@@ -16,7 +16,7 @@ public class FeedDAOImpl implements FeedDAO {
 	@Inject
 	private SqlSession session;
 
-	private static String namespace = "com.swproject.mapper.FeedMapper";
+	private static String namespace = "com.swproject.mappers.FeedMapper";
 
 	@Override
 	public void create(FeedVO vo) throws Exception {

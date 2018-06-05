@@ -201,8 +201,8 @@ img {
 </head>
 <body>
 	<h1>컨텐츠 정하기</h1>
-	<div id="divwhole" style="width: 840px; height: 720px; margin: auto;">
-		<div id="divking">
+	<div id="divwhole" style="width: 850px; height: 720px; margin: auto;">
+		<div id="divking" style="float: left;">
 			<div id="divframe">
 				<div class="carddiv" onclick="divclick()">
 					<div class="onediv">

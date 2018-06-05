@@ -11,7 +11,7 @@ import com.swproject.domain.TotalVO;
 
 @Repository
 public class TotalDAOImpl implements TotalDAO {
-	private static String namespace = "com.swproject.mapper.TotalMapper";
+	private static String namespace = "com.swproject.mappers.TotalMapper";
 
 	@Inject
 	private SqlSession session;

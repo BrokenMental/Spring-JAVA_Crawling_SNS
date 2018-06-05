@@ -14,5 +14,6 @@ CREATE TABLE card (
   val11 tinyint(1) DEFAULT NULL,
   val12 tinyint(1) DEFAULT NULL,
   val13 tinyint(1) DEFAULT NULL,
-  val14 tinyint(1) DEFAULT NULL
+  val14 tinyint(1) DEFAULT NULL,
+  user varchar(20) DEFAULT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci

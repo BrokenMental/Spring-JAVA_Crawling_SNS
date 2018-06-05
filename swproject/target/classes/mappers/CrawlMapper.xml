@@ -3,7 +3,7 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.swproject.mapper.CrawlMapper">
+<mapper namespace="com.swproject.mappers.CrawlMapper">
 	<insert id="create1">
 		insert into crawler (N_Title, N_IMG, N_Source, URL, C_Group, C_Time)
 		select #{N_Title}, #{N_IMG}, #{N_Source}, #{URL}, #{C_Group}, #{C_Time} from dual

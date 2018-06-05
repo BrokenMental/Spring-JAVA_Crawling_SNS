@@ -12,7 +12,7 @@ public class CardDAOImpl implements CardDAO {
 	@Autowired
 	private SqlSession session;
 	
-	private static String namespace = "com.swproject.mapper.CardMapper";
+	private static String namespace = "com.swproject.mappers.CardMapper";
 	
 	@Override
 	public void insertCardnum(CardVO vo) {

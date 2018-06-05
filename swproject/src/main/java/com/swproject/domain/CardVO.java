@@ -5,7 +5,8 @@ import java.util.Arrays;
 public class CardVO {
 	private String sent;
 	private boolean val[] = new boolean[] {false,false,false,false,false,false,false,false,false,false,false,false,false,false,false};
-
+	private String user;
+	
 	public String getSent() {
 		return sent;
 	}
@@ -20,6 +21,14 @@ public class CardVO {
 
 	public void setVal(boolean[] val) {
 		this.val = val;
+	}
+
+	public String getUser() {
+		return user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
 	}
 
 	@Override

@@ -16,7 +16,7 @@ public class CrawlDAOImpl implements CrawlDAO {
 	@Inject
 	private SqlSession session;
 	
-	private static String namespace = "com.swproject.mapper.CrawlMapper";
+	private static String namespace = "com.swproject.mappers.CrawlMapper";
 	
 	@Override
 	public void create1(CrawlerVO vo) throws Exception {

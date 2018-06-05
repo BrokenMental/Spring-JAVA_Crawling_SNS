@@ -3,7 +3,7 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.swproject.mapper.TotalMapper">
+<mapper namespace="com.swproject.mappers.TotalMapper">
 
 	<select id="listHome0" resultType="TotalVO">
 		select F_Number, MyFeed, ID, F_Time, F_Group

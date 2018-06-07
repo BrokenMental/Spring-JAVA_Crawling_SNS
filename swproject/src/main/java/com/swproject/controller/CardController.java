@@ -1,7 +1,5 @@
 package com.swproject.controller;
 
-import java.util.Arrays;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,9 +40,9 @@ public class CardController {
 	@RequestMapping(value = "/testvalue1", method = RequestMethod.POST)
 	public String testValuePost1(CardVO vo){
 		logger.info("testvalue1 POST .........");
-		//System.out.println(Arrays.toString(vo.getVal()));
-		boolean val[] = new boolean[] {vo.getVal()[0],vo.getVal()[1],vo.getVal()[2],vo.getVal()[3],vo.getVal()[4],false,false,false,false,false,false,false,false,false,false};
-		vo.setVal(val);
+		//노가다 코드로 바꿈
+		/*boolean val[] = new boolean[] {vo.getVal()[0],vo.getVal()[1],vo.getVal()[2],vo.getVal()[3],vo.getVal()[4],false,false,false,false,false,false,false,false,false,false};
+		vo.setVal(val);*/
 		cService.insertCard(vo,"num");
 		return "redirect:/ConfirmCard/slide_card";
 	}

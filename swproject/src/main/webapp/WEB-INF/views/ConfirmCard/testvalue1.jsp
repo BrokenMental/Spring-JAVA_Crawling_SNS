@@ -23,11 +23,11 @@ h1 {
 	<h1>결과</h1>
 	<form method="post">
 		<div id="divking">
-			01<input type="text" class="valueview" name="val"> 02<input
-				type="text" class="valueview" name="val"> 03<input
-				type="text" class="valueview" name="val"> 04<input
-				type="text" class="valueview" name="val"> 05<input
-				type="text" class="valueview" name="val">
+			01<input type="text" class="valueview" name="val00"> 02<input
+				type="text" class="valueview" name="val01"> 03<input
+				type="text" class="valueview" name="val02"> 04<input
+				type="text" class="valueview" name="val03"> 05<input
+				type="text" class="valueview" name="val04">
 			<div id="divbottom">
 				<button type="submit" class="btn btn-warning">OK</button>
 			</div>

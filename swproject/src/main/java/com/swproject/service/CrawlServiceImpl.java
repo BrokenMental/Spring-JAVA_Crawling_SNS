@@ -3,12 +3,11 @@ package com.swproject.service;
 import java.util.Date;
 import java.util.List;
 
-import javax.inject.Inject;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.swproject.domain.CrawlerNews;
@@ -24,10 +23,10 @@ import twitter4j.TwitterFactory;
 @Service
 public class CrawlServiceImpl implements CrawlService {
 
-	@Inject
+	@Autowired
 	private CrawlDAO dao;
 
-	@Inject
+	@Autowired
 	private CrawlService service;
 
 	public String time() {

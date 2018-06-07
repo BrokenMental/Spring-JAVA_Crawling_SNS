@@ -23,16 +23,16 @@ h1 {
 	<h1>결과</h1>
 	<form method="post">
 		<div id="divking">
-			01<input type="text" class="valueview" name="val"> 02<input type="text"
-				class="valueview" name="val"> 03<input type="text" class="valueview" name="val">
-			04<input type="text" class="valueview" name="val"> 05<input type="text"
-				class="valueview" name="val"> 06<input type="text" class="valueview" name="val">
-			07<input type="text" class="valueview" name="val"> 08<input type="text"
-				class="valueview" name="val"> 09<input type="text" class="valueview" name="val">
-			10<input type="text" class="valueview" name="val"> 11<input type="text"
-				class="valueview" name="val"> 12<input type="text" class="valueview" name="val">
-			13<input type="text" class="valueview" name="val"> 14<input type="text"
-				class="valueview" name="val"> 15<input type="text" class="valueview" name="val">
+			01<input type="text" class="valueview" name="val00"> 02<input type="text"
+				class="valueview" name="val01"> 03<input type="text" class="valueview" name="val02">
+			04<input type="text" class="valueview" name="val03"> 05<input type="text"
+				class="valueview" name="val04"> 06<input type="text" class="valueview" name="val05">
+			07<input type="text" class="valueview" name="val06"> 08<input type="text"
+				class="valueview" name="val07"> 09<input type="text" class="valueview" name="val08">
+			10<input type="text" class="valueview" name="val09"> 11<input type="text"
+				class="valueview" name="val10"> 12<input type="text" class="valueview" name="val11">
+			13<input type="text" class="valueview" name="val12"> 14<input type="text"
+				class="valueview" name="val13"> 15<input type="text" class="valueview" name="val14">
 			<div id="divbottom">
 				<button type="submit" class="btn btn-warning">OK</button>
 			</div>

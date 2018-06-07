@@ -1,18 +1,16 @@
 package com.swproject.controller;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
-
-import javax.inject.Inject;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.swproject.domain.CardVO;
 import com.swproject.domain.CrawlerVO;
 import com.swproject.domain.TotalVO;
 import com.swproject.service.CrawlService;
@@ -27,10 +25,10 @@ public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-	@Inject
+	@Autowired
 	private TotalService service1;
 
-	@Inject
+	@Autowired
 	private CrawlService service2;
 	
 	/**
@@ -44,10 +42,10 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/CardHome/cardHome", method = RequestMethod.GET)
-	public void home(TotalVO Total, Locale locale, CrawlerVO Crawl, Model model) throws Exception {
-		logger.info("Welcome home! The client locale is {}.", locale);
+	public void home(TotalVO Total, CardVO Card, Locale locale, CrawlerVO Crawl, Model model) throws Exception {
+		logger.info("CardHome GET...");
 		
-		model.addAttribute("list",service1.listHome0(Total));
+		model.addAttribute("list",service1.listHome(Total, Card));
 		
 		//DB결과값을 가져오면서 크롤링을 하니까 런타임이 오래걸린다.
 		//model.addAttribute("list1",service2.listCrawl1(Crawl));

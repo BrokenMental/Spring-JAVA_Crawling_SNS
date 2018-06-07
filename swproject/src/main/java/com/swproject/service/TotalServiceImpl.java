@@ -3,10 +3,10 @@ package com.swproject.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.inject.Inject;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.swproject.domain.CardVO;
 import com.swproject.domain.TotalVO;
 import com.swproject.persistence.TotalDAO;
 
@@ -14,11 +14,15 @@ import com.swproject.persistence.TotalDAO;
 @Service
 public class TotalServiceImpl implements TotalService {
 
-	@Inject
+	@Autowired
 	private TotalDAO dao;
 	
 	@Override
-	public List<TotalVO> listHome0(TotalVO total) throws Exception{
+	public List<TotalVO> listHome(TotalVO total, CardVO card) throws Exception{
+
+		dao.userChoiceNum(card);
+		List<CardVO> CardNum = dao.userChoiceNum(card);
+		List<CardVO> CardSlide = dao.userChoiceSlide(card);
 		
 		List<TotalVO> TotalFeed = dao.listHome0(total);
 		List<TotalVO> TotalNews = dao.listHome1(total);
@@ -37,7 +41,7 @@ public class TotalServiceImpl implements TotalService {
 				Lmaster.add(TotalSns.get(i));
 			}
 		}
-		
+
 		return Lmaster;
 	}
 

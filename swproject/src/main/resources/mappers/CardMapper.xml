@@ -4,13 +4,29 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.swproject.mappers.CardMapper">
-	<select id="selectCard" resultType="CardVO">
+	<select id="selectNum" resultType="com.swproject.domain.CardVO">
 		SELECT *
 		FROM CARD
-		WHERE USER = #{user}
+		WHERE USER = 'user00' AND sent = 'num'
+	</select>
+	
+	<select id="selectSlide" resultType="com.swproject.domain.CardVO">
+		SELECT *
+		FROM CARD
+		WHERE USER = 'user00' AND sent = 'slide'
 	</select>
 	
 	<insert id="cardinsertnum">
+		INSERT INTO CARD
+		VALUES (#{sent}, #{val00}, #{val01}, #{val02}, #{val03}, #{val04}, #{val05}, #{val06}, #{val07}, #{val08}, #{val09}, #{val10}, #{val11}, #{val12}, #{val13}, #{val14}, 'user00')
+	</insert>
+	
+	<insert id="cardinsertslide">
+		INSERT INTO CARD
+		VALUES (#{sent}, #{val00}, #{val01}, #{val02}, #{val03}, #{val04}, #{val05}, #{val06}, #{val07}, #{val08}, #{val09}, #{val10}, #{val11}, #{val12}, #{val13}, #{val14}, 'user00')
+	</insert>
+	
+	<!-- <insert id="cardinsertnum">
 		INSERT INTO CARD
 		VALUES (#{sent}
 		<foreach item="item" collection="val">
@@ -22,11 +38,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<insert id="cardinsertslide">
 		INSERT INTO CARD
-		VALUES (#{sent}
+		VALUES (#{sent},
 		<foreach item="item" collection="val">
 			,#{item}
 		</foreach>
 		, 'user00'
 		)
-	</insert>
+	</insert> -->
 </mapper>

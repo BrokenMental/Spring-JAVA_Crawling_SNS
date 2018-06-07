@@ -24,7 +24,6 @@ public class TotalDAOImpl implements TotalDAO {
 	public List<TotalVO> listHome1(TotalVO total) throws Exception{
 		return session.selectList(namespace + ".listHome1", total);
 	}
-
 	@Override
 	public List<TotalVO> listHome2(TotalVO total) throws Exception{
 		return session.selectList(namespace + ".listHome2", total);

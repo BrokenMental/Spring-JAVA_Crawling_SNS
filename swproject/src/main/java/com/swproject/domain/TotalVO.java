@@ -17,6 +17,7 @@ public class TotalVO {
 	private String S_Addr;
 	private String S_Img;
 	private String S_User;
+	private Integer LimitNum;
 	
 	public Integer getF_Number() {
 		return F_Number;
@@ -108,19 +109,18 @@ public class TotalVO {
 	public void setS_User(String s_User) {
 		S_User = s_User;
 	}
-	
+	public Integer getLimitNum() {
+		return LimitNum;
+	}
+	public void setLimitNum(Integer limitNum) {
+		LimitNum = limitNum;
+	}
 	@Override
 	public String toString() {
 		return "TotalVO [F_Number=" + F_Number + ", C_Number=" + C_Number + ", MyFeed=" + MyFeed + ", ID=" + ID
 				+ ", F_Time=" + F_Time + ", F_Group=" + F_Group + ", C_Group=" + C_Group + ", N_Title=" + N_Title
 				+ ", N_IMG=" + N_IMG + ", N_Source=" + N_Source + ", URL=" + URL + ", S_Content=" + S_Content
-				+ ", S_Addr=" + S_Addr + ", S_User=" + S_User + ", getF_Number()=" + getF_Number() + ", getC_Number()="
-				+ getC_Number() + ", getMyFeed()=" + getMyFeed() + ", getID()=" + getID() + ", getF_Time()="
-				+ getF_Time() + ", getF_Group()=" + getF_Group() + ", getC_Group()=" + getC_Group() + ", getN_Title()="
-				+ getN_Title() + ", getN_IMG()=" + getN_IMG() + ", getN_Source()=" + getN_Source() + ", getURL()="
-				+ getURL() + ", getS_Content()=" + getS_Content() + ", getS_Addr()=" + getS_Addr() + ", getS_User()="
-				+ getS_User() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
-				+ super.toString() + "]";
+				+ ", S_Addr=" + S_Addr + ", S_Img=" + S_Img + ", S_User=" + S_User + ", LimitNum=" + LimitNum + "]";
 	}
 	
 }

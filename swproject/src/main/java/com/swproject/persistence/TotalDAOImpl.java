@@ -28,17 +28,20 @@ public class TotalDAOImpl implements TotalDAO {
 	}
 
 	@Override
-	public List<TotalVO> listHome0(TotalVO total) throws Exception {
+	public List<TotalVO> listHome0(TotalVO total, int limitNum) throws Exception {
+		total.setLimitNum(limitNum);
 		return session.selectList(namespaceTotal + ".listHome0", total);
 	}
 
 	@Override
-	public List<TotalVO> listHome1(TotalVO total) throws Exception {
+	public List<TotalVO> listHome1(TotalVO total, int limitNum) throws Exception {
+		total.setLimitNum(limitNum);
 		return session.selectList(namespaceTotal + ".listHome1", total);
 	}
 
 	@Override
-	public List<TotalVO> listHome2(TotalVO total) throws Exception {
+	public List<TotalVO> listHome2(TotalVO total, int limitNum) throws Exception {
+		total.setLimitNum(limitNum);
 		return session.selectList(namespaceTotal + ".listHome2", total);
 	}
 

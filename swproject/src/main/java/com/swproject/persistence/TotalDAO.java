@@ -10,8 +10,8 @@ public interface TotalDAO {
 	public List<CardVO> userChoiceNum(CardVO card) throws Exception;
 	public List<CardVO> userChoiceSlide(CardVO card) throws Exception;
 	
-	public List<TotalVO> listHome0(TotalVO total) throws Exception;
-	public List<TotalVO> listHome1(TotalVO total) throws Exception;
-	public List<TotalVO> listHome2(TotalVO total) throws Exception;
+	public List<TotalVO> listHome0(TotalVO total, int limitNum) throws Exception;
+	public List<TotalVO> listHome1(TotalVO total, int limitNum) throws Exception;
+	public List<TotalVO> listHome2(TotalVO total, int limitNum) throws Exception;
 
 }

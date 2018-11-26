@@ -1,4 +1,4 @@
-# Spring-Java_Crawling
+# Spring-Java_Crawling_SNS
 
 - Java Crawling을 활용한 SNS 프로젝트
 - 페이지 새로고침시 새로운 크롤링 데이터 활용
